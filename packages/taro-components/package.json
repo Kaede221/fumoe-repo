@@ -1,0 +1,48 @@
+{
+  "name": "@fumoe/taro-components",
+  "version": "0.1.0",
+  "description": "Taro 4.x 开箱即用的一些公用组件",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "react",
+    "taro",
+    "components"
+  ],
+  "types": "dist/types/index.d.ts",
+  "typings": "dist/types/index.d.ts",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "files": [
+    "src",
+    "dist/types",
+    "package.json",
+    "README.md"
+  ],
+  "author": "kaedeshimizu",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@fumoe/taro-hooks": "0.1.6",
+    "@taroify/core": "^0.9.0",
+    "@tarojs/components": "4.1.5",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^12.1.4",
+    "@tarojs/taro": "4.1.5",
+    "@types/lodash": "^4.17.20",
+    "@types/react": "^18.0.0",
+    "postcss": "^8.4.38",
+    "react-refresh": "^0.14.0",
+    "rollup": "^4.46.4",
+    "sass": "^1.75.0",
+    "tslib": "^2.8.1",
+    "typescript": "^5.4.5"
+  }
+}

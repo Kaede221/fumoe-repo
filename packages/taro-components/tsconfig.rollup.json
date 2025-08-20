@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "declaration": true,
+    // 生成类型声明
+    "emitDeclarationOnly": true,
+    // 只生成类型声明，不生成JS
+    "declarationDir": "dist/types",
+    // 类型文件输出目录
+    "skipLibCheck": true,
+    // 跳过库文件检查（避免之前的类型错误）
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "types": [
+      "@tarojs/taro",
+      "@tarojs/components"
+    ],
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+      // 如有别名需要配置
+    }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  // 只处理源码
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts"
+  ]
+}
