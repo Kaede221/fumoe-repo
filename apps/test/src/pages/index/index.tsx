@@ -1,9 +1,9 @@
 import { View, Text, Button } from "@tarojs/components";
 import { MoeTag, MoeHeader, MoePicker } from "@fumoe/taro-components";
+import { useState } from "react";
 import { useNavInfo } from "@fumoe/taro-hooks";
 
 import "./index.scss";
-import { useState } from "react";
 
 export default function Index() {
   const navInfo = useNavInfo();
@@ -20,9 +20,9 @@ export default function Index() {
         open={open}
         columns={2}
         categories={["A", "B", "C"]}
-        onConfirm={e => {
-          console.log(e)
-          setOpen(false)
+        onConfirm={(e) => {
+          console.log(e);
+          setOpen(false);
         }}
       ></MoePicker>
     </View>
