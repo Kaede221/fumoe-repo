@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Image, View } from "@tarojs/components";
 
-import "./MoeTag.scss";
+import './MoeTag.scss'
 
 export interface IMoeTag {
   /** tag文本 */
@@ -35,7 +35,7 @@ const MoeTag: FC<IMoeTag> = ({
 }) => {
   return (
     <View
-      className="common-shared-tag-lc"
+      className={"common-shared-tag-lc"}
       style={{
         borderColor: mainColor,
         backgroundColor: backgroundColor,
@@ -55,7 +55,7 @@ const MoeTag: FC<IMoeTag> = ({
         />
       )}
       <View
-        className="label"
+        className={"label"}
         style={{
           color: mainColor,
         }}

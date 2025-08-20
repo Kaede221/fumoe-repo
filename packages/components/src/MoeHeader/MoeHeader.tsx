@@ -105,10 +105,10 @@ const MoeHeader: FC<IMoeHeader> = ({
         ></View>
       )}
       <View
-        className="moe-header"
+        className={"moe-header"}
         style={{
           position: fixed ? "fixed" : "static",
-          height: appHeaderHeight,
+          height: appHeaderHeight + "px",
           top: fixed ? 0 : "auto",
           backgroundColor,
           zIndex,
@@ -116,7 +116,7 @@ const MoeHeader: FC<IMoeHeader> = ({
       >
         {/*主要内容区域*/}
         <View
-          className="moe-header-container"
+          className={"moe-header-container"}
           style={{
             height: containerHeight + "px",
             fontSize: fontSize + "rpx",
@@ -126,7 +126,7 @@ const MoeHeader: FC<IMoeHeader> = ({
         >
           {back && (
             <Image
-              className="back-icon"
+              className={"back-icon"}
               src={!!backIcon ? backIcon : arrowIcon}
               onClick={onClickBackIcon}
               style={{

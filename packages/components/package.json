@@ -28,11 +28,13 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "*.css"
+    "*.css",
+    "*.scss"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "node build.js",
     "build:types": "tsc --emitDeclarationOnly",
+    "build:tsc": "tsc",
     "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {
