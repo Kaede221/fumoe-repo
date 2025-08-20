@@ -15,7 +15,7 @@
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
     "resolveJsonModule": true,
-    "removeComments": true,
+    "removeComments": false,
     "declaration": true,
     "declarationMap": true,
     "skipLibCheck": true,

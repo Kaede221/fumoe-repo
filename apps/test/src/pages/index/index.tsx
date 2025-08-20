@@ -1,6 +1,5 @@
 import { View, Text, Button } from "@tarojs/components";
-import { MoeTag, MoeHeader } from "@fumoe/taro-components";
-import MoePicker from "@/components/MoePicker";
+import { MoeTag, MoeHeader, MoePicker } from "@fumoe/taro-components";
 import { useNavInfo } from "@fumoe/taro-hooks";
 
 import "./index.scss";
