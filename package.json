@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build:components": "pnpm --F @fumoe/taro-components build"
   },
   "keywords": [],
   "author": "",
