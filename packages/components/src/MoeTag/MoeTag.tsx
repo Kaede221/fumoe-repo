@@ -35,7 +35,7 @@ const MoeTag: FC<IMoeTag> = ({
 }) => {
   return (
     <View
-      className={"common-shared-tag-lc"}
+      className="common-shared-tag-lc"
       style={{
         borderColor: mainColor,
         backgroundColor: backgroundColor,
@@ -51,11 +51,13 @@ const MoeTag: FC<IMoeTag> = ({
           style={{
             width: "28rpx",
             height: "28rpx",
+            // 确保图片垂直居中
+            display: "block",
           }}
         />
       )}
       <View
-        className={"label"}
+        className="label"
         style={{
           color: mainColor,
         }}

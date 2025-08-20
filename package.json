@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev:taro": "pnpm --F @fumoe/taro-test dev",
-    "build:components": "pnpm --F @fumoe/taro-components build"
+    "build:components": "pnpm --F @fumoe/taro-components build",
+    "build:hooks": "pnpm --F @fumoe/taro-hooks build"
   },
   "keywords": [],
   "author": "",

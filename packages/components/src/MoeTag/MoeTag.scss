@@ -1,20 +1,34 @@
 .common-shared-tag-lc {
-  min-height: 44rpx;
+  height: 44rpx;
   border-radius: 112rpx;
   border: solid 2rpx #FFFFFF;
 
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 20rpx;
+  gap: 8rpx;
 
-  gap: 10rpx;
-
+  // 优化文本对齐和抗锯齿
   .label {
-    font-family: Microsoft YaHei UI, sans-serif;
-    font-weight: 290;
+    font-family: 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
     font-size: 24rpx;
-    line-height: 140%;
+    line-height: 44rpx; // 与容器高度一致，确保垂直居中
+    
+    // 解决文本偏上问题
+    display: inline-block;
     vertical-align: middle;
+    
+    // 抗锯齿优化
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  // 优化图片对齐
+  image {
+    display: block;
+    flex-shrink: 0;
   }
 }
