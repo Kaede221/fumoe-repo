@@ -1,0 +1,45 @@
+{
+  "name": "@fumoe/taro-hooks",
+  "version": "0.1.7",
+  "description": "Taro 4.x 中, 可以开箱即用的自制hooks",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "react",
+    "taro",
+    "hooks",
+    "react-hooks",
+    "taro-hooks",
+    "weapp",
+    "miniprogram"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "node build.js",
+    "build:tsc": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "pnpm run build"
+  },
+  "author": "kaedeshimizu",
+  "license": "MIT",
+  "peerDependencies": {
+    "@tarojs/helper": "4.1.2",
+    "@tarojs/plugin-platform-weapp": "4.1.2",
+    "@tarojs/service": "4.1.2",
+    "@tarojs/shared": "4.1.2",
+    "@tarojs/taro": "4.1.2",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.23",
+    "typescript": "^5.9.2"
+  },
+  "packageManager": "pnpm@10.14.0"
+}
