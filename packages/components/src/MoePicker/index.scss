@@ -66,6 +66,10 @@
     .btn-active {
       color: #FFFFFF;
       background-color: #FFC234;
+
+      &:active {
+        transform: scale(0.98);
+      }
     }
 
     .btn-active-hover {
@@ -83,7 +87,6 @@
         border: 1px solid #ccc;
         border-radius: 141rpx;
         text-align: center;
-        cursor: pointer;
         font-size: 32rpx;
         line-height: 77rpx;
         transition: all 0.2s ease;

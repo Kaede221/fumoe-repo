@@ -19,9 +19,47 @@ interface IMoePicker {
 }
 
 /**
- * 自定义弹出层选择器
- * @author kaedeshimizu
- * @email kaedeshimizu@qq.com
+ * 自定义弹出层选择器 - MoePicker
+ * 
+ * 一个美观的底部弹出选择器组件，支持动画效果、自定义列数和分类选项。
+ * 
+ * @remarks
+ * 该组件提供了完整的底部弹出选择器功能，包括：
+ * - 背景透明黑色渐变动画
+ * - 选择器从底部滑入/滑出动画
+ * - 支持自定义列数布局
+ * - 分类选项点击高亮效果
+ * - 确认按钮状态切换动画
+ * - 响应式设计适配各种屏幕
+ * 
+ * @example
+ * ```tsx
+ * import { useState } from 'react';
+ * import { View, Button } from '@tarojs/components';
+ * import MoePicker from '@/components/MoePicker';
+ * 
+ * export default function Demo() {
+ *   const [open, setOpen] = useState(false);
+ *   const [selected, setSelected] = useState('');
+ *   const categories = ["日常", "工作", "学习", "娱乐", "运动"];
+ * 
+ *   return (
+ *     <View>
+ *       <Button onClick={() => setOpen(true)}>打开选择器</Button>
+ *       <MoePicker
+ *         open={open}
+ *         setOpen={setOpen}
+ *         categories={categories}
+ *         columns={2}
+ *         closeable={true}
+ *         defaultCategory="日常"
+ *       />
+ *     </View>
+ *   );
+ * }
+ * ```
+ * 
+ * @interface IMoePicker - 组件属性接口
  */
 const MoePicker: FC<IMoePicker> = ({
   closeable,
@@ -37,6 +75,7 @@ const MoePicker: FC<IMoePicker> = ({
   const handleClose = () => {
     if (closeable) {
       setOpen(false);
+      setSelectedCategory("");
     }
   };
 
