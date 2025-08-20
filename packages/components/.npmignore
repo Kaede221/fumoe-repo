@@ -1,0 +1,13 @@
+src/
+*.log
+*.tsbuildinfo
+node_modules/
+.npmignore
+.gitignore
+.prettierrc
+rollup.config.js
+tsconfig.json
+*.test.tsx
+*.test.ts
+*.spec.tsx
+*.spec.ts

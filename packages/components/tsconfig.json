@@ -2,6 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "dist",
+    "rootDirs": ["src"],
     "sourceMap": false,
     "target": "esnext",
     "module": "esnext",
@@ -19,18 +20,16 @@
     "declarationMap": true,
     "skipLibCheck": true,
     "noImplicitAny": false,
-    "types": [
-      "node"
-    ],
-    "rootDir": ".",
-    "jsx": "react",
+
+    "rootDir": "src",
+    "jsx": "react-jsx",
     "typeRoots": [
       "node_modules/@types"
     ]
   },
   "include": [
-    "packages/*/src",
-    "typings.d.ts"
+    "src/**/*",
+    "typing.d.ts"
   ],
   "exclude": [
     "node_modules"

@@ -1,0 +1,46 @@
+{
+  "name": "@fumoe/taro-components",
+  "version": "0.0.15-test.0.1",
+  "license": "MIT",
+  "description": "Taro 4.x 开箱即用的一些公用组件",
+  "keywords": [
+    "react",
+    "taro",
+    "components"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "author": "kaedeshimizu",
+  "peerDependencies": {
+    "@tarojs/shared": "4.1.2",
+    "@tarojs/service": "4.1.2",
+    "@tarojs/components": "4.1.2",
+    "@tarojs/helper": "4.1.2",
+    "less": "^4.2.0",
+    "@tarojs/plugin-platform-weapp": "4.1.2",
+    "@tarojs/taro": "4.1.2",
+    "react": "^18.2.0"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "*.css"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:types": "tsc --emitDeclarationOnly",
+    "prepublishOnly": "pnpm run build"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-is": "^18.2.0",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2"
+  },
+  "packageManager": "pnpm@10.14.0"
+}
