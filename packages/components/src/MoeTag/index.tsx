@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Image, View } from "@tarojs/components";
 
-import './MoeTag.scss'
+import "./index.scss";
 
 export interface IMoeTag {
   /** tag文本 */

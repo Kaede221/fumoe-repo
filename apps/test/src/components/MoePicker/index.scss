@@ -1,0 +1,85 @@
+.moe-picker-main {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(black, 0.7);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  &-container {
+    background-color: white;
+    width: 100%;
+    min-height: 100rpx;
+    padding: 20rpx 0 60rpx 0;
+    border-top-left-radius: 50rpx;
+    border-top-right-radius: 50rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40rpx;
+
+    .confirm-button {
+      width: 91%;
+      height: 80rpx;
+      border-radius: 40rpx;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-disabled {
+      color: gray;
+
+      &-cover {
+
+      }
+    }
+
+    .btn-active {
+      color: #FFFFFF;
+      background-color: #FFC234;
+
+      &-cover {
+        background-color: #e0b046;
+      }
+    }
+
+    // 列表部分
+    .category-list {
+      width: 91%;
+      display: grid;
+      gap: 20rpx;
+
+      .category-item {
+        height: 77rpx;
+        border: 1px solid #ccc;
+        border-radius: 141rpx;
+        text-align: center;
+        cursor: pointer;
+        // 字体设置部分
+        font-size: 32rpx;
+        line-height: 77rpx;
+        transition: all 0.1s linear;
+      }
+
+      .category-item-selected {
+        background-color: #fdf5e2;
+        border-color: #fdd57a;
+        color: #fdd57a;
+      }
+    }
+
+    .moe-picker-title {
+      font-size: 35rpx;
+    }
+  }
+}
+
+.hide {
+  visibility: hidden;
+}

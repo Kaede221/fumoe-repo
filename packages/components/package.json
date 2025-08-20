@@ -13,16 +13,6 @@
     "registry": "https://registry.npmjs.org/"
   },
   "author": "kaedeshimizu",
-  "peerDependencies": {
-    "@tarojs/shared": "4.1.2",
-    "@tarojs/service": "4.1.2",
-    "@tarojs/components": "4.1.2",
-    "@tarojs/helper": "4.1.2",
-    "less": "^4.2.0",
-    "@tarojs/plugin-platform-weapp": "4.1.2",
-    "@tarojs/taro": "4.1.2",
-    "react": "^18.2.0"
-  },
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -43,6 +33,16 @@
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "typescript": "^5.9.2"
+  },
+  "peerDependencies": {
+    "@tarojs/shared": "4.1.2",
+    "@tarojs/service": "4.1.2",
+    "@tarojs/components": "4.1.2",
+    "@tarojs/helper": "4.1.2",
+    "less": "^4.2.0",
+    "@tarojs/plugin-platform-weapp": "4.1.2",
+    "@tarojs/taro": "4.1.2",
+    "react": "^18.2.0"
   },
   "packageManager": "pnpm@10.14.0"
 }

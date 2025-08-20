@@ -5,7 +5,7 @@ import { View, Image } from "@tarojs/components";
 const arrowIcon =
   "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNzU1MzE3NjIwMzg2IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjQ5MDIiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTEwOS41OTM2IDUwOS4zODg4bDM4Ni4wNDgtMzgzLjEyOTZjMTYuMTI4LTE3LjkyIDE1LjIwNjQtNDUuMjg2NC0yLjA3MzYtNjIuMTMxMmE0NS42NzA0IDQ1LjY3MDQgMCAwIDAtNjIuNjQzMi0wLjk3MjhMMTMuMzEyIDQ3Ny42MTkyYTQ0LjkwMjQgNDQuOTAyNCAwIDAgMCAwIDYzLjc5NTJsNDE3LjYxMjggNDE0LjIwOGE0NS41OTM2IDQ1LjU5MzYgMCAwIDAgNDUuNTY4IDE2LjA3NjggNDUuMjYwOCA0NS4yNjA4IDAgMCAwIDM0LjMyOTYtMzMuODE3NiA0NC44NzY4IDQ0Ljg3NjggMCAwIDAtMTUuODcyLTQ1LjM2MzJMMTA5LjU5MzYgNTA5LjM4ODh6IiBmaWxsPSIjMjIyMjIyIiBwLWlkPSI0OTAzIiBkYXRhLXNwbS1hbmNob3ItaWQ9ImEzMTN4LnNlYXJjaF9pbmRleC4wLmkwLjJjNmEzYTgxQTAxdjFsIj48L3BhdGg+PC9zdmc+";
 
-import './MoeHeader.scss'
+import "./index.scss";
 
 export interface IMoeHeader {
   /** 标题和返回部分图标的大小 */
@@ -65,8 +65,7 @@ const MoeHeader: FC<IMoeHeader> = ({
 }) => {
   const { statusBarHeight } = Taro.getWindowInfo();
   // 获取胶囊信息
-  const { height, top } =
-    Taro.getMenuButtonBoundingClientRect();
+  const { height, top } = Taro.getMenuButtonBoundingClientRect();
   // 计算标题栏高度
   const titleBarHeight = height + (top - statusBarHeight!) * 2;
   // 计算导航栏高度
