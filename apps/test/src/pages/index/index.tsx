@@ -21,6 +21,10 @@ export default function Index() {
         open={open}
         columns={2}
         categories={["A", "B", "C"]}
+        onConfirm={e => {
+          console.log(e)
+          setOpen(false)
+        }}
       ></MoePicker>
     </View>
   );

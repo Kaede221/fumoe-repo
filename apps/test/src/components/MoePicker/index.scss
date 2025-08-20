@@ -1,14 +1,25 @@
 .moe-picker-main {
   position: fixed;
-  width: 100vw;
-  height: 100vh;
   top: 0;
   left: 0;
-  background-color: rgba(black, 0.7);
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1000;
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: flex-end;
+  align-items: flex-end;
+  transition: background-color 0.3s ease;
+  pointer-events: none;
+
+  &.show {
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: auto;
+  }
+
+  &.hide {
+    background-color: rgba(0, 0, 0, 0);
+    pointer-events: none;
+  }
 
   &-container {
     background-color: white;
@@ -22,6 +33,16 @@
     justify-content: center;
     flex-direction: column;
     gap: 40rpx;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+
+    &.slide-up {
+      transform: translateY(0);
+    }
+
+    &.slide-down {
+      transform: translateY(100%);
+    }
 
     .confirm-button {
       width: 91%;
@@ -30,23 +51,25 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      border: none;
+      font-size: 32rpx;
+      font-weight: 500;
+      transition: all 0.3s ease;
     }
 
     .btn-disabled {
-      color: gray;
-
-      &-cover {
-
-      }
+      color: #999;
+      background-color: #e5e5e5;
+      cursor: not-allowed;
     }
 
     .btn-active {
       color: #FFFFFF;
       background-color: #FFC234;
+    }
 
-      &-cover {
-        background-color: #e0b046;
-      }
+    .btn-active-hover {
+      background-color: #e0b046 !important;
     }
 
     // 列表部分
@@ -61,10 +84,13 @@
         border-radius: 141rpx;
         text-align: center;
         cursor: pointer;
-        // 字体设置部分
         font-size: 32rpx;
         line-height: 77rpx;
-        transition: all 0.1s linear;
+        transition: all 0.2s ease;
+
+        &:active {
+          transform: scale(0.95);
+        }
       }
 
       .category-item-selected {
@@ -78,8 +104,4 @@
       font-size: 35rpx;
     }
   }
-}
-
-.hide {
-  visibility: hidden;
 }

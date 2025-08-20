@@ -15,6 +15,7 @@ interface IMoePicker {
   columns: number;
   categories: string[];
   defaultCategory?: string;
+  onConfirm: (confirmValue: string) => void;
 }
 
 /**
@@ -29,17 +30,29 @@ const MoePicker: FC<IMoePicker> = ({
   columns,
   categories,
   defaultCategory = "",
+  onConfirm
 }) => {
   const [selectedCategory, setSelectedCategory] = useState(defaultCategory);
+
+  const handleClose = () => {
+    if (closeable) {
+      setOpen(false);
+    }
+  };
+
   return (
     <View
-      className={classnames("moe-picker-main", open ? "" : "hide")}
-      onClick={() => {
-        if (closeable) setOpen(false);
-      }}
+      className={classnames(
+        "moe-picker-main",
+        open ? "show" : "hide"
+      )}
+      onClick={handleClose}
     >
       <View
-        className="moe-picker-main-container"
+        className={classnames(
+          "moe-picker-main-container",
+          open ? "slide-up" : "slide-down"
+        )}
         onClick={(e) => e.stopPropagation()}
       >
         {/*顶部标题*/}
@@ -52,9 +65,8 @@ const MoePicker: FC<IMoePicker> = ({
           {categories.map((category) => (
             <View
               key={category}
-              className={`category-item ${
-                selectedCategory === category ? "category-item-selected" : ""
-              }`}
+              className={`category-item ${selectedCategory === category ? "category-item-selected" : ""
+                }`}
               onClick={() => setSelectedCategory(category)}
             >
               {category}
@@ -69,9 +81,14 @@ const MoePicker: FC<IMoePicker> = ({
             !selectedCategory ? "btn-disabled" : "btn-active",
           )}
           hoverClass={classnames(
-            !selectedCategory ? "btn-disabled-cover" : "btn-active-cover",
+            !selectedCategory ? "" : "btn-active-hover",
           )}
           disabled={!selectedCategory}
+          onClick={() => {
+            if (selectedCategory) {
+              onConfirm(selectedCategory);
+            }
+          }}
         >
           确定
         </Button>
