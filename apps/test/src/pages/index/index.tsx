@@ -5,6 +5,7 @@ import {
   useLayoutHeight,
   useCounter,
   useToggle,
+  useBoolean,
 } from "@fumoe/taro-hooks";
 
 import "./index.scss";
@@ -12,6 +13,7 @@ import "./index.scss";
 export default function Index() {
   const navInfo = useNavInfo();
   const [showDialog, { toggle, set: setDialogOpen }] = useToggle(false);
+  const [boolVal, { toggle: toggleBoolVal }] = useBoolean();
   const [counter, { inc, dec, set: setCounterValue, reset }] = useCounter(100, {
     min: -1,
     max: 2,
@@ -38,6 +40,7 @@ export default function Index() {
       <Button onClick={dec}>-1</Button>
       <Button onClick={() => setCounterValue(65)}>set to 65</Button>
       <Button onClick={reset}>Reset</Button>
+      <View onClick={toggleBoolVal}>当前Bool: {boolVal ? "Yes" : "No"}</View>
       <MoePicker
         closeable
         setOpen={setDialogOpen}
