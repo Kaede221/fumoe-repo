@@ -1,4 +1,6 @@
 import type { StorybookConfig } from "@storybook/react-webpack5";
+// @ts-ignore
+import React from "react";
 
 // @ts-ignore
 const webpack = require("webpack");
@@ -16,23 +18,23 @@ const config: StorybookConfig = {
     name: "@storybook/react-webpack5",
     options: {},
   },
-  docs: {
-    autodocs: "tag",
-  },
   webpackFinal: (config: any) => {
     // 添加 rpx 支持的 PostCSS 插件
     const rpxPlugin = () => {
       return {
-        postcssPlugin: 'rpx',
-        Declaration(decl) {
-          if (decl.value.includes('rpx')) {
-            decl.value = decl.value.replace(/(\d+(?:\.\d+)?)rpx/g, (match, num) => {
-              return `${parseFloat(num) / 750 * 100}vw`;
-            });
+        postcssPlugin: "rpx",
+        Declaration(decl: { value: string }) {
+          if (decl.value.includes("rpx")) {
+            decl.value = decl.value.replace(
+              /(\d+(?:\.\d+)?)rpx/g,
+              (match, num) => {
+                return `${(parseFloat(num) / 750) * 100}vw`;
+              },
+            );
           }
-        }
-      }
-    }
+        },
+      };
+    };
     rpxPlugin.postcss = true;
 
     // 配置 CSS/SCSS 规则，支持 rpx
@@ -40,39 +42,39 @@ const config: StorybookConfig = {
       {
         test: /\.scss$/,
         use: [
-          'style-loader',
-          'css-loader',
+          "style-loader",
+          "css-loader",
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
               postcssOptions: {
-                plugins: [rpxPlugin]
-              }
-            }
+                plugins: [rpxPlugin],
+              },
+            },
           },
           {
-            loader: 'sass-loader',
+            loader: "sass-loader",
             options: {
-              implementation: require('sass')
-            }
-          }
-        ]
+              implementation: require("sass"),
+            },
+          },
+        ],
       },
       {
         test: /\.css$/,
         use: [
-          'style-loader',
-          'css-loader',
+          "style-loader",
+          "css-loader",
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
               postcssOptions: {
-                plugins: [rpxPlugin]
-              }
-            }
-          }
-        ]
-      }
+                plugins: [rpxPlugin],
+              },
+            },
+          },
+        ],
+      },
     ];
 
     return {
@@ -90,9 +92,11 @@ const config: StorybookConfig = {
         ...config.module,
         rules: [
           ...config.module.rules.filter(
-            (rule: any) => !rule.test || (!rule.test.test('.css') && !rule.test.test('.scss'))
+            (rule: any) =>
+              !rule.test ||
+              (!rule.test.test(".css") && !rule.test.test(".scss")),
           ),
-          ...styleRules
+          ...styleRules,
         ],
       },
       plugins: [

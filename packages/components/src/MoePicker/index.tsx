@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import React, { useState } from "react";
 import { View, Button } from "@tarojs/components";
 
 import "./index.scss";
@@ -9,66 +9,47 @@ const classnames = (...args: string[]): string => {
 };
 
 interface IMoePicker {
+  // 点击空白处是否可以关闭
   closeable?: boolean;
+  // 是否显示
   open: boolean;
+  // 设置是否显示
   setOpen: (value: boolean) => void;
+  // 显示列数
   columns: number;
+  // 可选内容列表
   categories: string[];
+  // 默认选择的内容
   defaultCategory?: string;
+  // 确认时的回调函数 默认传入选择的内容
   onConfirm: (confirmValue: string) => void;
 }
 
 /**
- * 自定义弹出层选择器 - MoePicker
- * 
- * 一个美观的底部弹出选择器组件，支持动画效果、自定义列数和分类选项。
- * 
- * @remarks
- * 该组件提供了完整的底部弹出选择器功能，包括：
- * - 背景透明黑色渐变动画
- * - 选择器从底部滑入/滑出动画
- * - 支持自定义列数布局
- * - 分类选项点击高亮效果
- * - 确认按钮状态切换动画
- * - 响应式设计适配各种屏幕
- * 
- * @example
- * ```tsx
- * import { useState } from 'react';
- * import { View, Button } from '@tarojs/components';
- * import MoePicker from '@/components/MoePicker';
- * 
- * export default function Demo() {
- *   const [open, setOpen] = useState(false);
- *   const [selected, setSelected] = useState('');
- *   const categories = ["日常", "工作", "学习", "娱乐", "运动"];
- * 
- *   return (
- *     <View>
- *       <Button onClick={() => setOpen(true)}>打开选择器</Button>
- *       <MoePicker
- *         open={open}
- *         setOpen={setOpen}
- *         categories={categories}
- *         columns={2}
- *         closeable={true}
- *         defaultCategory="日常"
- *       />
- *     </View>
- *   );
- * }
- * ```
- * 
- * @interface IMoePicker - 组件属性接口
+ * 自定义弹出层选择器
+ *
+ * @param `closeable` 点击空白处是否可以关闭
+ *
+ * @param `open` 是否显示
+ *
+ * @param `setOpen` 设置是否显示
+ *
+ * @param `columns` 显示列数
+ *
+ * @param `categories` 可选内容列表
+ *
+ * @param `defaultCategory` 默认选择的内容
+ *
+ * @param `onConfirm` 确认时的回调函数 默认传入选择的内容
  */
-const MoePicker: FC<IMoePicker> = ({
+const MoePicker: React.FC<IMoePicker> = ({
   closeable,
   open,
   setOpen,
   columns,
   categories,
   defaultCategory = "",
-  onConfirm
+  onConfirm,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState(defaultCategory);
 
@@ -81,16 +62,13 @@ const MoePicker: FC<IMoePicker> = ({
 
   return (
     <View
-      className={classnames(
-        "moe-picker-main",
-        open ? "show" : "hide"
-      )}
+      className={classnames("moe-picker-main", open ? "show" : "hide")}
       onClick={handleClose}
     >
       <View
         className={classnames(
           "moe-picker-main-container",
-          open ? "slide-up" : "slide-down"
+          open ? "slide-up" : "slide-down",
         )}
         onClick={(e) => e.stopPropagation()}
       >
@@ -104,8 +82,9 @@ const MoePicker: FC<IMoePicker> = ({
           {categories.map((category) => (
             <View
               key={category}
-              className={`category-item ${selectedCategory === category ? "category-item-selected" : ""
-                }`}
+              className={`category-item ${
+                selectedCategory === category ? "category-item-selected" : ""
+              }`}
               onClick={() => setSelectedCategory(category)}
             >
               {category}
@@ -119,9 +98,7 @@ const MoePicker: FC<IMoePicker> = ({
             "confirm-button",
             !selectedCategory ? "btn-disabled" : "btn-active",
           )}
-          hoverClass={classnames(
-            !selectedCategory ? "" : "btn-active-hover",
-          )}
+          hoverClass={classnames(!selectedCategory ? "" : "btn-active-hover")}
           disabled={!selectedCategory}
           onClick={() => {
             if (selectedCategory) {

@@ -1,5 +1,5 @@
 import Taro from "@tarojs/taro";
-import { FC, ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { View, Image } from "@tarojs/components";
 
 const arrowIcon =
@@ -30,30 +30,31 @@ export interface IMoeHeader {
 
 /**
  * 通用小程序顶部组件
- * @param fontSize 标题和返回部分图标的大小
- * @param titleLeft 标题是否靠左
- * @param fixed 是否固定在顶部
- * @param back 是否显示返回图标
- * @param backIcon 返回部分的图标, 支持路径字符串或者图片base64
- * @param backHandler 点击返回区域的回调事件
- * @param backgroundColor 背景颜色
- * @param zIndex 层级高度
- * @param children 标题内部元素
- * @example
- * <MoeHeader
- *   back
- *   backgroundColor="#FFFFFF"
- *   backHandler={handleClickEStaionIcon}
- *   fontSize={64}
- *   backIcon={iconEStation}
- * >
- *   <View className="index-title">首页</View>
- * </MoeHeader>
- * @author kaedeshimizu
- * @email kaedeshimizu@qq.com
+ *
+ * @param `fontSize` 标题和返回部分图标的大小
+ *
+ * @param `titleLeft` 标题是否靠左
+ *
+ * @param `fixed` 是否固定在顶部
+ *
+ * @param `back` 是否显示返回图标
+ *
+ * @param `backIcon` 返回部分的图标, 支持路径字符串或者图片base64
+ *
+ * @param `backHandler` 点击返回区域的回调事件
+ *
+ * @param `backgroundColor` 背景颜色
+ *
+ * @param `zIndex` 层级高度
+ *
+ * @param `children` 标题内部元素
+ *
+ * @author **kaedeshimizu**
+ *
+ * @email **kaedeshimizu@qq.com**
  */
-const MoeHeader: FC<IMoeHeader> = ({
-  fontSize = 32,
+const MoeHeader: React.FC<IMoeHeader> = ({
+  fontSize = 18,
   titleLeft,
   fixed,
   back,
@@ -63,9 +64,16 @@ const MoeHeader: FC<IMoeHeader> = ({
   zIndex = 1000,
   children,
 }) => {
-  const { statusBarHeight } = Taro.getWindowInfo();
+  // 防止当前不存在这个东西
+  const { statusBarHeight } = Taro.getWindowInfo
+    ? Taro.getWindowInfo()
+    : { statusBarHeight: 0 };
+
   // 获取胶囊信息
-  const { height, top } = Taro.getMenuButtonBoundingClientRect();
+  const { height, top } = Taro.getMenuButtonBoundingClientRect
+    ? Taro.getMenuButtonBoundingClientRect()
+    : { height: 32, top: 0 };
+
   // 计算标题栏高度
   const titleBarHeight = height + (top - statusBarHeight!) * 2;
   // 计算导航栏高度
@@ -118,9 +126,9 @@ const MoeHeader: FC<IMoeHeader> = ({
           className={"moe-header-container"}
           style={{
             height: containerHeight + "px",
-            fontSize: fontSize + "rpx",
+            fontSize: fontSize + "px",
             justifyContent: titleLeft ? "flex-start" : "center",
-            paddingLeft: titleLeft ? (back ? fontSize + 50 + "rpx" : "0") : "0",
+            paddingLeft: titleLeft ? (back ? fontSize + 50 + "px" : "0") : "0",
           }}
         >
           {back && (
@@ -129,8 +137,8 @@ const MoeHeader: FC<IMoeHeader> = ({
               src={!!backIcon ? backIcon : arrowIcon}
               onClick={onClickBackIcon}
               style={{
-                width: fontSize + "rpx",
-                height: fontSize + "rpx",
+                width: fontSize + "px",
+                height: fontSize + "px",
               }}
             ></Image>
           )}

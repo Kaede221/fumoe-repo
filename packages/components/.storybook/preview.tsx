@@ -9,9 +9,9 @@ import "@tarojs/components/dist/taro-components/taro-components.css";
 import React from "react";
 
 export const decorators = [
-  (Story) => {
+  (Story: React.JSX) => {
     applyPolyfills().then(function () {
-      defineCustomElements(window);
+      defineCustomElements(window).then(() => {});
     });
 
     Taro.initPxTransform({
@@ -29,6 +29,6 @@ export const decorators = [
 //设置全局的配置
 export const parameters = {
   viewport: {
-    defaultViewport: "mobile2",
+    defaultViewport: "mobile1",
   },
 };
