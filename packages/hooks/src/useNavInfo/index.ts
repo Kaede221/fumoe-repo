@@ -31,7 +31,7 @@ interface INavInfo {
  *   ></View>
  * )
  */
-const useNavInfo = (): INavInfo => {
+const index = (): INavInfo => {
   const [navInfo, setNavInfo] = useState({
     statusBarHeight: 0,
     titleBarHeight: 0,
@@ -81,4 +81,4 @@ const useNavInfo = (): INavInfo => {
   return navInfo;
 };
 
-export default useNavInfo;
+export default index;

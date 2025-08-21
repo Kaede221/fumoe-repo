@@ -26,7 +26,7 @@ type QueryResult = ElementRect[] | null;
  *   />
  * )
  */
-const useLayoutHeight = (selectors: string[]) => {
+const index = (selectors: string[]) => {
   const [height, setHeight] = useState(0);
   const prevSelectors = useRef<string[]>([]);
 
@@ -70,4 +70,4 @@ const useLayoutHeight = (selectors: string[]) => {
   return height;
 };
 
-export default useLayoutHeight;
+export default index;
