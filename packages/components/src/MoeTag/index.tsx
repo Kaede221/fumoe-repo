@@ -8,6 +8,8 @@ export interface IMoeTag {
   label: string;
   /** tag的左侧图标路径 */
   icon?: string;
+  /** 缩放比例 */
+  scale?: number;
   /** 标签主色调 (文本, 边框) */
   mainColor?: string;
   /** 标签背景色 (背景) */
@@ -23,6 +25,8 @@ export interface IMoeTag {
  *
  * @param `icon` tag的左侧图标路径
  *
+ * @param `scale` 缩放比例
+ *
  * @param `mainColor` 标签主色调 (文本, 边框)
  *
  * @param `backgroundColor` 标签背景色 (背景)
@@ -36,6 +40,7 @@ export interface IMoeTag {
 const MoeTag: React.FC<IMoeTag> = ({
   label,
   icon,
+  scale = 1,
   mainColor = "#6C4E09",
   backgroundColor = "#FFFAF1",
   onClick,
@@ -46,6 +51,7 @@ const MoeTag: React.FC<IMoeTag> = ({
       style={{
         borderColor: mainColor,
         backgroundColor: backgroundColor,
+        zoom: scale,
       }}
       onClick={(e) => {
         e.stopPropagation();

@@ -9,6 +9,8 @@ const classnames = (...args: string[]): string => {
 };
 
 interface IMoePicker {
+  // 选择器的标题
+  title?: string;
   // 点击空白处是否可以关闭
   closeable?: boolean;
   // 是否显示
@@ -28,6 +30,8 @@ interface IMoePicker {
 /**
  * 自定义弹出层选择器
  *
+ * @param `title` 选择器的标题
+ *
  * @param `closeable` 点击空白处是否可以关闭
  *
  * @param `open` 是否显示
@@ -43,6 +47,7 @@ interface IMoePicker {
  * @param `onConfirm` 确认时的回调函数 默认传入选择的内容
  */
 const MoePicker: React.FC<IMoePicker> = ({
+  title = "请选择分类",
   closeable,
   open,
   setOpen,
@@ -73,7 +78,7 @@ const MoePicker: React.FC<IMoePicker> = ({
         onClick={(e) => e.stopPropagation()}
       >
         {/*顶部标题*/}
-        <View className="moe-picker-title">选择分类</View>
+        <View className="moe-picker-title">{title}</View>
         {/*选择部分 允许进行选择*/}
         <View
           className="category-list"

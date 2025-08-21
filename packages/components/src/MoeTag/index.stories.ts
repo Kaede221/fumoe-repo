@@ -47,6 +47,15 @@ export const Default: Story = {
   },
 };
 
+export const DefaultWithScale: Story = {
+  name: "调整大小",
+  args: {
+    label: "大一点",
+    scale: 1.3,
+    onClick: fn(),
+  },
+};
+
 export const WithIcon: Story = {
   name: "带图标",
   args: {

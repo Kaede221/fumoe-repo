@@ -76,7 +76,17 @@ export const ThreeColumn: Story = {
   args: {
     open: true,
     columns: 3,
-    categories: ["红色", "蓝色", "绿色", "黄色", "紫色", "橙色", "粉色", "黑色", "白色"],
+    categories: [
+      "红色",
+      "蓝色",
+      "绿色",
+      "黄色",
+      "紫色",
+      "橙色",
+      "粉色",
+      "黑色",
+      "白色",
+    ],
     onConfirm: fn(),
     setOpen: fn(),
   },
@@ -101,6 +111,19 @@ export const WithDefaultValue: Story = {
     columns: 2,
     categories: ["早餐", "午餐", "晚餐", "夜宵"],
     defaultCategory: "午餐",
+    onConfirm: fn(),
+    setOpen: fn(),
+  },
+};
+
+export const WithCustomTitle: Story = {
+  name: "自定义标题",
+  args: {
+    open: true,
+    columns: 2,
+    title: "好好好",
+    categories: ["Kaede", "Lc"],
+    defaultCategory: "Lc",
     onConfirm: fn(),
     setOpen: fn(),
   },
