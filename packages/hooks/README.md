@@ -1,7 +1,6 @@
 # @fumoe/taro-hooks
 
-专为 Taro 4.x 设计的 React Hooks 集合，提供开箱即用的微信小程序和其他平台常用功能。
-
+专为 Taro 4.x 设计的 React Hooks 集合，提供开箱即用的微信小程序和其他常用Hooks功能.
 ## 📦 安装
 
 ```bash

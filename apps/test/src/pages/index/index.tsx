@@ -1,14 +1,18 @@
 import { View, Text, Button } from "@tarojs/components";
 import { MoeTag, MoeHeader, MoePicker } from "@fumoe/taro-components";
-import { useState } from "react";
-import { useNavInfo, useLayoutHeight, useCounter } from "@fumoe/taro-hooks";
+import {
+  useNavInfo,
+  useLayoutHeight,
+  useCounter,
+  useToggle,
+} from "@fumoe/taro-hooks";
 
 import "./index.scss";
 
 export default function Index() {
   const navInfo = useNavInfo();
-  const [open, setOpen] = useState(false);
-  const [counter, { inc, dec, set, reset }] = useCounter(100, {
+  const [showDialog, { toggle, set: setDialogOpen }] = useToggle(false);
+  const [counter, { inc, dec, set: setCounterValue, reset }] = useCounter(100, {
     min: -1,
     max: 2,
   });
@@ -17,7 +21,7 @@ export default function Index() {
       <MoeHeader>首页测试2</MoeHeader>
       <Text>高度: {navInfo.appHeaderHeight}</Text>
       <MoeTag label="标签"></MoeTag>
-      <Button onClick={() => setOpen(!open)}>切换显示</Button>
+      <Button onClick={toggle}>切换显示</Button>
       <View
         className="test-box"
         style={{
@@ -32,17 +36,17 @@ export default function Index() {
       <View>Counter is {counter}</View>
       <Button onClick={inc}>+1</Button>
       <Button onClick={dec}>-1</Button>
-      <Button onClick={() => set(65)}>set to 65</Button>
+      <Button onClick={() => setCounterValue(65)}>set to 65</Button>
       <Button onClick={reset}>Reset</Button>
       <MoePicker
         closeable
-        setOpen={setOpen}
-        open={open}
+        setOpen={setDialogOpen}
+        open={showDialog}
         columns={2}
         categories={["A", "B", "C"]}
         onConfirm={(e) => {
           console.log(e);
-          setOpen(false);
+          toggle();
         }}
       ></MoePicker>
     </View>
