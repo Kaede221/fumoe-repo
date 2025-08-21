@@ -2,7 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "dist",
-    "rootDirs": ["src"],
+    "rootDirs": [
+      "src"
+    ],
     "sourceMap": false,
     "target": "esnext",
     "module": "esnext",
@@ -20,7 +22,6 @@
     "declarationMap": true,
     "skipLibCheck": true,
     "noImplicitAny": false,
-
     "rootDir": "src",
     "jsx": "react-jsx",
     "typeRoots": [
@@ -32,6 +33,7 @@
     "typing.d.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/**/**.stories.ts"
   ]
 }

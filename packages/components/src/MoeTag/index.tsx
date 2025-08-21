@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React from "react";
 import { Image, View } from "@tarojs/components";
 
 import "./index.scss";
@@ -26,7 +26,7 @@ export interface IMoeTag {
  * @author Kaede221
  * @email kaedeshimizu@qq.com
  */
-const MoeTag: FC<IMoeTag> = ({
+const MoeTag: React.FC<IMoeTag> = ({
   label,
   icon,
   mainColor = "#6C4E09",

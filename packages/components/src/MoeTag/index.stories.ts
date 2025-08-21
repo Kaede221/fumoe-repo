@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react-webpack5";
+import type { Meta, StoryObj } from "@storybook/react";
 import MoeTag from "./index";
 
 const meta = {
@@ -10,6 +10,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    label: "Button",
+    label: "This Is A tag",
   },
 };
