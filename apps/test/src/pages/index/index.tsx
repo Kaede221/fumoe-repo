@@ -7,7 +7,9 @@ import "./index.scss";
 export default function Index() {
   return (
     <View className="index">
-      <MoeHeader back>测试场地</MoeHeader>
+      <MoeHeader back titleLeft>
+        测试场地
+      </MoeHeader>
       <UpdateHookTest></UpdateHookTest>
     </View>
   );

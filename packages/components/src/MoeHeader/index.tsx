@@ -128,7 +128,7 @@ const MoeHeader: React.FC<IMoeHeader> = ({
             height: containerHeight + "px",
             fontSize: fontSize + "px",
             justifyContent: titleLeft ? "flex-start" : "center",
-            paddingLeft: titleLeft ? (back ? fontSize + 50 + "px" : "0") : "0",
+            paddingLeft: titleLeft ? (back ? fontSize + 25 + "px" : "0") : "0",
           }}
         >
           {back && (
