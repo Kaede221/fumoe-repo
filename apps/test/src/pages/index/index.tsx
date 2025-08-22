@@ -1,19 +1,28 @@
 import { View } from "@tarojs/components";
-import { MoeHeader } from "@fumoe/taro-components";
+import { MoeHeader, MoeButton } from "@fumoe/taro-components";
+import { useNavInfo } from "@fumoe/taro-hooks";
 
 import "./index.scss";
 
 export default function Index() {
+  const navInfo = useNavInfo();
   return (
-    <View className="index">
+    <View>
       <MoeHeader backgroundColor="#FFFFFF">测试场地</MoeHeader>
       <View
+        className="main-container"
         style={{
-          width: "100%",
-          height: "100vh",
-          flexDirection: "column",
+          height: `calc(100vh - ${navInfo.appHeaderHeight}px)`,
         }}
-      ></View>
+      >
+        <MoeButton color="primary" variant="outlined">
+          Hello World
+        </MoeButton>
+        <MoeButton color="danger">测试</MoeButton>
+        <MoeButton color="info" rounded variant="outlined">
+          测试按钮
+        </MoeButton>
+      </View>
     </View>
   );
 }

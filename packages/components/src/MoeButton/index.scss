@@ -47,26 +47,31 @@
   &-primary {
     background-color: #1989FA;
     color: #FFFFFF;
+    border: 2rpx #1989FA solid;
   }
 
   &-info {
     background-color: #2DB7F5;
     color: #FFFFFF;
+    border: 2rpx #2DB7F5 solid;
   }
 
   &-success {
     background-color: #07C160;
     color: #FFFFFF;
+    border: 2rpx #07C160 solid;
   }
 
   &-warning {
     background-color: #E6A23C;
     color: #FFFFFF;
+    border: 2rpx #E6A23C solid;
   }
 
   &-danger {
     background-color: #EE0A24;
     color: #FFFFFF;
+    border: 2rpx #EE0A24 solid;
   }
 
   &-default {
@@ -92,5 +97,43 @@
 
   &-mini {
     border-radius: 50rpx;
+  }
+}
+
+// 按钮的各种类型部分
+.moe-button-variant {
+  &-outlined {
+    &-primary {
+      color: #1989FA;
+      background-color: transparent;
+    }
+
+    &-info {
+      color: #2DB7F5;
+      background-color: transparent;
+    }
+
+    &-success {
+      color: #07C160;
+      background-color: transparent;
+    }
+
+    &-warning {
+      color: #E6A23C;
+      background-color: transparent;
+    }
+
+    &-danger {
+      color: #EE0A24;
+      background-color: transparent;
+    }
+
+    &-default {
+      color: black;
+      background-color: transparent;
+    }
+  }
+
+  &-text {
   }
 }

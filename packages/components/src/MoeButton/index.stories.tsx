@@ -62,6 +62,30 @@ export const Colors = {
   ),
 };
 
+export const Plain = {
+  name: "镂空效果",
+  render: () => (
+    <div
+      style={{
+        display: "flex",
+        gap: "16px",
+        flexWrap: "wrap",
+        alignItems: "center",
+      }}
+    >
+      <MoeButton color="primary" variant="outlined">
+        主要按钮
+      </MoeButton>
+      <MoeButton color="success" variant="outlined" rounded>
+        成功按钮
+      </MoeButton>
+      <MoeButton color="warning" variant="outlined" rounded size="small">
+        警告按钮
+      </MoeButton>
+    </div>
+  ),
+};
+
 export const Rounded = {
   name: "圆角样式",
   render: () => (
