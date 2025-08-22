@@ -21,7 +21,7 @@ export interface IMoeButton {
    */
   className?: string;
   /**
-   * 自定义style属性
+   * 自定义style属性, 会覆盖原有样式
    */
   style?: React.CSSProperties;
   /**
@@ -41,6 +41,10 @@ export interface IMoeButton {
    */
   variant?: "contained" | "outlined" | "text";
   /**
+   * 按钮是否被禁用
+   */
+  disabled?: boolean;
+  /**
    * 点击事件回调函数
    */
   onClick?: () => void;
@@ -59,6 +63,7 @@ const MoeButton: React.FC<IMoeButton> = ({
   size = "medium",
   color = "default",
   variant = "contained",
+  disabled,
   onClick,
 }) => {
   return (
@@ -69,12 +74,13 @@ const MoeButton: React.FC<IMoeButton> = ({
         `moe-button-color-${color}`,
         rounded ? `moe-button-rounded-${size}` : "",
         `moe-button-variant-${variant}-${color}`,
+        disabled ? "moe-button-disabled" : "",
         className ? className : "",
       )}
       hoverClass="moe-button-container-pressed"
       onClick={(e) => {
         e.stopPropagation();
-        if (onClick) onClick();
+        if (!disabled && onClick) onClick();
       }}
       style={style}
     >

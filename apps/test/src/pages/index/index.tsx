@@ -18,10 +18,13 @@ export default function Index() {
         <MoeButton color="primary" variant="outlined">
           Hello World
         </MoeButton>
-        <MoeButton color="danger">测试</MoeButton>
+        <MoeButton color="danger" disabled>
+          测试
+        </MoeButton>
         <MoeButton color="info" rounded variant="outlined">
           测试按钮
         </MoeButton>
+        <MoeButton variant="text">文本按钮</MoeButton>
       </View>
     </View>
   );

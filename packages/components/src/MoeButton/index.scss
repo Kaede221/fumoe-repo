@@ -4,7 +4,7 @@
   justify-content: center;
   text-align: center;
   font-weight: 500;
-  transition: transform 100ms ease-in-out, filter 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
   will-change: transform;
   transform-origin: center;
   box-sizing: border-box;
@@ -13,6 +13,13 @@
     transform: scale(0.95);
     filter: brightness(0.9)
   }
+}
+
+// 按钮禁用的样式
+.moe-button-disabled {
+  pointer-events: none;
+  filter: opacity(0.6);
+  background-color: white;
 }
 
 // 按钮的多种大小样式
@@ -135,5 +142,40 @@
   }
 
   &-text {
+    &-primary {
+      color: #1989FA;
+      background-color: transparent;
+      border: none;
+    }
+
+    &-info {
+      color: #2DB7F5;
+      background-color: transparent;
+      border: none;
+    }
+
+    &-success {
+      color: #07C160;
+      background-color: transparent;
+      border: none;
+    }
+
+    &-warning {
+      color: #E6A23C;
+      background-color: transparent;
+      border: none;
+    }
+
+    &-danger {
+      color: #EE0A24;
+      background-color: transparent;
+      border: none;
+    }
+
+    &-default {
+      color: black;
+      background-color: transparent;
+      border: none;
+    }
   }
 }
