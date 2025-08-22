@@ -8,8 +8,6 @@
     "docs:components": "pnpm --F @fumoe/taro-components storybook",
     "docs-build:components": "pnpm --F @fumoe/taro-components build-storybook",
     "build:components": "pnpm --F @fumoe/taro-components build",
-    "docs:hooks": "pnpm --F @fumoe/taro-hooks storybook",
-    "docs-build:hooks": "pnpm --F @fumoe/taro-hooks build-storybook",
     "build:hooks": "pnpm --F @fumoe/taro-hooks build"
   },
   "keywords": [],
