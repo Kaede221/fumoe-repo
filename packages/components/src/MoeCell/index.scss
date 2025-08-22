@@ -9,15 +9,29 @@
     border-top: 1px solid #eee;
   }
 
-  &-title {
-    font-size: 32rpx;
-    color: #323233;
-    font-weight: 500;
+  &-left-part {
+    display: flex;
+    gap: 12rpx;
+    align-items: center;
+
+    &-icon {
+      width: 32rpx;
+      height: 32rpx;
+      margin-bottom: -2%;
+    }
+
+    &-title {
+      font-size: 32rpx;
+      line-height: 32rpx;
+      color: #323233;
+      font-weight: 500;
+    }
   }
 
   &-content {
     display: flex;
     align-items: center;
+    gap: 8rpx;
 
     &-cell-text {
       font-size: 30rpx;
@@ -29,8 +43,8 @@
       width: 32rpx;
       height: 32rpx;
       color: #ccc;
-      margin-left: 8rpx;
       transform: scale(1.2);
+      margin-bottom: -2%;
     }
   }
 }
