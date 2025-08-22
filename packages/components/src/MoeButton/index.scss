@@ -1,0 +1,96 @@
+.moe-button-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 500;
+  transition: transform 100ms ease-in-out, filter 100ms ease-in-out;
+  will-change: transform;
+  transform-origin: center;
+  box-sizing: border-box;
+
+  &:active {
+    transform: scale(0.95);
+    filter: brightness(0.9)
+  }
+}
+
+// 按钮的多种大小样式
+.moe-button-size {
+  &-large {
+    border-radius: 15rpx;
+    padding: 25rpx 30rpx;
+    font-size: 35rpx;
+  }
+
+  &-medium {
+    border-radius: 14rpx;
+    padding: 25rpx 30rpx;
+    font-size: 30rpx;
+  }
+
+  &-small {
+    border-radius: 12rpx;
+    padding: 20rpx 30rpx;
+    font-size: 25rpx;
+  }
+
+  &-mini {
+    border-radius: 10rpx;
+    padding: 15rpx 25rpx;
+    font-size: 20rpx;
+  }
+}
+
+// 按钮的颜色部分
+.moe-button-color {
+  &-primary {
+    background-color: #1989FA;
+    color: #FFFFFF;
+  }
+
+  &-info {
+    background-color: #2DB7F5;
+    color: #FFFFFF;
+  }
+
+  &-success {
+    background-color: #07C160;
+    color: #FFFFFF;
+  }
+
+  &-warning {
+    background-color: #E6A23C;
+    color: #FFFFFF;
+  }
+
+  &-danger {
+    background-color: #EE0A24;
+    color: #FFFFFF;
+  }
+
+  &-default {
+    background-color: #FFFFFF;
+    color: black;
+    border: #DCDEE0 solid 2rpx;
+  }
+}
+
+// 按钮的圆角部分
+.moe-button-rounded {
+  &-large {
+    border-radius: 85rpx;
+  }
+
+  &-medium {
+    border-radius: 80rpx;
+  }
+
+  &-small {
+    border-radius: 65rpx;
+  }
+
+  &-mini {
+    border-radius: 50rpx;
+  }
+}
