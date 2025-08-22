@@ -1,11 +1,8 @@
 import React from "react";
 import { Image, Text, View } from "@tarojs/components";
+import classNames from "classnames";
 
 import "./index.scss";
-
-const classnames = (...args: string[]): string => {
-  return args.join(" ");
-};
 
 const arrowImage =
   "data:image/svg+xml;base64,PHN2ZyBjbGFzc05hbWU9ImNlbGwtYXJyb3ciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgICAgICAgICA8cGF0aCBkPSJNMTAgMTdMMTUgMTJMMTAgNyIgc3Ryb2tlPSIjOUZBMEEyIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCINCiAgICAgICAgICAgICAgICBzdHJva2UtbGluZWpvaW49InJvdW5kIiAvPg0KICAgICAgICA8L3N2Zz4=";
@@ -57,10 +54,9 @@ const MoeCell: React.FC<IMoeCell> = ({
 }) => {
   return (
     <View
-      className={classnames(
-        "moe-cell-container",
-        clickable ? "moe-cell-container-clickable" : "",
-      )}
+      className={classNames("moe-cell-container", {
+        "moe-cell-container-clickable": clickable,
+      })}
       onClick={(e) => {
         e.stopPropagation();
         if (clickable && onClick) onClick();

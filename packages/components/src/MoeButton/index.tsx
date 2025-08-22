@@ -1,12 +1,8 @@
 import React from "react";
 import { View } from "@tarojs/components";
+import classNames from "classnames";
 
 import "./index.scss";
-
-// 简易classnames
-const classnames = (...args: string[]): string => {
-  return args.join(" ");
-};
 
 /**
  * MoeButton 组件属性接口
@@ -77,14 +73,18 @@ const MoeButton: React.FC<IMoeButton> = ({
 }) => {
   return (
     <View
-      className={classnames(
+      className={classNames(
         "moe-button-container",
         `moe-button-size-${size}`,
         `moe-button-color-${color}`,
-        rounded ? `moe-button-rounded-${size}` : "",
+        {
+          [`moe-button-rounded-${size}`]: rounded,
+        },
         `moe-button-variant-${variant}-${color}`,
-        disabled ? "moe-button-disabled" : "",
-        className ? className : "",
+        {
+          "moe-button-disabled": disabled,
+        },
+        className,
       )}
       hoverClass="moe-button-container-pressed"
       onClick={(e) => {

@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import { View, Button } from "@tarojs/components";
+import classNames from "classnames";
 
 import "./index.scss";
-
-// 实现简易classNames
-const classnames = (...args: string[]): string => {
-  return args.join(" ");
-};
 
 interface IMoePicker {
   // 选择器的标题
@@ -67,11 +63,11 @@ const MoePicker: React.FC<IMoePicker> = ({
 
   return (
     <View
-      className={classnames("moe-picker-main", open ? "show" : "hide")}
+      className={classNames("moe-picker-main", open ? "show" : "hide")}
       onClick={handleClose}
     >
       <View
-        className={classnames(
+        className={classNames(
           "moe-picker-main-container",
           open ? "slide-up" : "slide-down",
         )}
@@ -99,11 +95,13 @@ const MoePicker: React.FC<IMoePicker> = ({
 
         {/*下方的确认按钮*/}
         <Button
-          className={classnames(
+          className={classNames(
             "confirm-button",
             !selectedCategory ? "btn-disabled" : "btn-active",
           )}
-          hoverClass={classnames(!selectedCategory ? "" : "btn-active-hover")}
+          hoverClass={classNames({
+            "btn-active-hover": !selectedCategory,
+          })}
           disabled={!selectedCategory}
           onClick={() => {
             if (selectedCategory) {
