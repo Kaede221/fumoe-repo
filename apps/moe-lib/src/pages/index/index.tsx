@@ -8,7 +8,7 @@ export default function Index() {
   const navInfo = useNavInfo();
   return (
     <View>
-      <MoeHeader backgroundColor="#FFFFFF">测试场地</MoeHeader>
+      <MoeHeader backgroundColor="#FFFFFF">Moe 组件库</MoeHeader>
       <View
         className="main-container"
         style={{

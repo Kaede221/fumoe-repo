@@ -2,7 +2,7 @@
   "miniprogramRoot": "dist/",
   "projectname": "test",
   "description": "",
-  "appid": "wx5b765009b2f35673",
+  "appid": "wxc9e0e45ad781b58a",
   "setting": {
     "urlCheck": true,
     "es6": false,
@@ -35,5 +35,6 @@
     "ignore": [],
     "include": []
   },
-  "editorSetting": {}
+  "editorSetting": {},
+  "libVersion": "3.9.2"
 }

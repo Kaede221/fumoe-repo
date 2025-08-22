@@ -52,6 +52,15 @@ export interface IMoeButton {
 
 /**
  * 按钮组件
+ * @param children 按钮内容
+ * @param className 自定义CSS类名
+ * @param style 自定义style属性, 会覆盖原有样式
+ * @param rounded 是否使用圆角样式
+ * @param size 按钮尺寸
+ * @param color 按钮颜色主题
+ * @param variant 按钮类型
+ * @param disabled 按钮是否被禁用
+ * @param onClick 点击事件回调函数
  * @author kaedeshimizu
  * @email kaedeshimizu@qq.com
  */
