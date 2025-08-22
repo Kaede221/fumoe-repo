@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev:taro": "pnpm --F @fumoe/taro-test dev",
+    "build:taro": "pnpm --F @fumoe/taro-test build",
     "docs:components": "pnpm --F @fumoe/taro-components storybook",
     "docs-build:components": "pnpm --F @fumoe/taro-components build-storybook",
     "build:components": "pnpm --F @fumoe/taro-components build",
