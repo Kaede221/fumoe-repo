@@ -6,7 +6,7 @@ import "./index.scss";
 const Index = () => {
   return (
     <View>
-      <MoeHeader>MoeLib - 组件</MoeHeader>
+      <MoeHeader backgroundColor="#FFFFFF">MoeLib - 组件</MoeHeader>
     </View>
   );
 };

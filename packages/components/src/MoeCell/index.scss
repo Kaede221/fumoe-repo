@@ -1,0 +1,42 @@
+.moe-cell-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 23rpx 30rpx;
+  background-color: #FFFFFF;
+
+  & + .moe-cell-container {
+    border-top: 1px solid #eee;
+  }
+
+  &-title {
+    font-size: 32rpx;
+    color: #323233;
+    font-weight: 500;
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+
+    &-cell-text {
+      font-size: 30rpx;
+      color: #9FA0A2;
+      text-align: right;
+    }
+
+    &-cell-arrow {
+      width: 32rpx;
+      height: 32rpx;
+      color: #ccc;
+      margin-left: 8rpx;
+      transform: scale(1.2);
+    }
+  }
+}
+
+.moe-cell-container-clickable {
+  &:active {
+    filter: brightness(0.9);
+  }
+}
