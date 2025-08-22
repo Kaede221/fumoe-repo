@@ -1,4 +1,4 @@
-import { DependencyList, EffectCallback, useEffect, useState } from "react";
+import {DependencyList, EffectCallback, useEffect, useState} from "react";
 
 /**
  * 一个忽略首次执行的 useEffect 变体，只在依赖项更新时执行副作用函数
@@ -64,23 +64,23 @@ import { DependencyList, EffectCallback, useEffect, useState } from "react";
  * @throws {Error} 如果在非函数组件或自定义 Hook 外使用
  */
 const useUpdateEffect = (
-  effect: EffectCallback,
-  deps?: DependencyList,
+    effect: EffectCallback,
+    deps: DependencyList,
 ): void => {
-  // 使用 useState 而非 useRef，确保在 StrictMode 下也能正确工作
-  const [isFirst, setIsFirst] = useState(true);
+    // 使用 useState 而非 useRef，确保在 StrictMode 下也能正确工作
+    const [isFirst, setIsFirst] = useState(true);
 
-  useEffect(() => {
-    // 首次渲染时跳过
-    if (isFirst) {
-      setIsFirst(false);
-      return;
-    }
+    useEffect(() => {
+        // 首次渲染时跳过
+        if (isFirst) {
+            setIsFirst(false);
+            return;
+        }
 
-    // 执行副作用函数并处理清理函数
-    // 返回清理函数给 useEffect
-    return effect();
-  }, deps);
+        // 执行副作用函数并处理清理函数
+        // 返回清理函数给 useEffect
+        return effect();
+    }, deps);
 };
 
 export default useUpdateEffect;

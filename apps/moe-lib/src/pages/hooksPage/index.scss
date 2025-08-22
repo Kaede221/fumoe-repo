@@ -1,3 +1,17 @@
-.main-container {
+page {
+  background-color: #f1f1f1;
+}
+
+.scroll-view-part {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   width: 100%;
+  gap: 20rpx;
+
+  & > view {
+    padding-bottom: 30rpx;
+    border-bottom: 3rpx solid gray;
+  }
 }
