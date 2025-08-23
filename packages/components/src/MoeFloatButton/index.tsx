@@ -36,7 +36,7 @@ export interface IMoeFloatButton {
   /**
    * 点击事件 (已处理冒泡)
    */
-  onClick?: () => {};
+  onClick?: () => void;
   /**
    * 自定义样式
    */

@@ -15,7 +15,7 @@ export interface IMoeTag {
   /** 标签背景色 (背景) */
   backgroundColor?: string;
   /** 点击事件 */
-  onClick?: () => {};
+  onClick?: () => void;
 }
 
 /**
