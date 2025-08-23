@@ -16,6 +16,15 @@ const renderList1: IMoeCell[] = [
       });
     },
   },
+  {
+    title: "MoeFloatButton",
+    label: "悬浮按钮组件",
+    onClick: async () => {
+      await Taro.navigateTo({
+        url: "/pages/comsPage/index" + "?id=MoeFloatButton",
+      });
+    },
+  },
 ];
 
 const Index = () => {

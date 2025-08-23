@@ -33,11 +33,11 @@ export const Shapes: Story = {
     >
       <MoeFloatButton
         shape="circle"
-        children={<Text style={{ color: "white", fontSize: 40 }}>圆</Text>}
+        icon={<Text style={{ color: "white", fontSize: 40 }}>圆</Text>}
       />
       <MoeFloatButton
         shape="square"
-        children={<Text style={{ color: "white", fontSize: 40 }}>方</Text>}
+        icon={<Text style={{ color: "white", fontSize: 40 }}>方</Text>}
       />
     </View>
   ),
@@ -56,7 +56,7 @@ export const Colors: Story = {
     >
       <MoeFloatButton
         backgroundColor="#1E90FF"
-        children={<Text style={{ color: "white", fontSize: 40 }}>蓝</Text>}
+        icon={<Text style={{ color: "white", fontSize: 40 }}>蓝</Text>}
       />
     </View>
   ),
@@ -76,17 +76,17 @@ export const Positions: Story = {
       <MoeFloatButton
         bottom={50}
         right={20}
-        children={<Text style={{ color: "white", fontSize: 32 }}>右20</Text>}
+        icon={<Text style={{ color: "white", fontSize: 32 }}>右20</Text>}
       />
       <MoeFloatButton
         bottom={100}
         right={50}
-        children={<Text style={{ color: "white", fontSize: 32 }}>底100</Text>}
+        icon={<Text style={{ color: "white", fontSize: 32 }}>底100</Text>}
       />
       <MoeFloatButton
         bottom={150}
         right={80}
-        children={<Text style={{ color: "white", fontSize: 32 }}>远</Text>}
+        icon={<Text style={{ color: "white", fontSize: 32 }}>远</Text>}
       />
     </View>
   ),
@@ -104,19 +104,19 @@ export const Icons: Story = {
       }}
     >
       <MoeFloatButton
-        children={<Text style={{ color: "white", fontSize: 40 }}>+</Text>}
+        icon={<Text style={{ color: "white", fontSize: 40 }}>+</Text>}
       />
       <MoeFloatButton
-        children={<Text style={{ color: "white", fontSize: 40 }}>↑</Text>}
+        icon={<Text style={{ color: "white", fontSize: 40 }}>↑</Text>}
       />
       <MoeFloatButton
-        children={<Text style={{ color: "white", fontSize: 36 }}>📞</Text>}
+        icon={<Text style={{ color: "white", fontSize: 36 }}>📞</Text>}
       />
       <MoeFloatButton
-        children={<Text style={{ color: "white", fontSize: 36 }}>✉️</Text>}
+        icon={<Text style={{ color: "white", fontSize: 36 }}>✉️</Text>}
       />
       <MoeFloatButton
-        children={
+        icon={
           <View
             style={{
               display: "flex",
@@ -135,7 +135,7 @@ export const Icons: Story = {
 export const Interactive: Story = {
   name: "交互示例",
   args: {
-    children: <Text style={{ color: "white", fontSize: 40 }}>点击我</Text>,
+    icon: <Text style={{ color: "white", fontSize: 40 }}>点击我</Text>,
     backgroundColor: "#1E90FF",
   },
   parameters: {
@@ -164,7 +164,7 @@ export const CustomStyle: Story = {
           boxShadow: "0 4px 12px rgba(30, 144, 255, 0.3)",
         }}
         backgroundColor="white"
-        children={<Text style={{ color: "#1E90FF", fontSize: 40 }}>定</Text>}
+        icon={<Text style={{ color: "#1E90FF", fontSize: 40 }}>定</Text>}
       />
       <MoeFloatButton
         style={{
@@ -172,7 +172,7 @@ export const CustomStyle: Story = {
           transform: "rotate(45deg)",
         }}
         backgroundColor="#FF6347"
-        children={
+        icon={
           <Text
             style={{
               color: "white",
@@ -189,7 +189,7 @@ export const CustomStyle: Story = {
           opacity: 0.8,
         }}
         backgroundColor="#32CD32"
-        children={<Text style={{ color: "white", fontSize: 40 }}>透</Text>}
+        icon={<Text style={{ color: "white", fontSize: 40 }}>透</Text>}
       />
     </View>
   ),
@@ -210,21 +210,21 @@ export const RealWorld: Story = {
         <Text style={{ fontSize: 28, color: "#666" }}>添加操作</Text>
         <MoeFloatButton
           backgroundColor="#07C160"
-          children={<Text style={{ color: "white", fontSize: 40 }}>+</Text>}
+          icon={<Text style={{ color: "white", fontSize: 40 }}>+</Text>}
         />
       </View>
       <View style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
         <Text style={{ fontSize: 28, color: "#666" }}>客服咨询</Text>
         <MoeFloatButton
           backgroundColor="#1989FA"
-          children={<Text style={{ color: "white", fontSize: 36 }}>💬</Text>}
+          icon={<Text style={{ color: "white", fontSize: 36 }}>💬</Text>}
         />
       </View>
       <View style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
         <Text style={{ fontSize: 28, color: "#666" }}>返回顶部</Text>
         <MoeFloatButton
           backgroundColor="#FF8C00"
-          children={<Text style={{ color: "white", fontSize: 40 }}>↑</Text>}
+          icon={<Text style={{ color: "white", fontSize: 40 }}>↑</Text>}
         />
       </View>
     </View>

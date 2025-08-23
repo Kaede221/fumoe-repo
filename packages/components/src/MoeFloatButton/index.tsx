@@ -24,7 +24,7 @@ export interface IMoeFloatButton {
   /**
    * 按钮的图标内容
    */
-  children?: React.ReactNode;
+  icon?: React.ReactNode;
   /**
    * 距离底部的距离
    */
@@ -52,7 +52,7 @@ export interface IMoeFloatButton {
  * @param size 悬浮按钮的大小
  * @param shape 悬浮按钮的形状
  * @param visible 是否显示该按钮
- * @param children 按钮的图标内容
+ * @param icon 按钮的图标内容
  * @param bottom 距离底部的距离
  * @param right 距离右侧的距离
  * @param onClick 点击事件 (已处理冒泡)
@@ -65,7 +65,7 @@ const MoeFloatButton: React.FC<IMoeFloatButton> = ({
   size = "default",
   shape = "circle",
   visible = true,
-  children,
+  icon,
   bottom = 35,
   right = 30,
   onClick,
@@ -115,7 +115,7 @@ const MoeFloatButton: React.FC<IMoeFloatButton> = ({
         if (onClick) onClick();
       }}
     >
-      {children}
+      {icon}
     </View>
   );
 };
