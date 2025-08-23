@@ -1,6 +1,6 @@
 import { View } from "@tarojs/components";
 import { MoeHeader } from "@fumoe/taro-components";
-import MoeFloatButton from "@/components/MoeFloatButton";
+import { MoeFloatButton } from "@fumoe/taro-components";
 
 import "./index.scss";
 

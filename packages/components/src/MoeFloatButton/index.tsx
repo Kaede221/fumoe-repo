@@ -37,6 +37,10 @@ export interface IMoeFloatButton {
    * 自定义样式
    */
   style?: CSSProperties;
+  /**
+   * 按钮背景颜色
+   */
+  backgroundColor?: string;
 }
 
 /**
@@ -48,6 +52,7 @@ export interface IMoeFloatButton {
  * @param right 距离右侧的距离 (单位 px)
  * @param onClick 点击事件 (已处理冒泡)
  * @param style 自定义样式
+ * @param backgroundColor 按钮背景颜色
  * @author kaedeshimizu
  * @email kaedeshimizu@qq.com
  */
@@ -59,6 +64,7 @@ const MoeFloatButton: React.FC<IMoeFloatButton> = ({
   right = 30,
   onClick,
   style,
+  backgroundColor = "#1E90FF",
 }) => {
   // 获取底部安全高度
   const [safeAreaHeight, setSafeAreaHeight] = useState(0);
@@ -86,6 +92,7 @@ const MoeFloatButton: React.FC<IMoeFloatButton> = ({
       style={{
         bottom: safeAreaHeight + bottom + "px",
         right: right + "px",
+        backgroundColor,
         ...(isNumber(size)
           ? {
               width: size + "rpx",
