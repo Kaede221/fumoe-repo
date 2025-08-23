@@ -5,6 +5,7 @@ import { MoeHeader } from "@fumoe/taro-components";
 
 import ButtonView from "@/components/normalComs/ButtonView";
 import FloatButtonView from "@/components/normalComs/FloatButtonView";
+import CellView from "@/components/normalComs/CellView";
 
 import "./index.scss";
 
@@ -12,6 +13,7 @@ import "./index.scss";
 const componentMap = {
   MoeButton: <ButtonView />,
   MoeFloatButton: <FloatButtonView />,
+  MoeCell: <CellView />,
 };
 
 const Index = () => {

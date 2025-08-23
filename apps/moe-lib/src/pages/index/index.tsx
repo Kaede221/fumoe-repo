@@ -27,6 +27,28 @@ const renderList1: IMoeCell[] = [
       });
     },
   },
+  {
+    title: "MoeCell",
+    label: "单元格组件",
+    onClick: async () => {
+      await Taro.navigateTo({
+        url: "/pages/comsPage/index" + "?id=MoeCell",
+      });
+    },
+  },
+];
+
+// 表单组件的渲染列表
+const renderList2: IMoeCell[] = [
+  {
+    title: "MoeButton",
+    label: "按钮组件",
+    onClick: async () => {
+      await Taro.navigateTo({
+        url: "/pages/comsPage/index" + "?id=MoeButton",
+      });
+    },
+  },
 ];
 
 const Index = () => {
@@ -50,8 +72,8 @@ const Index = () => {
         .slice() // 创建数组副本，避免修改原数组
         .sort((a, b) => {
           // 提取首字母并转为小写进行比较（忽略大小写）
-          const firstLetterA = String(a.title).charAt(0).toLowerCase();
-          const firstLetterB = String(b.title).charAt(0).toLowerCase();
+          const firstLetterA = String(a.title).charAt(3).toLowerCase();
+          const firstLetterB = String(b.title).charAt(3).toLowerCase();
           return firstLetterA.localeCompare(firstLetterB);
         })
         .map((item, index) => (
@@ -65,6 +87,23 @@ const Index = () => {
         ))}
 
       <Title>表单组件</Title>
+      {renderList2
+        .slice() // 创建数组副本，避免修改原数组
+        .sort((a, b) => {
+          // 提取首字母并转为小写进行比较（忽略大小写）
+          const firstLetterA = String(a.title).charAt(3).toLowerCase();
+          const firstLetterB = String(b.title).charAt(3).toLowerCase();
+          return firstLetterA.localeCompare(firstLetterB);
+        })
+        .map((item, index) => (
+          <MoeCell
+            key={`renderlist2-${index}`}
+            title={item.title}
+            label={item.label}
+            isLink
+            onClick={item.onClick}
+          ></MoeCell>
+        ))}
     </View>
   );
 };
