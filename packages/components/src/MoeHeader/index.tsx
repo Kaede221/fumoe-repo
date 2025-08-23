@@ -90,7 +90,7 @@ const MoeHeader: React.FC<IMoeHeader> = ({
       Taro.navigateBack({
         delta: 1,
       }).catch((err) => {
-        console.info("返回出错", err.errMsg);
+        console.warn("返回出错", err.errMsg);
       });
     }
   };
@@ -126,7 +126,7 @@ const MoeHeader: React.FC<IMoeHeader> = ({
           className={"moe-header-container"}
           style={{
             height: containerHeight + "px",
-            fontSize: fontSize + "px",
+            fontSize: Taro.pxTransform(fontSize),
             justifyContent: titleLeft ? "flex-start" : "center",
             paddingLeft: titleLeft ? (back ? fontSize + 25 + "px" : "0") : "0",
           }}
@@ -137,8 +137,8 @@ const MoeHeader: React.FC<IMoeHeader> = ({
               src={!!backIcon ? backIcon : arrowIcon}
               onClick={onClickBackIcon}
               style={{
-                width: fontSize + "px",
-                height: fontSize + "px",
+                width: Taro.pxTransform(fontSize),
+                height: Taro.pxTransform(fontSize),
               }}
             ></Image>
           )}

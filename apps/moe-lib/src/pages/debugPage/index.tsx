@@ -11,13 +11,11 @@ const Index = () => {
   const [visiable, { toggle: changeVisiable }] = useToggle(true);
   return (
     <View>
-      <MoeHeader backgroundColor="#FFFFFF">Debug Page</MoeHeader>
+      <MoeHeader back backgroundColor="#FFFFFF">
+        Debug Page
+      </MoeHeader>
       <View onClick={changeVisiable}>修改是否显示</View>
-      <MoeFloatButton
-        size="default"
-        backgroundColor="#FFFFFF"
-        visible={visiable}
-      >
+      <MoeFloatButton size={100} backgroundColor="#FFFFFF" visible={visiable}>
         <Image
           src={testIcon}
           style={{

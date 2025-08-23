@@ -10,7 +10,7 @@ const isNumber = (value: any): value is number => typeof value === "number";
 
 export interface IMoeFloatButton {
   /**
-   * 悬浮按钮的大小, 当为数字的时候, 使用px作为单位
+   * 悬浮按钮的大小
    */
   size?: "large" | "default" | "small" | number;
   /**
@@ -26,11 +26,11 @@ export interface IMoeFloatButton {
    */
   children?: React.ReactNode;
   /**
-   * 距离底部的距离 (不包含安全区, 单位 px)
+   * 距离底部的距离
    */
   bottom?: number;
   /**
-   * 距离右侧的距离 (单位 px)
+   * 距离右侧的距离
    */
   right?: number;
   /**
@@ -49,12 +49,12 @@ export interface IMoeFloatButton {
 
 /**
  * 悬浮于页面上方的按钮
- * @param size 悬浮按钮的大小, 当为数字的时候, 使用px作为单位
+ * @param size 悬浮按钮的大小
  * @param shape 悬浮按钮的形状
  * @param visible 是否显示该按钮
  * @param children 按钮的图标内容
- * @param bottom 距离底部的距离 (不包含安全区, 单位 px)
- * @param right 距离右侧的距离 (单位 px)
+ * @param bottom 距离底部的距离
+ * @param right 距离右侧的距离
  * @param onClick 点击事件 (已处理冒泡)
  * @param style 自定义样式
  * @param backgroundColor 按钮背景颜色
@@ -99,13 +99,13 @@ const MoeFloatButton: React.FC<IMoeFloatButton> = ({
         },
       )}
       style={{
-        bottom: safeAreaHeight + bottom + "px",
-        right: right + "px",
+        bottom: Taro.pxTransform(safeAreaHeight + bottom),
+        right: Taro.pxTransform(right),
         backgroundColor,
         ...(isNumber(size)
           ? {
-              width: size + "px",
-              height: size + "px",
+              width: Taro.pxTransform(size),
+              height: Taro.pxTransform(size),
             }
           : {}),
         ...style,
