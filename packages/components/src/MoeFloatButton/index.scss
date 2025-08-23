@@ -1,0 +1,46 @@
+.moe-float-button-main {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  transition: all 100ms linear;
+  background-color: dodgerblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 0 7rpx gray;
+
+  &:active {
+    transform: scale(0.95);
+    filter: brightness(0.9);
+  }
+}
+
+// 悬浮按钮的形状部分
+.moe-float-button-main-shape {
+  &-circle {
+    border-radius: 50%;
+  }
+
+  &-square {
+    border-radius: 27%;
+  }
+}
+
+// 悬浮按钮大小控制部分
+.moe-float-button-main-size {
+  &-large {
+    width: 130rpx;
+    height: 130rpx;
+  }
+
+  &-default {
+    width: 115rpx;
+    height: 115rpx;
+  }
+
+  &-small {
+    width: 100rpx;
+    height: 100rpx;
+  }
+}
