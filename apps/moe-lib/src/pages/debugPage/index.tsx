@@ -10,7 +10,7 @@ const Index = () => {
   return (
     <View>
       <MoeHeader backgroundColor="#FFFFFF">Debug Page</MoeHeader>
-      <MoeFloatButton size={60} backgroundColor="#FFFFFF">
+      <MoeFloatButton size="default" backgroundColor="#FFFFFF">
         <Image
           src={testIcon}
           style={{
