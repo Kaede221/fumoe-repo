@@ -2,7 +2,7 @@
   position: fixed;
   right: 0;
   bottom: 0;
-  transition: all 100ms linear;
+  transition: all 120ms ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,6 +12,17 @@
   &:active {
     transform: scale(0.95);
     filter: brightness(0.9);
+  }
+
+  // 添加可见性动画
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+
+  &.moe-float-button-main-hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
   }
 }
 

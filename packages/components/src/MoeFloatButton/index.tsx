@@ -18,6 +18,10 @@ export interface IMoeFloatButton {
    */
   shape?: "circle" | "square";
   /**
+   * 是否显示该按钮
+   */
+  visible?: boolean;
+  /**
    * 按钮的图标内容
    */
   children?: React.ReactNode;
@@ -47,6 +51,7 @@ export interface IMoeFloatButton {
  * 悬浮于页面上方的按钮
  * @param size 悬浮按钮的大小, 当为数字的时候, 使用px作为单位
  * @param shape 悬浮按钮的形状
+ * @param visible 是否显示该按钮
  * @param children 按钮的图标内容
  * @param bottom 距离底部的距离 (不包含安全区, 单位 px)
  * @param right 距离右侧的距离 (单位 px)
@@ -59,6 +64,7 @@ export interface IMoeFloatButton {
 const MoeFloatButton: React.FC<IMoeFloatButton> = ({
   size = "default",
   shape = "circle",
+  visible = true,
   children,
   bottom = 35,
   right = 30,
@@ -88,6 +94,9 @@ const MoeFloatButton: React.FC<IMoeFloatButton> = ({
           [`moe-float-button-main-size-${size}`]: !isNumber(size),
         },
         `moe-float-button-main-shape-${shape}`,
+        {
+          "moe-float-button-main-hidden": !visible,
+        },
       )}
       style={{
         bottom: safeAreaHeight + bottom + "px",
