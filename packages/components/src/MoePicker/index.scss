@@ -55,25 +55,16 @@
       font-size: 32rpx;
       font-weight: 500;
       transition: all 0.3s ease;
-    }
 
-    .btn-disabled {
-      color: #999;
-      background-color: #e5e5e5;
-      cursor: not-allowed;
-    }
-
-    .btn-active {
-      color: #FFFFFF;
-      background-color: #FFC234;
-
-      &:active {
-        transform: scale(0.98);
+      &.btn-disabled {
+        color: #999;
+        background-color: #e5e5e5;
       }
-    }
 
-    .btn-active-hover {
-      background-color: #e0b046 !important;
+      &.btn-active {
+        color: white;
+        background-color: #FFC234;
+      }
     }
 
     // 列表部分
@@ -103,6 +94,7 @@
       }
     }
 
+    // 标题部分
     .moe-picker-title {
       font-size: 35rpx;
     }

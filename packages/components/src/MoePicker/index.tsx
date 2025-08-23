@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { View, Button } from "@tarojs/components";
+import { View } from "@tarojs/components";
+import { MoeButton } from "../index";
 import classNames from "classnames";
 
 import "./index.scss";
@@ -25,22 +26,14 @@ export interface IMoePicker {
 
 /**
  * 自定义弹出层选择器
- *
- * @param `title` 选择器的标题
- *
- * @param `closeable` 点击空白处是否可以关闭
- *
- * @param `open` 是否显示
- *
- * @param `setOpen` 设置是否显示
- *
- * @param `columns` 显示列数
- *
- * @param `categories` 可选内容列表
- *
- * @param `defaultCategory` 默认选择的内容
- *
- * @param `onConfirm` 确认时的回调函数 默认传入选择的内容
+ * @param title 选择器的标题
+ * @param closeable 点击空白处是否可以关闭
+ * @param open 是否显示
+ * @param setOpen 设置是否显示
+ * @param columns 显示列数
+ * @param categories 可选内容列表
+ * @param defaultCategory 默认选择的内容
+ * @param onConfirm 确认时的回调函数 默认传入选择的内容
  */
 const MoePicker: React.FC<IMoePicker> = ({
   title = "请选择分类",
@@ -63,14 +56,17 @@ const MoePicker: React.FC<IMoePicker> = ({
 
   return (
     <View
-      className={classNames("moe-picker-main", open ? "show" : "hide")}
+      className={classNames("moe-picker-main", {
+        show: open,
+        hide: !open,
+      })}
       onClick={handleClose}
     >
       <View
-        className={classNames(
-          "moe-picker-main-container",
-          open ? "slide-up" : "slide-down",
-        )}
+        className={classNames("moe-picker-main-container", {
+          "slide-up": open,
+          "slide-down": !open,
+        })}
         onClick={(e) => e.stopPropagation()}
       >
         {/*顶部标题*/}
@@ -80,12 +76,12 @@ const MoePicker: React.FC<IMoePicker> = ({
           className="category-list"
           style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
         >
-          {categories.map((category) => (
+          {categories.map((category, index) => (
             <View
-              key={category}
-              className={`category-item ${
-                selectedCategory === category ? "category-item-selected" : ""
-              }`}
+              key={`moe-picker-choices-${index}`}
+              className={classNames("category-item", {
+                "category-item-selected": selectedCategory === category,
+              })}
               onClick={() => setSelectedCategory(category)}
             >
               {category}
@@ -94,23 +90,22 @@ const MoePicker: React.FC<IMoePicker> = ({
         </View>
 
         {/*下方的确认按钮*/}
-        <Button
+        <MoeButton
           className={classNames(
             "confirm-button",
             !selectedCategory ? "btn-disabled" : "btn-active",
           )}
-          hoverClass={classNames({
-            "btn-active-hover": !selectedCategory,
-          })}
           disabled={!selectedCategory}
           onClick={() => {
             if (selectedCategory) {
               onConfirm(selectedCategory);
+              setOpen(false);
+              setSelectedCategory("");
             }
           }}
         >
           确定
-        </Button>
+        </MoeButton>
       </View>
     </View>
   );

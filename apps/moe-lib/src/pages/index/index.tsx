@@ -41,11 +41,11 @@ const renderList1: IMoeCell[] = [
 // 表单组件的渲染列表
 const renderList2: IMoeCell[] = [
   {
-    title: "MoeButton",
-    label: "按钮组件",
+    title: "MoePicker",
+    label: "弹出选择器",
     onClick: async () => {
       await Taro.navigateTo({
-        url: "/pages/comsPage/index" + "?id=MoeButton",
+        url: "/pages/comsPage/index" + "?id=MoePicker",
       });
     },
   },
