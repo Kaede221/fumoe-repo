@@ -47,11 +47,24 @@ const useNavInfo = (): INavInfo => {
   });
 
   useEffect(() => {
+    // 判断当前环境是否可用, 不可用则直接返回0
     const { statusBarHeight, screenWidth, screenHeight, windowHeight } =
-      Taro.getWindowInfo();
+      Taro.getEnv() === "WEAPP" || Taro.getEnv() === "HARMONYHYBRID"
+        ? Taro.getWindowInfo()
+        : {
+            statusBarHeight: 70,
+            screenWidth: 0,
+            screenHeight: 0,
+            windowHeight: 0,
+          };
+
     // 获取胶囊信息
     const { width, height, left, top, right } =
-      Taro.getMenuButtonBoundingClientRect();
+      Taro.getEnv() === "WEAPP" ||
+      Taro.getEnv() === "TT" ||
+      Taro.getEnv() === "HARMONYHYBRID"
+        ? Taro.getMenuButtonBoundingClientRect()
+        : { width: 0, height: 0, left: 0, top: 0, right: 0 };
     // 计算标题栏高度
     const titleBarHeight = height + (top - statusBarHeight!) * 2;
     // 计算导航栏高度

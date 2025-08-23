@@ -38,33 +38,38 @@ const useLayoutHeight = (selectors: string[]) => {
     prevSelectors.current = [...selectors];
 
     let isMounted = true;
-    const query = Taro.createSelectorQuery();
+    // 添加一个判断, 如果没有的话, 直接报错, 这个钩子就不做其他的事情了.
+    try {
+      const query = Taro.createSelectorQuery();
 
-    // 关键修改：使用selectAll查询每个选择器对应的所有元素
-    selectors.forEach((sel) => {
-      query.selectAll(sel).boundingClientRect();
-    });
+      // 关键修改：使用selectAll查询每个选择器对应的所有元素
+      selectors.forEach((sel) => {
+        query.selectAll(sel).boundingClientRect();
+      });
 
-    query.exec((res: QueryResult[]) => {
-      if (!isMounted) return;
+      query.exec((res: QueryResult[]) => {
+        if (!isMounted) return;
 
-      // 计算总高度：先遍历每个选择器的结果数组，再累加每个元素的高度
-      const totalHeight = res.reduce((acc, rects) => {
-        // 处理当前选择器对应的所有元素
-        const groupHeight =
-          rects?.reduce((groupAcc, rect) => {
-            return groupAcc + (rect?.height || 0);
-          }, 0) || 0;
+        // 计算总高度：先遍历每个选择器的结果数组，再累加每个元素的高度
+        const totalHeight = res.reduce((acc, rects) => {
+          // 处理当前选择器对应的所有元素
+          const groupHeight =
+            rects?.reduce((groupAcc, rect) => {
+              return groupAcc + (rect?.height || 0);
+            }, 0) || 0;
 
-        return acc + groupHeight;
-      }, 0);
+          return acc + groupHeight;
+        }, 0);
 
-      setHeight(totalHeight);
-    });
+        setHeight(totalHeight);
+      });
 
-    return () => {
-      isMounted = true;
-    };
+      return () => {
+        isMounted = true;
+      };
+    } catch (err) {
+      console.error(err);
+    }
   }, [selectors]);
 
   return height;
