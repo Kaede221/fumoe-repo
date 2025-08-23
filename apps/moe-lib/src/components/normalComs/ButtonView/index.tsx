@@ -38,6 +38,18 @@ const ButtonView: React.FC = () => {
         镂空按钮
       </MoeButton>
 
+      <Title>文本按钮</Title>
+      <MoeButton variant="text">文本按钮</MoeButton>
+      <MoeButton variant="text" color="primary">
+        文本按钮
+      </MoeButton>
+      <MoeButton variant="text" rounded color="success">
+        文本按钮
+      </MoeButton>
+      <MoeButton variant="text" rounded color="info" size="small">
+        文本按钮
+      </MoeButton>
+
       <Title>禁用按钮</Title>
       <MoeButton disabled>禁用按钮</MoeButton>
       <MoeButton disabled rounded>

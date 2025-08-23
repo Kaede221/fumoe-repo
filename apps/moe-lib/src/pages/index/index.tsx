@@ -21,7 +21,17 @@ const renderList1: IMoeCell[] = [
 const Index = () => {
   return (
     <View>
-      <MoeHeader backgroundColor="#FFFFFF">MoeLib - 组件</MoeHeader>
+      <MoeHeader
+        backgroundColor="#FFFFFF"
+        back
+        backHandler={async () => {
+          await Taro.navigateTo({
+            url: "/pages/debugPage/index",
+          });
+        }}
+      >
+        MoeLib - 组件
+      </MoeHeader>
       <Title>通用组件</Title>
       {renderList1.map((item, index) => (
         <MoeCell
