@@ -52,7 +52,7 @@ const useNavInfo = (): INavInfo => {
       Taro.getEnv() === "WEAPP" || Taro.getEnv() === "HARMONYHYBRID"
         ? Taro.getWindowInfo()
         : {
-            statusBarHeight: 70,
+            statusBarHeight: 0,
             screenWidth: 0,
             screenHeight: 0,
             windowHeight: 0,
