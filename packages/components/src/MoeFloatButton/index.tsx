@@ -10,7 +10,7 @@ const isNumber = (value: any): value is number => typeof value === "number";
 
 export interface IMoeFloatButton {
   /**
-   * 悬浮按钮的大小, 当为数字的时候, 使用rpx作为单位
+   * 悬浮按钮的大小, 当为数字的时候, 使用px作为单位
    */
   size?: "large" | "default" | "small" | number;
   /**
@@ -20,7 +20,7 @@ export interface IMoeFloatButton {
   /**
    * 按钮的图标内容
    */
-  chileren?: React.ReactNode;
+  children?: React.ReactNode;
   /**
    * 距离底部的距离 (不包含安全区, 单位 px)
    */
@@ -45,9 +45,9 @@ export interface IMoeFloatButton {
 
 /**
  * 悬浮于页面上方的按钮
- * @param size 悬浮按钮的大小, 当为数字的时候, 使用rpx作为单位
+ * @param size 悬浮按钮的大小, 当为数字的时候, 使用px作为单位
  * @param shape 悬浮按钮的形状
- * @param chileren 按钮的图标内容
+ * @param children 按钮的图标内容
  * @param bottom 距离底部的距离 (不包含安全区, 单位 px)
  * @param right 距离右侧的距离 (单位 px)
  * @param onClick 点击事件 (已处理冒泡)
@@ -59,7 +59,7 @@ export interface IMoeFloatButton {
 const MoeFloatButton: React.FC<IMoeFloatButton> = ({
   size = "default",
   shape = "circle",
-  chileren,
+  children,
   bottom = 35,
   right = 30,
   onClick,
@@ -95,8 +95,8 @@ const MoeFloatButton: React.FC<IMoeFloatButton> = ({
         backgroundColor,
         ...(isNumber(size)
           ? {
-              width: size + "rpx",
-              height: size + "rpx",
+              width: size + "px",
+              height: size + "px",
             }
           : {}),
         ...style,
@@ -106,7 +106,7 @@ const MoeFloatButton: React.FC<IMoeFloatButton> = ({
         if (onClick) onClick();
       }}
     >
-      {chileren}
+      {children}
     </View>
   );
 };
