@@ -11,7 +11,7 @@ const Index = () => {
   const [visiable, { toggle: changeVisiable }] = useToggle(true);
   return (
     <View>
-      <MoeHeader back backgroundColor="#FFFFFF">
+      <MoeHeader back backgroundColor="#FFFFFF" fontSize={5}>
         Debug Page
       </MoeHeader>
       <View onClick={changeVisiable}>修改是否显示</View>

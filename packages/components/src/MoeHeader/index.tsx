@@ -8,8 +8,10 @@ const arrowIcon =
 import "./index.scss";
 
 export interface IMoeHeader {
-  /** 标题和返回部分图标的大小 */
+  /** 标题大小 */
   fontSize?: number;
+  /** 返回图标大小 */
+  iconSize?: number;
   /** 标题是否靠左 */
   titleLeft?: boolean;
   /** 是否固定在顶部 */
@@ -30,31 +32,22 @@ export interface IMoeHeader {
 
 /**
  * 通用小程序顶部组件
- *
- * @param `fontSize` 标题和返回部分图标的大小
- *
- * @param `titleLeft` 标题是否靠左
- *
- * @param `fixed` 是否固定在顶部
- *
- * @param `back` 是否显示返回图标
- *
- * @param `backIcon` 返回部分的图标, 支持路径字符串或者图片base64
- *
- * @param `backHandler` 点击返回区域的回调事件
- *
- * @param `backgroundColor` 背景颜色
- *
- * @param `zIndex` 层级高度
- *
- * @param `children` 标题内部元素
- *
- * @author **kaedeshimizu**
- *
- * @email **kaedeshimizu@qq.com**
+ * @param fontSize 标题大小
+ * @param iconSize 图标大小
+ * @param titleLeft 标题是否靠左
+ * @param fixed 是否固定在顶部
+ * @param back 是否显示返回图标
+ * @param backIcon 返回部分的图标, 支持路径字符串或者图片base64
+ * @param backHandler 点击返回区域的回调事件
+ * @param backgroundColor 背景颜色
+ * @param zIndex 层级高度
+ * @param children 标题内部元素
+ * @author kaedeshimizu
+ * @email kaedeshimizu@qq.com
  */
 const MoeHeader: React.FC<IMoeHeader> = ({
-  fontSize = 18,
+  fontSize = 32,
+  iconSize = 32,
   titleLeft,
   fixed,
   back,
@@ -137,8 +130,8 @@ const MoeHeader: React.FC<IMoeHeader> = ({
               src={!!backIcon ? backIcon : arrowIcon}
               onClick={onClickBackIcon}
               style={{
-                width: Taro.pxTransform(fontSize),
-                height: Taro.pxTransform(fontSize),
+                width: Taro.pxTransform(iconSize),
+                height: Taro.pxTransform(iconSize),
               }}
             ></Image>
           )}
@@ -148,6 +141,7 @@ const MoeHeader: React.FC<IMoeHeader> = ({
             style={{
               marginBottom: "0.025em",
               display: "flex",
+              fontSize: Taro.pxTransform(fontSize),
             }}
           >
             {children}
