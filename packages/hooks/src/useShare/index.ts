@@ -19,7 +19,7 @@ interface IUseShare {
  * @param path 分享路径 (分享到聊天)
  * @param query 分享到朋友圈的场景值 (分享到朋友圈)
  */
-const index = ({ title, imageUrl, path, query }: IUseShare) => {
+const useShare = ({ title, imageUrl, path, query }: IUseShare) => {
   useShareAppMessage(() => ({
     title,
     path,
@@ -40,4 +40,4 @@ const index = ({ title, imageUrl, path, query }: IUseShare) => {
   });
 };
 
-export default index;
+export default useShare;

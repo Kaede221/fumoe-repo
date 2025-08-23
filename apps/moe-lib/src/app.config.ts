@@ -1,5 +1,5 @@
 export default defineAppConfig({
-  pages: ["pages/index/index", "pages/hooksPage/index"],
+  pages: ["pages/index/index", "pages/hooksPage/index", "pages/comsPage/index"],
   tabBar: {
     color: "#bfbfbf",
     selectedColor: "#4a9dfd",

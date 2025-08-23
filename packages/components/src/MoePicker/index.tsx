@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 import "./index.scss";
 
-interface IMoePicker {
+export interface IMoePicker {
   // 选择器的标题
   title?: string;
   // 点击空白处是否可以关闭

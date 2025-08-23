@@ -10,8 +10,10 @@
     "framework": "React"
   },
   "scripts": {
-    "build": "taro build --type weapp",
-    "dev": "npm run build -- --watch"
+    "dev:h5": "taro build --type h5 --watch",
+    "dev:weapp": "npm run build -- --watch",
+    "build:h5": "taro build --type h5",
+    "build:weapp": "taro build --type weapp"
   },
   "browserslist": [
     "defaults and fully supports es6-module",
