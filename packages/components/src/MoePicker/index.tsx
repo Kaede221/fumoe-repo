@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { CSSProperties, useState } from "react";
 import { View } from "@tarojs/components";
 import { MoeButton } from "../index";
 import classNames from "classnames";
@@ -22,6 +22,8 @@ export interface IMoePicker {
   defaultCategory?: string;
   // 确认时的回调函数 默认传入选择的内容
   onConfirm: (confirmValue: string) => void;
+  // 确认按钮的额外样式
+  confirmButtonStyle?: CSSProperties;
 }
 
 /**
@@ -33,7 +35,8 @@ export interface IMoePicker {
  * @param columns 显示列数
  * @param categories 可选内容列表
  * @param defaultCategory 默认选择的内容
- * @param onConfirm 确认时的回调函数 默认传入选择的内容
+ * @param onConfirm 确认时的回调函数 默认传入选择的内容, 确认后会自动关闭弹窗
+ * @param confirmButtonStyle 确认按钮的额外样式
  */
 const MoePicker: React.FC<IMoePicker> = ({
   title = "请选择分类",
@@ -44,6 +47,7 @@ const MoePicker: React.FC<IMoePicker> = ({
   categories,
   defaultCategory = "",
   onConfirm,
+  confirmButtonStyle,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState(defaultCategory);
 
@@ -95,6 +99,7 @@ const MoePicker: React.FC<IMoePicker> = ({
             "confirm-button",
             !selectedCategory ? "btn-disabled" : "btn-active",
           )}
+          style={confirmButtonStyle}
           disabled={!selectedCategory}
           onClick={() => {
             if (selectedCategory) {

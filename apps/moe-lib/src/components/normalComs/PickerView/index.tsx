@@ -2,20 +2,24 @@ import { FC } from "react";
 import Taro from "@tarojs/taro";
 import { View } from "@tarojs/components";
 import { MoeButton, MoePicker } from "@fumoe/taro-components";
-import { useToggle } from "@fumoe/taro-hooks";
+import { useToggle, useCounter } from "@fumoe/taro-hooks";
 
 import "./index.scss";
 
 const PickerView: FC = () => {
   const [showPicker, { toggle: togglePicker, set: setShowPicker }] =
     useToggle(false);
+  const [columns, { inc: incColumns }] = useCounter(0);
   return (
     <View className="picker-view-test">
       <MoeButton onClick={togglePicker}>显示弹出层</MoeButton>
+      <MoeButton onClick={incColumns}>
+        修改显示列数: {(columns % 3) + 1}
+      </MoeButton>
       <MoePicker
         open={showPicker}
         setOpen={setShowPicker}
-        columns={3}
+        columns={(columns % 3) + 1}
         closeable
         categories={[
           "选项 1",
