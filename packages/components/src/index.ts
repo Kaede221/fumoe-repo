@@ -1,3 +1,4 @@
+export { default as MoeBackdrop, IMoeBackdrop } from "./MoeBackdrop";
 export { default as MoeButton, IMoeButton } from "./MoeButton";
 export { default as MoeCell, IMoeCell } from "./MoeCell";
 export { default as MoeFloatButton, IMoeFloatButton } from "./MoeFloatButton";

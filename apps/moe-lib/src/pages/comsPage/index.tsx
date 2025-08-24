@@ -9,6 +9,7 @@ import CellView from "@/components/comViews/CellView";
 import PickerView from "@/components/comViews/PickerView";
 import HeaderView from "@/components/comViews/HeaderView";
 import TagView from "@/components/comViews/TagView";
+import BackdropView from "@/components/comViews/BackdropView";
 
 import "./index.scss";
 
@@ -20,6 +21,7 @@ const componentMap = {
   MoePicker: <PickerView />,
   MoeHeader: <HeaderView />,
   MoeTag: <TagView />,
+  MoeBackdrop: <BackdropView />,
 };
 
 const Index = () => {

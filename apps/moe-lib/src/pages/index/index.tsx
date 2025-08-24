@@ -34,7 +34,12 @@ const renderList2: IMoeCell[] = [
 ];
 
 // NOTE 反馈组件
-const renderList3: IMoeCell[] = [];
+const renderList3: IMoeCell[] = [
+  {
+    title: "MoeBackdrop",
+    label: "背景弹出层",
+  },
+];
 
 // NOTE 展示组件
 const renderList4: IMoeCell[] = [
