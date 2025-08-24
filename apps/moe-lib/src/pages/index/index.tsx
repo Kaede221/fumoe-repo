@@ -5,6 +5,7 @@ import Title from "@/components/Title";
 
 import "./index.scss";
 
+// NOTE 基础组件
 const renderList1: IMoeCell[] = [
   {
     title: "MoeButton",
@@ -22,13 +23,9 @@ const renderList1: IMoeCell[] = [
     title: "MoeHeader",
     label: "通用的顶部组件",
   },
-  {
-    title: "MoeTag",
-    label: "标签组件",
-  },
 ];
 
-// 表单组件的渲染列表
+// NOTE 表单组件
 const renderList2: IMoeCell[] = [
   {
     title: "MoePicker",
@@ -36,25 +33,34 @@ const renderList2: IMoeCell[] = [
   },
 ];
 
+// NOTE 反馈组件
+const renderList3: IMoeCell[] = [];
+
+// NOTE 展示组件
+const renderList4: IMoeCell[] = [
+  {
+    title: "MoeTag",
+    label: "标签组件",
+  },
+];
+
 // 最终渲染列表
-const finalList = [
+const finalList: { title: string; item: IMoeCell[] }[] = [
   {
     title: "基础组件",
-    item: renderList1.slice().sort((a, b) => {
-      // 提取首字母并转为小写进行比较（忽略大小写）
-      const firstLetterA = String(a.title).charAt(3).toLowerCase();
-      const firstLetterB = String(b.title).charAt(3).toLowerCase();
-      return firstLetterA.localeCompare(firstLetterB);
-    }),
+    item: renderList1,
   },
   {
     title: "表单组件",
-    item: renderList2.slice().sort((a, b) => {
-      // 提取首字母并转为小写进行比较（忽略大小写）
-      const firstLetterA = String(a.title).charAt(3).toLowerCase();
-      const firstLetterB = String(b.title).charAt(3).toLowerCase();
-      return firstLetterA.localeCompare(firstLetterB);
-    }),
+    item: renderList2,
+  },
+  {
+    title: "反馈组件",
+    item: renderList3,
+  },
+  {
+    title: "展示组件",
+    item: renderList4,
   },
 ];
 
@@ -67,19 +73,27 @@ const Index = () => {
       {finalList.map((listObj) => (
         <>
           <Title>{listObj.title}</Title>
-          {listObj.item.map((item, index) => (
-            <MoeCell
-              key={`renderlist1-${index}`}
-              title={item.title}
-              label={item.label}
-              isLink
-              onClick={async () => {
-                await Taro.navigateTo({
-                  url: "/pages/comsPage/index?id=" + item.title,
-                });
-              }}
-            ></MoeCell>
-          ))}
+          {listObj.item
+            .slice()
+            .sort((a, b) => {
+              // 提取首字母并转为小写进行比较（忽略大小写）
+              const firstLetterA = String(a.title).charAt(3).toLowerCase();
+              const firstLetterB = String(b.title).charAt(3).toLowerCase();
+              return firstLetterA.localeCompare(firstLetterB);
+            })
+            .map((item, index) => (
+              <MoeCell
+                key={`renderlist1-${index}`}
+                title={item.title}
+                label={item.label}
+                isLink
+                onClick={async () => {
+                  await Taro.navigateTo({
+                    url: "/pages/comsPage/index?id=" + item.title,
+                  });
+                }}
+              ></MoeCell>
+            ))}
         </>
       ))}
     </View>
