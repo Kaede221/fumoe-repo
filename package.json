@@ -8,14 +8,8 @@
     "dev:taro-h5": "pnpm --F @fumoe/taro-test dev:h5",
     "build:taro-weapp": "pnpm --F @fumoe/taro-test build:weapp",
     "build:taro-h5": "pnpm --F @fumoe/taro-test build:h5",
-
-    "docs:components": "pnpm --F @fumoe/taro-components storybook",
-    "docs-build:components": "pnpm --F @fumoe/taro-components build-storybook",
     "build:components": "pnpm --F @fumoe/taro-components build",
-
-    "build:hooks": "pnpm --F @fumoe/taro-hooks build",
-    "docs:hooks-dev": "pnpm --F @fumoe/taro-hooks-docs dev",
-    "docs:hooks-build": "pnpm --F @fumoe/taro-hooks-docs build"
+    "build:hooks": "pnpm --F @fumoe/taro-hooks build"
   },
   "keywords": [],
   "author": "",
