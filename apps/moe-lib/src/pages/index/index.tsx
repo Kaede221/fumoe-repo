@@ -52,7 +52,14 @@ const renderList1: IMoeCell[] = [
       });
     },
   },
-];
+]
+  .slice()
+  .sort((a, b) => {
+    // 提取首字母并转为小写进行比较（忽略大小写）
+    const firstLetterA = String(a.title).charAt(3).toLowerCase();
+    const firstLetterB = String(b.title).charAt(3).toLowerCase();
+    return firstLetterA.localeCompare(firstLetterB);
+  });
 
 // 表单组件的渲染列表
 const renderList2: IMoeCell[] = [
@@ -65,7 +72,14 @@ const renderList2: IMoeCell[] = [
       });
     },
   },
-];
+]
+  .slice()
+  .sort((a, b) => {
+    // 提取首字母并转为小写进行比较（忽略大小写）
+    const firstLetterA = String(a.title).charAt(3).toLowerCase();
+    const firstLetterB = String(b.title).charAt(3).toLowerCase();
+    return firstLetterA.localeCompare(firstLetterB);
+  });
 
 const Index = () => {
   return (
@@ -74,42 +88,26 @@ const Index = () => {
         MoeLib - 组件
       </MoeHeader>
       <Title>通用组件</Title>
-      {renderList1
-        .slice() // 创建数组副本，避免修改原数组
-        .sort((a, b) => {
-          // 提取首字母并转为小写进行比较（忽略大小写）
-          const firstLetterA = String(a.title).charAt(3).toLowerCase();
-          const firstLetterB = String(b.title).charAt(3).toLowerCase();
-          return firstLetterA.localeCompare(firstLetterB);
-        })
-        .map((item, index) => (
-          <MoeCell
-            key={`renderlist1-${index}`}
-            title={item.title}
-            label={item.label}
-            isLink
-            onClick={item.onClick}
-          ></MoeCell>
-        ))}
+      {renderList1.map((item, index) => (
+        <MoeCell
+          key={`renderlist1-${index}`}
+          title={item.title}
+          label={item.label}
+          isLink
+          onClick={item.onClick}
+        ></MoeCell>
+      ))}
 
       <Title>表单组件</Title>
-      {renderList2
-        .slice() // 创建数组副本，避免修改原数组
-        .sort((a, b) => {
-          // 提取首字母并转为小写进行比较（忽略大小写）
-          const firstLetterA = String(a.title).charAt(3).toLowerCase();
-          const firstLetterB = String(b.title).charAt(3).toLowerCase();
-          return firstLetterA.localeCompare(firstLetterB);
-        })
-        .map((item, index) => (
-          <MoeCell
-            key={`renderlist2-${index}`}
-            title={item.title}
-            label={item.label}
-            isLink
-            onClick={item.onClick}
-          ></MoeCell>
-        ))}
+      {renderList2.map((item, index) => (
+        <MoeCell
+          key={`renderlist2-${index}`}
+          title={item.title}
+          label={item.label}
+          isLink
+          onClick={item.onClick}
+        ></MoeCell>
+      ))}
     </View>
   );
 };
