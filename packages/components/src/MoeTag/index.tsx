@@ -20,22 +20,14 @@ export interface IMoeTag {
 
 /**
  * 通用标签组件
- *
- * @param `label` 标签文本
- *
- * @param `icon` tag的左侧图标路径
- *
- * @param `scale` 缩放比例
- *
- * @param `mainColor` 标签主色调 (文本, 边框)
- *
- * @param `backgroundColor` 标签背景色 (背景)
- *
- * @param `onClick` 点击事件 (已阻止冒泡)
- *
- * @author **Kaede221**
- *
- * @email **kaedeshimizu@qq.com**
+ * @param label 标签文本
+ * @param icon tag的左侧图标路径
+ * @param scale 缩放比例
+ * @param mainColor 标签主色调 (文本, 边框)
+ * @param backgroundColor 标签背景色 (背景)
+ * @param onClick 点击事件
+ * @author Kaede221
+ * @email kaedeshimizu@qq.com
  */
 const MoeTag: React.FC<IMoeTag> = ({
   label,

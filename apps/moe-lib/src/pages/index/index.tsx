@@ -3,8 +3,6 @@ import { View } from "@tarojs/components";
 import { MoeHeader, MoeCell, IMoeCell } from "@fumoe/taro-components";
 import Title from "@/components/Title";
 
-import icDebug from "@/assets/ic-debug.svg";
-
 import "./index.scss";
 
 // 通用组件的渲染列表
@@ -45,6 +43,15 @@ const renderList1: IMoeCell[] = [
       });
     },
   },
+  {
+    title: "MoeTag",
+    label: "标签组件",
+    onClick: async () => {
+      await Taro.navigateTo({
+        url: "/pages/comsPage/index" + "?id=MoeTag",
+      });
+    },
+  },
 ];
 
 // 表单组件的渲染列表
@@ -63,17 +70,7 @@ const renderList2: IMoeCell[] = [
 const Index = () => {
   return (
     <View>
-      <MoeHeader
-        backgroundColor="#FFFFFF"
-        back
-        backIcon={icDebug}
-        iconSize={50}
-        backHandler={async () => {
-          await Taro.navigateTo({
-            url: "/pages/debugPage/index",
-          });
-        }}
-      >
+      <MoeHeader backgroundColor="#FFFFFF" iconSize={50}>
         MoeLib - 组件
       </MoeHeader>
       <Title>通用组件</Title>

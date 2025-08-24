@@ -3,11 +3,12 @@ import { useEffect, useState } from "react";
 import { View } from "@tarojs/components";
 import { MoeHeader } from "@fumoe/taro-components";
 
-import ButtonView from "@/components/normalComs/ButtonView";
-import FloatButtonView from "@/components/normalComs/FloatButtonView";
-import CellView from "@/components/normalComs/CellView";
-import PickerView from "@/components/normalComs/PickerView";
-import HeaderView from "@/components/normalComs/HeaderView";
+import ButtonView from "@/components/comViews/ButtonView";
+import FloatButtonView from "@/components/comViews/FloatButtonView";
+import CellView from "@/components/comViews/CellView";
+import PickerView from "@/components/comViews/PickerView";
+import HeaderView from "@/components/comViews/HeaderView";
+import TagView from "@/components/comViews/TagView";
 
 import "./index.scss";
 
@@ -18,6 +19,7 @@ const componentMap = {
   MoeCell: <CellView />,
   MoePicker: <PickerView />,
   MoeHeader: <HeaderView />,
+  MoeTag: <TagView />,
 };
 
 const Index = () => {
