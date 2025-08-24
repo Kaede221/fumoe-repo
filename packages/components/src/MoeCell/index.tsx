@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Text, View } from "@tarojs/components";
+import { Image, View } from "@tarojs/components";
 import classNames from "classnames";
 
 import "./index.scss";
@@ -70,7 +70,7 @@ const MoeCell: React.FC<IMoeCell> = ({
       </View>
 
       <View className="moe-cell-container-content">
-        <Text className="moe-cell-container-content-cell-text">{label}</Text>
+        <View className="moe-cell-container-content-cell-text">{label}</View>
         {isLink && (
           <Image
             svg
