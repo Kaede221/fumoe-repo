@@ -7,6 +7,7 @@ import ButtonView from "@/components/normalComs/ButtonView";
 import FloatButtonView from "@/components/normalComs/FloatButtonView";
 import CellView from "@/components/normalComs/CellView";
 import PickerView from "@/components/normalComs/PickerView";
+import HeaderView from "@/components/normalComs/HeaderView";
 
 import "./index.scss";
 
@@ -16,6 +17,7 @@ const componentMap = {
   MoeFloatButton: <FloatButtonView />,
   MoeCell: <CellView />,
   MoePicker: <PickerView />,
+  MoeHeader: <HeaderView />,
 };
 
 const Index = () => {

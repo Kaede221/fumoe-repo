@@ -36,6 +36,15 @@ const renderList1: IMoeCell[] = [
       });
     },
   },
+  {
+    title: "MoeHeader",
+    label: "通用的顶部组件",
+    onClick: async () => {
+      await Taro.navigateTo({
+        url: "/pages/comsPage/index" + "?id=MoeHeader",
+      });
+    },
+  },
 ];
 
 // 表单组件的渲染列表
