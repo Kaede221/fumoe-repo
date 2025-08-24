@@ -1,27 +1,150 @@
+@use "../styles";
+
 .common-shared-tag-lc {
-  height: 44rpx;
-  border-radius: 112rpx;
-  border: solid 2rpx #FFFFFF;
+  color: #FFFFFF;
+  box-sizing: border-box;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 13rpx;
   gap: 8rpx;
+
+  // NOTE 配置颜色主题
+  &.color-set {
+    &-default {
+      background-color: styles.$moe-color-default;
+      border: styles.$moe-color-default solid 2rpx;
+    }
+
+    &-primary {
+      background-color: styles.$moe-color-primary;
+      border: styles.$moe-color-primary solid 2rpx;
+    }
+
+    &-info {
+      background-color: styles.$moe-color-info;
+      border: styles.$moe-color-info solid 2rpx;
+    }
+
+    &-success {
+      background-color: styles.$moe-color-success;
+      border: styles.$moe-color-success solid 2rpx;
+    }
+
+    &-warning {
+      background-color: styles.$moe-color-warning;
+      border: styles.$moe-color-warning solid 2rpx;
+    }
+
+    &-danger {
+      background-color: styles.$moe-color-danger;
+      border: styles.$moe-color-danger solid 2rpx;
+    }
+  }
+
+  // NOTE 配置样式主题
+  &.variant-set {
+    &-outlined {
+      background-color: transparent;
+
+      &-default {
+        color: styles.$moe-color-default;
+      }
+
+      &-primary {
+        color: styles.$moe-color-primary;
+      }
+
+      &-info {
+        color: styles.$moe-color-info;
+      }
+
+      &-success {
+        color: styles.$moe-color-success;
+      }
+
+      &-warning {
+        color: styles.$moe-color-warning;
+      }
+
+      &-danger {
+        color: styles.$moe-color-danger;
+      }
+    }
+  }
+
+  // NOTE 配置大小
+  &.size-set {
+    &-default {
+      padding: 6rpx 13rpx;
+      border-radius: 19.5rpx;
+
+      .label {
+        font-size: 27rpx;
+        line-height: 27rpx;
+      }
+    }
+
+    &-medium {
+      padding: 7rpx 14rpx;
+      border-radius: 22rpx;
+
+      .label {
+        font-size: 30rpx;
+        line-height: 30rpx;
+      }
+    }
+
+    &-large {
+      padding: 10rpx 15rpx;
+      border-radius: 26.5rpx;
+
+      .label {
+        font-size: 33rpx;
+        line-height: 33rpx;
+      }
+    }
+  }
+
+  // NOTE 配置形状
+  &.shape-set {
+    &-square {
+      border-radius: 10rpx;
+    }
+
+    &-roundedRight {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &-roundedLeft {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
 
   // 图标
   .img-icon {
-    width: 30rpx;
-    height: 30rpx;
+    &-default {
+      width: 30rpx;
+      height: 30rpx;
+    }
+
+    &-medium {
+      width: 33rpx;
+      height: 33rpx;
+    }
+
+    &-large {
+      width: 35rpx;
+      height: 35rpx;
+    }
   }
 
   // 优化文本对齐和抗锯齿
   .label {
     font-family: 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 400;
-    font-size: 24rpx;
-    line-height: 24rpx;
-    padding-bottom: 0.1em;
 
     // 抗锯齿优化
     text-rendering: optimizeLegibility;

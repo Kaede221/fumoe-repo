@@ -1,3 +1,5 @@
+@use "../styles";
+
 .moe-button-container {
   display: inline-flex;
   align-items: center;
@@ -52,33 +54,33 @@
 // 按钮的颜色部分
 .moe-button-color {
   &-primary {
-    background-color: #1989FA;
+    background-color: styles.$moe-color-primary;
     color: #FFFFFF;
-    border: 2rpx #1989FA solid;
+    border: 2rpx styles.$moe-color-primary solid;
   }
 
   &-info {
-    background-color: #2DB7F5;
+    background-color: styles.$moe-color-info;
     color: #FFFFFF;
-    border: 2rpx #2DB7F5 solid;
+    border: 2rpx styles.$moe-color-info solid;
   }
 
   &-success {
-    background-color: #07C160;
+    background-color: styles.$moe-color-success;
     color: #FFFFFF;
-    border: 2rpx #07C160 solid;
+    border: 2rpx styles.$moe-color-success solid;
   }
 
   &-warning {
-    background-color: #E6A23C;
+    background-color: styles.$moe-color-warning;
     color: #FFFFFF;
-    border: 2rpx #E6A23C solid;
+    border: 2rpx styles.$moe-color-warning solid;
   }
 
   &-danger {
-    background-color: #EE0A24;
+    background-color: styles.$moe-color-danger;
     color: #FFFFFF;
-    border: 2rpx #EE0A24 solid;
+    border: 2rpx styles.$moe-color-danger solid;
   }
 
   &-default {
@@ -111,27 +113,27 @@
 .moe-button-variant {
   &-outlined {
     &-primary {
-      color: #1989FA;
+      color: styles.$moe-color-primary;
       background-color: transparent;
     }
 
     &-info {
-      color: #2DB7F5;
+      color: styles.$moe-color-info;
       background-color: transparent;
     }
 
     &-success {
-      color: #07C160;
+      color: styles.$moe-color-success;
       background-color: transparent;
     }
 
     &-warning {
-      color: #E6A23C;
+      color: styles.$moe-color-warning;
       background-color: transparent;
     }
 
     &-danger {
-      color: #EE0A24;
+      color: styles.$moe-color-danger;
       background-color: transparent;
     }
 
@@ -143,31 +145,31 @@
 
   &-text {
     &-primary {
-      color: #1989FA;
+      color: styles.$moe-color-primary;
       background-color: transparent;
       border: none;
     }
 
     &-info {
-      color: #2DB7F5;
+      color: styles.$moe-color-info;
       background-color: transparent;
       border: none;
     }
 
     &-success {
-      color: #07C160;
+      color: styles.$moe-color-success;
       background-color: transparent;
       border: none;
     }
 
     &-warning {
-      color: #E6A23C;
+      color: styles.$moe-color-warning;
       background-color: transparent;
       border: none;
     }
 
     &-danger {
-      color: #EE0A24;
+      color: styles.$moe-color-danger;
       background-color: transparent;
       border: none;
     }
