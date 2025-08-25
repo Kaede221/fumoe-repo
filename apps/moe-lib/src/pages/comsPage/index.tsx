@@ -11,6 +11,7 @@ import HeaderView from "@/components/comViews/HeaderView";
 import TagView from "@/components/comViews/TagView";
 import BackdropView from "@/components/comViews/BackdropView";
 import SwitchView from "@/components/comViews/SwitchView";
+import LoadingView from "@/components/comViews/LoadingView";
 
 import "./index.scss";
 
@@ -24,6 +25,7 @@ const componentMap = {
   MoeTag: <TagView />,
   MoeBackdrop: <BackdropView />,
   MoeSwitch: <SwitchView />,
+  MoeLoading: <LoadingView />,
 };
 
 const Index = () => {

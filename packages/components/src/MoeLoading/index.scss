@@ -1,0 +1,113 @@
+// 定义动画序列
+@keyframes moe-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moe-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.moe-loading-container {
+  // 直接根据大小设置宽高即可
+  width: var(--moe-loading-size);
+  height: var(--moe-loading-size);
+  transition: all 0.3s linear;
+
+  &.type-set {
+    &-circular {
+      border-top: var(--moe-loading-color) 0.05rem solid;
+      border-radius: 50%;
+    }
+
+    &-spinner {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .spinner-item {
+        position: absolute;
+        width: 4%;
+        height: 25%;
+        background-color: var(--moe-loading-color);
+        border-radius: 5px;
+
+        // 配置动画效果
+        &:nth-child(1) {
+          transform: rotate(0deg) translate(0, -150%);
+          opacity: 100%;
+        }
+
+        &:nth-child(2) {
+          transform: rotate(30deg) translate(0, -150%);
+          opacity: 94%;
+        }
+
+        &:nth-child(3) {
+          transform: rotate(60deg) translate(0, -150%);
+          opacity: 88%;
+        }
+
+        &:nth-child(4) {
+          transform: rotate(90deg) translate(0, -150%);
+          opacity: 82%;
+        }
+
+        &:nth-child(5) {
+          transform: rotate(120deg) translate(0, -150%);
+          opacity: 76%;
+        }
+
+        &:nth-child(6) {
+          transform: rotate(150deg) translate(0, -150%);
+          opacity: 70%;
+        }
+
+        &:nth-child(7) {
+          transform: rotate(180deg) translate(0, -150%);
+          opacity: 64%;
+        }
+
+        &:nth-child(8) {
+          transform: rotate(210deg) translate(0, -150%);
+          opacity: 58%;
+        }
+
+        &:nth-child(9) {
+          transform: rotate(240deg) translate(0, -150%);
+          opacity: 52%;
+        }
+
+        &:nth-child(10) {
+          transform: rotate(270deg) translate(0, -150%);
+          opacity: 46%;
+        }
+
+        &:nth-child(11) {
+          transform: rotate(300deg) translate(0, -150%);
+          opacity: 40%;
+        }
+
+        &:nth-child(12) {
+          transform: rotate(330deg) translate(0, -150%);
+          opacity: 32%;
+        }
+      }
+    }
+  }
+
+  // 通用旋转
+  animation: moe-rotate 1s linear infinite;
+}

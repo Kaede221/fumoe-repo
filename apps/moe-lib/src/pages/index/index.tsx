@@ -43,6 +43,10 @@ const renderList3: IMoeCell[] = [
     title: "MoeBackdrop",
     label: "背景弹出层",
   },
+  {
+    title: "MoeLoading",
+    label: "加载组件",
+  },
 ];
 
 // NOTE 展示组件
