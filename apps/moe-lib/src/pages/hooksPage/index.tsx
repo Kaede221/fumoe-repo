@@ -8,6 +8,7 @@ import ComUseLayoutHeight from "@/components/hookComs/ComUseLayoutHeight";
 import ComUseNavInfo from "@/components/hookComs/ComUseNavInfo";
 import ComUseToggle from "@/components/hookComs/ComUseToggle";
 import ComUpdateEffect from "@/components/hookComs/ComUpdateEffect";
+import ComUseResetState from "@/components/hookComs/ComUseResetState";
 
 import "./index.scss";
 
@@ -29,6 +30,7 @@ export default function Index() {
           <ComUseLayoutHeight />
           <ComUseNavInfo />
           <ComUpdateEffect />
+          <ComUseResetState />
         </View>
       </ScrollView>
     </View>
