@@ -21,11 +21,11 @@ export interface IMoeCell {
    */
   icon?: string;
   /**
-   * 是否显示右侧小箭头
+   * 是否显示右侧小箭头并开启点击反馈
    */
   isLink?: boolean;
   /**
-   * 是否可点击, 是否有点击效果
+   * 是否开启点击反馈
    */
   clickable?: boolean;
   /**
@@ -39,8 +39,8 @@ export interface IMoeCell {
  * @param title 左侧标题部分
  * @param label 右侧信息部分
  * @param icon 左侧图标部分图片链接
- * @param isLink 是否显示右侧小箭头
- * @param clickable 是否可点击, 是否有点击效果
+ * @param isLink 是否显示右侧小箭头并开启点击反馈
+ * @param clickable 是否开启点击反馈
  * @param onClick 点击的回调函数
  * @constructor
  */
@@ -49,17 +49,17 @@ const MoeCell: React.FC<IMoeCell> = ({
   label,
   icon,
   isLink,
-  clickable = true,
+  clickable,
   onClick,
 }) => {
   return (
     <View
       className={classNames("moe-cell-container", {
-        "moe-cell-container-clickable": clickable,
+        "moe-cell-container-clickable": isLink || clickable,
       })}
       onClick={(e) => {
         e.stopPropagation();
-        if (clickable && onClick) onClick();
+        if (onClick) onClick();
       }}
     >
       <View className="moe-cell-container-left-part">
@@ -70,7 +70,7 @@ const MoeCell: React.FC<IMoeCell> = ({
       </View>
 
       <View className="moe-cell-container-content">
-        <View className="moe-cell-container-content-cell-text">{label}</View>
+        {label}
         {isLink && (
           <Image
             svg
