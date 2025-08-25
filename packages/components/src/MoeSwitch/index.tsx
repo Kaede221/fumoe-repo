@@ -32,6 +32,17 @@ export interface IMoeSwitch {
   style?: CSSProperties;
 }
 
+/**
+ * 开关
+ * @param value 开关显示值
+ * @param onChange 开关状态切换时触发
+ * @param size 开关大小
+ * @param disabled 是否禁用 (禁用不可点击)
+ * @param activeBackgroundColor 激活时的背景颜色, 默认 `#1989FA`
+ * @param style 自定义样式
+ * @author kaedeshimizu
+ * @email kaedeshimizu@qq.com
+ */
 const MoeSwitch: FC<IMoeSwitch> = ({
   value,
   onChange,
