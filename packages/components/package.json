@@ -1,6 +1,6 @@
 {
   "name": "@fumoe/taro-components",
-  "version": "0.1.13-0.7",
+  "version": "0.1.13",
   "license": "MIT",
   "description": "Taro 4.x 开箱即用的一些公用组件",
   "keywords": [
