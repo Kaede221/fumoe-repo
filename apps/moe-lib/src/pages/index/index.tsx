@@ -35,6 +35,10 @@ const renderList2: IMoeCell[] = [
     title: "MoeSwitch",
     label: "开关",
   },
+  {
+    title: "MoeCheckbox",
+    label: "复选框",
+  },
 ];
 
 // NOTE 反馈组件

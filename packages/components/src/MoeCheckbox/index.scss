@@ -1,0 +1,50 @@
+$--moe-animation-duration: 0.15s;
+
+.moe-checkbox-container {
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: 20rpx;
+
+  // 配置默认的字体
+  font-size: 30rpx;
+
+  &-box {
+    border: #C8C9CC solid 2rpx;
+    transition: background-color $--moe-animation-duration linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // checkbox的形状
+    &.shape {
+      &-round {
+        border-radius: 50%;
+      }
+
+      &-square {
+        border-radius: 10%;
+      }
+    }
+
+    // 激活的选择框
+    &.active {
+      background-color: var(--moe-checkbox-active);
+    }
+
+    // 禁用的选择框
+    &.disabled {
+      filter: grayscale(100%);
+    }
+
+    &-image {
+      opacity: 0;
+      transition: opacity $--moe-animation-duration linear;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+}

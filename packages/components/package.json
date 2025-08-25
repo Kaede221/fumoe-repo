@@ -27,6 +27,10 @@
     "build:tsc": "tsc",
     "prepublishOnly": "pnpm run build"
   },
+  "dependencies": {
+    "@fumoe/taro-hooks": "workspace:*",
+    "classnames": "^2.5.1"
+  },
   "devDependencies": {
     "@types/node": "^18.19.123",
     "@types/react": "^18.2.0",
@@ -50,8 +54,5 @@
     "less": "^4.2.0",
     "react": "^18.2.0"
   },
-  "packageManager": "pnpm@10.14.0",
-  "dependencies": {
-    "classnames": "^2.5.1"
-  }
+  "packageManager": "pnpm@10.14.0"
 }
