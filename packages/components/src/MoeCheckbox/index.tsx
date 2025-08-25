@@ -76,6 +76,7 @@ const MoeCheckbox: FC<IMoeCheckbox> = ({
   return (
     <View
       className="moe-checkbox-container"
+      style={style}
       onClick={(e) => {
         e.stopPropagation();
         // 调用
@@ -93,7 +94,6 @@ const MoeCheckbox: FC<IMoeCheckbox> = ({
             height: iconSize + "rpx",
             width: iconSize + "rpx",
             "--moe-checkbox-active": activeBackgroundColor,
-            ...style,
           } as CSSProperties
         }
       >
