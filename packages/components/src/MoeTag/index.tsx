@@ -1,10 +1,10 @@
 import React, { CSSProperties } from "react";
-import { Image, View } from "@tarojs/components";
+import { Image, View, ViewProps } from "@tarojs/components";
 import classNames from "classnames";
 
 import "./index.scss";
 
-export interface IMoeTag {
+export interface IMoeTag extends ViewProps {
   /**
    * 文本
    */
@@ -49,6 +49,7 @@ export interface IMoeTag {
  * @param shape 形状
  * @param onClick 点击事件
  * @param style 自定义样式
+ * @param restProps
  * @author kaedeshimizu
  * @email kaedeshimizu@qq.com
  */
@@ -61,6 +62,7 @@ const MoeTag: React.FC<IMoeTag> = ({
   shape = "square",
   onClick,
   style,
+  ...restProps
 }) => {
   return (
     <View
@@ -77,6 +79,7 @@ const MoeTag: React.FC<IMoeTag> = ({
         e.stopPropagation();
         if (onClick) onClick();
       }}
+      {...restProps}
     >
       {icon && <Image className={`img-icon-${size}`} src={icon} />}
       <View className="label">{label}</View>

@@ -1,10 +1,10 @@
 import { CSSProperties, FC } from "react";
-import { View } from "@tarojs/components";
+import { View, ViewProps } from "@tarojs/components";
 import classNames from "classnames";
 
 import "./index.scss";
 
-export interface IMoeLoading {
+export interface IMoeLoading extends ViewProps {
   /**
    * 加载类型 默认 `circular`
    */
@@ -24,6 +24,7 @@ export interface IMoeLoading {
  * @param type 加载类型 默认 `circular`
  * @param size 加载图标大小 默认 `35`
  * @param color 加载的颜色 默认 `#1989fa`
+ * @param restProps
  * @author kaedeshimizu
  * @email kaedeshimizu@qq.com
  */
@@ -31,6 +32,7 @@ const MoeLoading: FC<IMoeLoading> = ({
   type = "circular",
   size = 35,
   color = "#C8C9CC",
+  ...restProps
 }) => {
   // 根据当前类型 渲染不同类型的加载图标
   if (type === "circular")
@@ -43,6 +45,7 @@ const MoeLoading: FC<IMoeLoading> = ({
           } as CSSProperties
         }
         className={classNames("moe-loading-container", `type-set-${type}`)}
+        {...restProps}
       ></View>
     );
   else
@@ -55,6 +58,7 @@ const MoeLoading: FC<IMoeLoading> = ({
           } as CSSProperties
         }
         className={classNames("moe-loading-container", `type-set-${type}`)}
+        {...restProps}
       >
         <View className="spinner-item"></View>
         <View className="spinner-item"></View>

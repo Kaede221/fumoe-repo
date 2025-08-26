@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "@tarojs/components";
+import { View, ViewProps } from "@tarojs/components";
 import classNames from "classnames";
 
 import "./index.scss";
@@ -7,7 +7,7 @@ import "./index.scss";
 /**
  * MoeButton 组件属性接口
  */
-export interface IMoeButton {
+export interface IMoeButton extends ViewProps {
   /**
    * 按钮内容
    */
@@ -57,6 +57,7 @@ export interface IMoeButton {
  * @param variant 按钮类型
  * @param disabled 按钮是否被禁用
  * @param onClick 点击事件回调函数
+ * @param restProps
  * @author kaedeshimizu
  * @email kaedeshimizu@qq.com
  */
@@ -70,6 +71,7 @@ const MoeButton: React.FC<IMoeButton> = ({
   variant = "contained",
   disabled,
   onClick,
+  ...restProps
 }) => {
   return (
     <View
@@ -92,6 +94,7 @@ const MoeButton: React.FC<IMoeButton> = ({
         if (!disabled && onClick) onClick();
       }}
       style={style}
+      {...restProps}
     >
       {children}
     </View>

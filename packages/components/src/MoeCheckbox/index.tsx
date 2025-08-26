@@ -1,5 +1,5 @@
 import { CSSProperties, FC, ReactNode } from "react";
-import { View, Image } from "@tarojs/components";
+import { View, Image, ViewProps } from "@tarojs/components";
 import { useToggle } from "@fumoe/taro-hooks";
 
 import classNames from "classnames";
@@ -10,7 +10,7 @@ import "./index.scss";
 const DEFAULT_CHECK_ICON =
   "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNzU2MTEzMjAzMTc3IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9Ijc5ODIiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTk5Ny44ODggNzAuMTQ0QzY4Ni41OTIgMjYxLjEyIDQ2MC44IDUwMi4yNzIgMzU4LjkxMiA2MjMuMTA0TDExMC4wOCA0MjguMDMyIDAgNTE2LjYwOGw0MjkuNTY4IDQzNy4yNDhDNTAzLjI5NiA3NjQuNDE2IDczNy43OTIgMzk0LjI0IDEwMjQgMTMxLjA3MmwtMjYuMTEyLTYwLjkyOG0wIDB6IiBwLWlkPSI3OTgzIiBmaWxsPSIjZmZmZmZmIj48L3BhdGg+PC9zdmc+";
 
-export interface IMoeCheckbox {
+export interface IMoeCheckbox extends ViewProps {
   /**
    * 是否为选中状态 (可以理解为默认值)
    */
@@ -50,6 +50,20 @@ export interface IMoeCheckbox {
   onChange?: (newValue: boolean) => void;
 }
 
+/**
+ * CheckBox 复选框组件
+ * @param checked 是否为选中状态 (可以理解为默认值)
+ * @param disabled 是否禁用
+ * @param shape 形状
+ * @param iconSize 图标大小
+ * @param iconUrl 自定义图标的链接, 地址, base64字符串
+ * @param activeBackgroundColor 激活的背景颜色
+ * @param children 复选框右侧内容部分
+ * @param style 自定义样式表
+ * @param onChange 切换的时候调用, 传入切换后的值
+ * @param restProps
+ * @constructor
+ */
 const MoeCheckbox: FC<IMoeCheckbox> = ({
   checked,
   disabled,
@@ -60,6 +74,7 @@ const MoeCheckbox: FC<IMoeCheckbox> = ({
   children,
   style,
   onChange,
+  ...restProps
 }) => {
   // 判断当前是否点击
   const [isChecked, { toggle: toggleIsChecked }] = useToggle(checked);
@@ -82,6 +97,7 @@ const MoeCheckbox: FC<IMoeCheckbox> = ({
         // 调用
         handleClick();
       }}
+      {...restProps}
     >
       {/* 选择框 */}
       <View

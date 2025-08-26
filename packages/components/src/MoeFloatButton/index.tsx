@@ -1,6 +1,6 @@
 import Taro from "@tarojs/taro";
 import React, { CSSProperties, useEffect, useState } from "react";
-import { View } from "@tarojs/components";
+import { View, ViewProps } from "@tarojs/components";
 import classNames from "classnames";
 
 import "./index.scss";
@@ -8,7 +8,7 @@ import "./index.scss";
 // 简易判断 是否为数字
 const isNumber = (value: any): value is number => typeof value === "number";
 
-export interface IMoeFloatButton {
+export interface IMoeFloatButton extends ViewProps {
   /**
    * 悬浮按钮的大小
    */
@@ -58,6 +58,7 @@ export interface IMoeFloatButton {
  * @param onClick 点击事件 (已处理冒泡)
  * @param style 自定义样式
  * @param backgroundColor 按钮背景颜色
+ * @param restProps
  * @author kaedeshimizu
  * @email kaedeshimizu@qq.com
  */
@@ -71,6 +72,7 @@ const MoeFloatButton: React.FC<IMoeFloatButton> = ({
   onClick,
   style,
   backgroundColor = "#1E90FF",
+  ...restProps
 }) => {
   // 获取底部安全高度
   const [safeAreaHeight, setSafeAreaHeight] = useState(0);
@@ -114,6 +116,7 @@ const MoeFloatButton: React.FC<IMoeFloatButton> = ({
         e.stopPropagation();
         if (onClick) onClick();
       }}
+      {...restProps}
     >
       {icon}
     </View>

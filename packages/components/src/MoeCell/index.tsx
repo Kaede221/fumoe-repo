@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, View } from "@tarojs/components";
+import { Image, View, ViewProps } from "@tarojs/components";
 import classNames from "classnames";
 
 import "./index.scss";
@@ -7,7 +7,7 @@ import "./index.scss";
 const arrowImage =
   "data:image/svg+xml;base64,PHN2ZyBjbGFzc05hbWU9ImNlbGwtYXJyb3ciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgICAgICAgICA8cGF0aCBkPSJNMTAgMTdMMTUgMTJMMTAgNyIgc3Ryb2tlPSIjOUZBMEEyIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCINCiAgICAgICAgICAgICAgICBzdHJva2UtbGluZWpvaW49InJvdW5kIiAvPg0KICAgICAgICA8L3N2Zz4=";
 
-export interface IMoeCell {
+export interface IMoeCell extends ViewProps {
   /**
    * 左侧标题部分
    */
@@ -42,6 +42,7 @@ export interface IMoeCell {
  * @param isLink 是否显示右侧小箭头并开启点击反馈
  * @param clickable 是否开启点击反馈
  * @param onClick 点击的回调函数
+ * @param restProps
  * @constructor
  */
 const MoeCell: React.FC<IMoeCell> = ({
@@ -51,6 +52,7 @@ const MoeCell: React.FC<IMoeCell> = ({
   isLink,
   clickable,
   onClick,
+  ...restProps
 }) => {
   return (
     <View
@@ -61,6 +63,7 @@ const MoeCell: React.FC<IMoeCell> = ({
         e.stopPropagation();
         if (onClick) onClick();
       }}
+      {...restProps}
     >
       <View className="moe-cell-container-left-part">
         {icon && (

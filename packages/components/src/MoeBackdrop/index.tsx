@@ -1,11 +1,11 @@
 import { CSSProperties, FC, ReactNode } from "react";
-import { View } from "@tarojs/components";
+import { View, ViewProps } from "@tarojs/components";
 
 import classNames from "classnames";
 
 import "./index.scss";
 
-export interface IMoeBackdrop {
+export interface IMoeBackdrop extends ViewProps {
   /**
    * 是否展示遮罩层
    */
@@ -40,6 +40,7 @@ export interface IMoeBackdrop {
  * @param onClose 关闭遮罩层的时候触发
  * @param children 内嵌内容
  * @param style 自定义CSS样式
+ * @param restProps
  * @author kaedeshimizu
  * @email kaedeshimizu@qq.com
  */
@@ -50,6 +51,7 @@ const MoeBackdrop: FC<IMoeBackdrop> = ({
   onClose,
   children,
   style,
+  ...restProps
 }) => {
   // 关闭的回调函数
   const handleClose = () => {
@@ -73,6 +75,7 @@ const MoeBackdrop: FC<IMoeBackdrop> = ({
           handleClose();
         }
       }}
+      {...restProps}
     >
       {children}
     </View>

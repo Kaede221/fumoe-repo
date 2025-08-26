@@ -1,11 +1,11 @@
 import { CSSProperties, FC } from "react";
-import { View } from "@tarojs/components";
+import { View, ViewProps } from "@tarojs/components";
 
 import classNames from "classnames";
 
 import "./index.scss";
 
-export interface IMoeSwitch {
+export interface IMoeSwitch extends ViewProps {
   /**
    * 开关显示值
    */
@@ -40,6 +40,7 @@ export interface IMoeSwitch {
  * @param disabled 是否禁用 (禁用不可点击)
  * @param activeBackgroundColor 激活时的背景颜色, 默认 `#1989FA`
  * @param style 自定义样式
+ * @param restProps
  * @author kaedeshimizu
  * @email kaedeshimizu@qq.com
  */
@@ -50,6 +51,7 @@ const MoeSwitch: FC<IMoeSwitch> = ({
   disabled,
   activeBackgroundColor = "#1989FA",
   style,
+  ...restProps
 }) => {
   // 切换的时候的回调函数
   const handleChange = () => {
@@ -74,6 +76,7 @@ const MoeSwitch: FC<IMoeSwitch> = ({
         e.stopPropagation();
         if (!disabled) handleChange();
       }}
+      {...restProps}
     >
       <View
         className={classNames("moe-switch-container-button", { active: value })}

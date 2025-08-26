@@ -1,11 +1,11 @@
 import React, { CSSProperties, useState } from "react";
-import { View } from "@tarojs/components";
+import { View, ViewProps } from "@tarojs/components";
 import { MoeButton } from "../index";
 import classNames from "classnames";
 
 import "./index.scss";
 
-export interface IMoePicker {
+export interface IMoePicker extends ViewProps {
   // 选择器的标题
   title?: string;
   // 点击空白处是否可以关闭
@@ -37,6 +37,7 @@ export interface IMoePicker {
  * @param defaultCategory 默认选择的内容
  * @param onConfirm 确认时的回调函数 默认传入选择的内容, 确认后会自动关闭弹窗
  * @param confirmButtonStyle 确认按钮的额外样式
+ * @param restProps
  */
 const MoePicker: React.FC<IMoePicker> = ({
   title = "请选择分类",
@@ -48,6 +49,7 @@ const MoePicker: React.FC<IMoePicker> = ({
   defaultCategory = "",
   onConfirm,
   confirmButtonStyle,
+  ...restProps
 }) => {
   const [selectedCategory, setSelectedCategory] = useState(defaultCategory);
 
@@ -65,6 +67,7 @@ const MoePicker: React.FC<IMoePicker> = ({
         hide: !open,
       })}
       onClick={handleClose}
+      {...restProps}
     >
       <View
         className={classNames("moe-picker-main-container", {

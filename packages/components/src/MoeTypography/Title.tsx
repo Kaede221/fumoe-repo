@@ -18,13 +18,18 @@ export interface ITitle extends ViewProps {
 
 /**
  * 标题组件
- * @description 展示不同级别的标题
+ * @param level 标题级别
+ * @param children 标题文本内容
+ * @param restProps
  * @author kaedeshimizu
  * @email kaedeshimizu@qq.com
  */
-const Title: FC<ITitle> = ({ level = 1, children, ...rest }) => {
+const Title: FC<ITitle> = ({ level = 1, children, ...restProps }) => {
   return (
-    <View className={classNames("moe-typography-title", `h${level}`)} {...rest}>
+    <View
+      className={classNames("moe-typography-title", `h${level}`)}
+      {...restProps}
+    >
       {children}
     </View>
   );
