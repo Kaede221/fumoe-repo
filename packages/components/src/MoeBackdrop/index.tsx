@@ -11,10 +11,6 @@ export interface IMoeBackdrop extends ViewProps {
    */
   show: boolean;
   /**
-   * 设置是否显示遮罩层
-   */
-  setShow: (value: boolean) => void;
-  /**
    * 点击遮罩层时是否关闭
    */
   closeable?: boolean;
@@ -35,7 +31,6 @@ export interface IMoeBackdrop extends ViewProps {
 /**
  * 通用遮罩层
  * @param show 是否展示遮罩层
- * @param setShow 设置是否显示遮罩层
  * @param closeable 点击遮罩层时是否关闭
  * @param onClose 关闭遮罩层的时候触发
  * @param children 内嵌内容
@@ -46,7 +41,6 @@ export interface IMoeBackdrop extends ViewProps {
  */
 const MoeBackdrop: FC<IMoeBackdrop> = ({
   show,
-  setShow,
   closeable,
   onClose,
   children,
@@ -56,7 +50,6 @@ const MoeBackdrop: FC<IMoeBackdrop> = ({
   // 关闭的回调函数
   const handleClose = () => {
     if (onClose) onClose();
-    setShow(false);
   };
 
   return (
