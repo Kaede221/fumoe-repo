@@ -7,6 +7,8 @@ import "./index.scss";
 const arrowImage =
   "data:image/svg+xml;base64,PHN2ZyBjbGFzc05hbWU9ImNlbGwtYXJyb3ciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgICAgICAgICA8cGF0aCBkPSJNMTAgMTdMMTUgMTJMMTAgNyIgc3Ryb2tlPSIjOUZBMEEyIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCINCiAgICAgICAgICAgICAgICBzdHJva2UtbGluZWpvaW49InJvdW5kIiAvPg0KICAgICAgICA8L3N2Zz4=";
 
+// TODO 后续移除 label 属性
+
 export interface IMoeCell extends ViewProps {
   /**
    * 左侧标题部分
