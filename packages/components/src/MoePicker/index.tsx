@@ -1,5 +1,5 @@
 import React, { CSSProperties, useState } from "react";
-import { View, ViewProps } from "@tarojs/components";
+import { View, ViewProps, ScrollView } from "@tarojs/components";
 import { MoeButton } from "../index";
 import classNames from "classnames";
 
@@ -78,23 +78,26 @@ const MoePicker: React.FC<IMoePicker> = ({
       >
         {/*顶部标题*/}
         <View className="moe-picker-title">{title}</View>
+
         {/*选择部分 允许进行选择*/}
-        <View
-          className="category-list"
-          style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
-        >
-          {categories.map((category, index) => (
-            <View
-              key={`moe-picker-choices-${index}`}
-              className={classNames("category-item", {
-                "category-item-selected": selectedCategory === category,
-              })}
-              onClick={() => setSelectedCategory(category)}
-            >
-              {category}
-            </View>
-          ))}
-        </View>
+        <ScrollView scrollY className="scroll-part">
+          <View
+            className="category-list"
+            style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
+          >
+            {categories.map((category, index) => (
+              <View
+                key={`moe-picker-choices-${index}`}
+                className={classNames("category-item", {
+                  "category-item-selected": selectedCategory === category,
+                })}
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category}
+              </View>
+            ))}
+          </View>
+        </ScrollView>
 
         {/*下方的确认按钮*/}
         <MoeButton

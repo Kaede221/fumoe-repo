@@ -8,7 +8,7 @@ import "./index.scss";
 
 const PickerView: FC = () => {
   const [showPicker, { toggle: togglePicker, set: setShowPicker }] =
-    useToggle(false);
+    useToggle(true);
   const [columns, { inc: incColumns }] = useCounter(0);
   return (
     <View className="picker-view-test">

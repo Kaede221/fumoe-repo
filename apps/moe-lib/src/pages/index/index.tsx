@@ -92,7 +92,7 @@ const finalList: { title: string; item: IMoeCell[] }[] = [
 const Index = () => {
   return (
     <View>
-      <MoeHeader backgroundColor="#FFFFFF" iconSize={50}>
+      <MoeHeader backgroundColor="#FFFFFF" iconSize={50} fixed>
         MoeLib - 组件
       </MoeHeader>
       {finalList.map((listObj, index) => (
