@@ -24,15 +24,15 @@
   &-container {
     background-color: white;
     width: 100%;
-    min-height: 100rpx;
-    padding: 30rpx 0 60rpx 0;
-    border-top-left-radius: 50rpx;
-    border-top-right-radius: 50rpx;
+    min-height: 100px;
+    padding: 30px 0 60px 0;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 40rpx;
+    gap: 40px;
     transform: translateY(100%);
     transition: transform 0.3s ease;
 
@@ -46,13 +46,13 @@
 
     .confirm-button {
       width: 91%;
-      height: 80rpx;
-      border-radius: 40rpx;
+      height: 80px;
+      border-radius: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
       border: none;
-      font-size: 32rpx;
+      font-size: 32px;
       font-weight: 500;
       transition: all 0.3s ease;
 
@@ -71,15 +71,15 @@
     .category-list {
       width: 91%;
       display: grid;
-      gap: 20rpx;
+      gap: 20px;
 
       .category-item {
-        height: 77rpx;
+        height: 77px;
         border: 1px solid #ccc;
-        border-radius: 141rpx;
+        border-radius: 141px;
         text-align: center;
-        font-size: 32rpx;
-        line-height: 77rpx;
+        font-size: 32px;
+        line-height: 77px;
         transition: all 0.2s ease;
 
         &:active {
@@ -96,7 +96,7 @@
 
     // 标题部分
     .moe-picker-title {
-      font-size: 35rpx;
+      font-size: 35px;
     }
   }
 }

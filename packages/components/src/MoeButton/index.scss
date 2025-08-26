@@ -27,27 +27,27 @@
 // 按钮的多种大小样式
 .moe-button-size {
   &-large {
-    border-radius: 15rpx;
-    padding: 25rpx 30rpx;
-    font-size: 35rpx;
+    border-radius: 15px;
+    padding: 25px 30px;
+    font-size: 35px;
   }
 
   &-medium {
-    border-radius: 14rpx;
-    padding: 25rpx 30rpx;
-    font-size: 30rpx;
+    border-radius: 14px;
+    padding: 25px 30px;
+    font-size: 30px;
   }
 
   &-small {
-    border-radius: 12rpx;
-    padding: 20rpx 30rpx;
-    font-size: 25rpx;
+    border-radius: 12px;
+    padding: 20px 30px;
+    font-size: 25px;
   }
 
   &-mini {
-    border-radius: 10rpx;
-    padding: 15rpx 25rpx;
-    font-size: 20rpx;
+    border-radius: 10px;
+    padding: 15px 25px;
+    font-size: 20px;
   }
 }
 
@@ -56,56 +56,56 @@
   &-primary {
     background-color: styles.$moe-color-primary;
     color: #FFFFFF;
-    border: 2rpx styles.$moe-color-primary solid;
+    border: 2px styles.$moe-color-primary solid;
   }
 
   &-info {
     background-color: styles.$moe-color-info;
     color: #FFFFFF;
-    border: 2rpx styles.$moe-color-info solid;
+    border: 2px styles.$moe-color-info solid;
   }
 
   &-success {
     background-color: styles.$moe-color-success;
     color: #FFFFFF;
-    border: 2rpx styles.$moe-color-success solid;
+    border: 2px styles.$moe-color-success solid;
   }
 
   &-warning {
     background-color: styles.$moe-color-warning;
     color: #FFFFFF;
-    border: 2rpx styles.$moe-color-warning solid;
+    border: 2px styles.$moe-color-warning solid;
   }
 
   &-danger {
     background-color: styles.$moe-color-danger;
     color: #FFFFFF;
-    border: 2rpx styles.$moe-color-danger solid;
+    border: 2px styles.$moe-color-danger solid;
   }
 
   &-default {
     background-color: #FFFFFF;
     color: black;
-    border: #DCDEE0 solid 2rpx;
+    border: #DCDEE0 solid 2px;
   }
 }
 
 // 按钮的圆角部分
 .moe-button-rounded {
   &-large {
-    border-radius: 85rpx;
+    border-radius: 85px;
   }
 
   &-medium {
-    border-radius: 80rpx;
+    border-radius: 80px;
   }
 
   &-small {
-    border-radius: 65rpx;
+    border-radius: 65px;
   }
 
   &-mini {
-    border-radius: 50rpx;
+    border-radius: 50px;
   }
 }
 

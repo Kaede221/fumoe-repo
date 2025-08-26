@@ -5,7 +5,7 @@ import { MoeCell, MoeLoading } from "@fumoe/taro-components";
 import { useCounter } from "@fumoe/taro-hooks";
 
 const LoadingView: FC = () => {
-  const [size, setSize] = useState(70);
+  const [size, setSize] = useState(35);
   const [colorIndex, { inc: incColorIndex }] = useCounter(0);
   // 定义可切换的颜色列表
   const colorList = ["#C8C9CC", "#769fcd", "#9896f1", "#ffd460"];

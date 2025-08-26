@@ -7,38 +7,38 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8rpx;
+  gap: 8px;
 
   // NOTE 配置颜色主题
   &.color-set {
     &-default {
       background-color: styles.$moe-color-default;
-      border: styles.$moe-color-default solid 2rpx;
+      border: styles.$moe-color-default solid 2px;
     }
 
     &-primary {
       background-color: styles.$moe-color-primary;
-      border: styles.$moe-color-primary solid 2rpx;
+      border: styles.$moe-color-primary solid 2px;
     }
 
     &-info {
       background-color: styles.$moe-color-info;
-      border: styles.$moe-color-info solid 2rpx;
+      border: styles.$moe-color-info solid 2px;
     }
 
     &-success {
       background-color: styles.$moe-color-success;
-      border: styles.$moe-color-success solid 2rpx;
+      border: styles.$moe-color-success solid 2px;
     }
 
     &-warning {
       background-color: styles.$moe-color-warning;
-      border: styles.$moe-color-warning solid 2rpx;
+      border: styles.$moe-color-warning solid 2px;
     }
 
     &-danger {
       background-color: styles.$moe-color-danger;
-      border: styles.$moe-color-danger solid 2rpx;
+      border: styles.$moe-color-danger solid 2px;
     }
   }
 
@@ -76,32 +76,32 @@
   // NOTE 配置大小
   &.size-set {
     &-default {
-      padding: 6rpx 13rpx;
-      border-radius: 19.5rpx;
+      padding: 6px 13px;
+      border-radius: 19.5px;
 
       .label {
-        font-size: 27rpx;
-        line-height: 27rpx;
+        font-size: 27px;
+        line-height: 27px;
       }
     }
 
     &-medium {
-      padding: 7rpx 14rpx;
-      border-radius: 22rpx;
+      padding: 7px 14px;
+      border-radius: 22px;
 
       .label {
-        font-size: 30rpx;
-        line-height: 30rpx;
+        font-size: 30px;
+        line-height: 30px;
       }
     }
 
     &-large {
-      padding: 10rpx 15rpx;
-      border-radius: 26.5rpx;
+      padding: 10px 15px;
+      border-radius: 26.5px;
 
       .label {
-        font-size: 33rpx;
-        line-height: 33rpx;
+        font-size: 33px;
+        line-height: 33px;
       }
     }
   }
@@ -109,7 +109,7 @@
   // NOTE 配置形状
   &.shape-set {
     &-square {
-      border-radius: 10rpx;
+      border-radius: 10px;
     }
 
     &-roundedRight {
@@ -126,18 +126,18 @@
   // 图标
   .img-icon {
     &-default {
-      width: 30rpx;
-      height: 30rpx;
+      width: 30px;
+      height: 30px;
     }
 
     &-medium {
-      width: 33rpx;
-      height: 33rpx;
+      width: 33px;
+      height: 33px;
     }
 
     &-large {
-      width: 35rpx;
-      height: 35rpx;
+      width: 35px;
+      height: 35px;
     }
   }
 

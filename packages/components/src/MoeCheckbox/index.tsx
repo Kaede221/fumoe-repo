@@ -54,7 +54,7 @@ const MoeCheckbox: FC<IMoeCheckbox> = ({
   checked,
   disabled,
   shape = "square",
-  iconSize = 40,
+  iconSize = 20,
   iconUrl,
   activeBackgroundColor = "#1989FA",
   children,
@@ -91,8 +91,8 @@ const MoeCheckbox: FC<IMoeCheckbox> = ({
         })}
         style={
           {
-            height: iconSize + "rpx",
-            width: iconSize + "rpx",
+            height: iconSize + "px",
+            width: iconSize + "px",
             "--moe-checkbox-active": activeBackgroundColor,
           } as CSSProperties
         }
@@ -103,8 +103,8 @@ const MoeCheckbox: FC<IMoeCheckbox> = ({
             active: isChecked,
           })}
           style={{
-            width: iconSize - 10 + "rpx",
-            height: iconSize - 10 + "rpx",
+            width: iconSize - 5 + "px",
+            height: iconSize - 5 + "px",
           }}
           src={iconUrl ? iconUrl : DEFAULT_CHECK_ICON}
         />

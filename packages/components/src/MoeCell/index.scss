@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30rpx 30rpx;
+  padding: 34px 30px;
   background-color: #FFFFFF;
 
   & + .moe-cell-container {
@@ -11,37 +11,37 @@
 
   &-left-part {
     display: flex;
-    gap: 12rpx;
+    gap: 12px;
     align-items: center;
 
     &-icon {
-      width: 32rpx;
-      height: 32rpx;
+      width: 32px;
+      height: 32px;
       margin-bottom: -2%;
     }
 
     &-title {
-      font-size: 32rpx;
-      line-height: 32rpx;
+      font-size: 32px;
+      line-height: 32px;
       color: #323233;
       font-weight: 500;
     }
   }
 
   &-content {
-    gap: 8rpx;
+    gap: 8px;
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     max-width: 60%;
     color: #A0A1A3;
-    font-size: 30rpx;
-    line-height: 30rpx;
+    font-size: 30px;
+    line-height: 30px;
 
     &-cell-arrow {
-      width: 32rpx;
-      height: 32rpx;
+      width: 32px;
+      height: 32px;
       color: #A0A1A3;
       transform: scale(1.2);
     }

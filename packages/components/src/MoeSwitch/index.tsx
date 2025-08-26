@@ -46,7 +46,7 @@ export interface IMoeSwitch {
 const MoeSwitch: FC<IMoeSwitch> = ({
   value,
   onChange,
-  size = 40,
+  size = 20,
   disabled,
   activeBackgroundColor = "#1989FA",
   style,
@@ -60,8 +60,8 @@ const MoeSwitch: FC<IMoeSwitch> = ({
     <View
       style={
         {
-          "--button-size": size + "rpx",
-          "--container-height": size + 10 + "rpx",
+          "--button-size": size + "px",
+          "--container-height": size + 7 + "px",
           "--active-background-color": activeBackgroundColor,
           ...style,
         } as CSSProperties

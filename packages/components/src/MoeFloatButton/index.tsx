@@ -104,8 +104,8 @@ const MoeFloatButton: React.FC<IMoeFloatButton> = ({
         backgroundColor,
         ...(isNumber(size)
           ? {
-              width: Taro.pxTransform(size),
-              height: Taro.pxTransform(size),
+              width: size + "px",
+              height: size + "px",
             }
           : {}),
         ...style,

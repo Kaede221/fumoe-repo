@@ -10,7 +10,7 @@ export interface IMoeLoading {
    */
   type?: "circular" | "spinner";
   /**
-   * 加载图标大小 默认 `45`
+   * 加载图标大小 默认 `35`
    */
   size?: number;
   /**
@@ -22,14 +22,14 @@ export interface IMoeLoading {
 /**
  * 加载组件
  * @param type 加载类型 默认 `circular`
- * @param size 加载图标大小 默认 `45`
+ * @param size 加载图标大小 默认 `35`
  * @param color 加载的颜色 默认 `#1989fa`
  * @author kaedeshimizu
  * @email kaedeshimizu@qq.com
  */
 const MoeLoading: FC<IMoeLoading> = ({
   type = "circular",
-  size = 45,
+  size = 35,
   color = "#C8C9CC",
 }) => {
   // 根据当前类型 渲染不同类型的加载图标
@@ -38,7 +38,7 @@ const MoeLoading: FC<IMoeLoading> = ({
       <View
         style={
           {
-            "--moe-loading-size": size + "rpx",
+            "--moe-loading-size": size + "px",
             "--moe-loading-color": color,
           } as CSSProperties
         }
@@ -50,7 +50,7 @@ const MoeLoading: FC<IMoeLoading> = ({
       <View
         style={
           {
-            "--moe-loading-size": size + "rpx",
+            "--moe-loading-size": size + "px",
             "--moe-loading-color": color,
           } as CSSProperties
         }

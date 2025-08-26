@@ -5,13 +5,13 @@ $--moe-animation-duration: 0.15s;
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  gap: 20rpx;
+  gap: 20px;
 
   // 配置默认的字体
-  font-size: 30rpx;
+  font-size: 30px;
 
   &-box {
-    border: #C8C9CC solid 2rpx;
+    border: #C8C9CC solid 2px;
     transition: background-color $--moe-animation-duration linear;
     display: flex;
     align-items: center;
