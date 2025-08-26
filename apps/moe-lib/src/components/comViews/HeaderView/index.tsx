@@ -1,10 +1,12 @@
 import { FC } from "react";
 import { View } from "@tarojs/components";
-import Title from "@/components/Title";
+import { MoeTypography } from "@fumoe/taro-components";
 import { MoeHeader } from "@fumoe/taro-components";
 
 import iconTest from "@/assets/ic-debug.svg";
 import Taro from "@tarojs/taro";
+
+const { Title } = MoeTypography;
 
 const HeaderView: FC = () => {
   return (

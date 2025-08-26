@@ -14,10 +14,10 @@ const BackdropView: FC = () => {
       <MoeBackdrop show={show2} setShow={toggleShow2} closeable>
         <View
           style={{
-            width: "300rpx",
-            height: "300rpx",
+            width: "300px",
+            height: "300px",
             backgroundColor: "#FFFFFF",
-            borderRadius: "30rpx",
+            borderRadius: "30px",
           }}
         >
           This Is A Pannel

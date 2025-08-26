@@ -8,3 +8,4 @@ export { default as MoeLoading, IMoeLoading } from "./MoeLoading";
 export { default as MoePicker, IMoePicker } from "./MoePicker";
 export { default as MoeSwitch, IMoeSwitch } from "./MoeSwitch";
 export { default as MoeTag, IMoeTag } from "./MoeTag";
+export { default as MoeTypography, ITitle } from "./MoeTypography";

@@ -1,8 +1,9 @@
 import { FC, useState } from "react";
 import { View, Slider } from "@tarojs/components";
-import Title from "@/components/Title";
-import { MoeCell, MoeLoading } from "@fumoe/taro-components";
+import { MoeCell, MoeLoading, MoeTypography } from "@fumoe/taro-components";
 import { useCounter } from "@fumoe/taro-hooks";
+
+const { Title } = MoeTypography;
 
 const LoadingView: FC = () => {
   const [size, setSize] = useState(35);
@@ -18,8 +19,8 @@ const LoadingView: FC = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          padding: "20rpx",
-          gap: "20rpx",
+          padding: "20px",
+          gap: "20px",
         }}
       >
         <MoeLoading

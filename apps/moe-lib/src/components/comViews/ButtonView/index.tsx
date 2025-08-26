@@ -1,7 +1,9 @@
 import React from "react";
 import { View } from "@tarojs/components";
 import { MoeButton } from "@fumoe/taro-components";
-import Title from "@/components/Title";
+import { MoeTypography } from "@fumoe/taro-components";
+
+const { Title } = MoeTypography;
 
 const ButtonView: React.FC = () => {
   return (
@@ -66,7 +68,7 @@ const ButtonView: React.FC = () => {
       <MoeButton
         style={{
           width: "100%",
-          borderRadius: "20rpx",
+          borderRadius: "20px",
           background: "linear-gradient(to bottom right, blue, pink)",
           color: "white",
           fontWeight: "bold",

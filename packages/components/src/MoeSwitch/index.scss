@@ -1,6 +1,6 @@
 .moe-switch-container {
   position: relative;
-  width: calc(var(--button-size) * 2 + 10rpx);
+  width: calc(var(--button-size) * 2 + 10px);
   height: var(--container-height);
   border-radius: calc(var(--container-height) / 2);
   background-color: #E2E3E7;
@@ -30,7 +30,7 @@
 
     &.active {
       // NOTE 计算方式: 容器宽度 - 圆形按钮宽度 - 两边margin
-      transform: translateX(calc(calc(var(--button-size) * 2 + 10rpx) - var(--button-size) - calc(calc((var(--container-height) - var(--button-size)) / 2) * 2)));
+      transform: translateX(calc(calc(var(--button-size) * 2 + 10px) - var(--button-size) - calc(calc((var(--container-height) - var(--button-size)) / 2) * 2)));
     }
   }
 }

@@ -8,10 +8,10 @@ page {
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  gap: 20rpx;
+  gap: 20px;
 
   & > view {
-    padding-bottom: 30rpx;
-    border-bottom: 3rpx solid gray;
+    padding-bottom: 30px;
+    border-bottom: 3px solid gray;
   }
 }

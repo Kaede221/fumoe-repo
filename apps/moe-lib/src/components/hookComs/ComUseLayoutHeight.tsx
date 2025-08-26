@@ -11,20 +11,20 @@ const ComUseLayoutHeight: FC = () => {
         alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
-        gap: "15rpx",
+        gap: "15px",
       }}
     >
       <View
         id="testBox"
         style={{
-          width: "100rpx",
-          height: "100rpx",
+          width: "100px",
+          height: "100px",
           backgroundColor: "red",
         }}
       ></View>
       <View
         style={{
-          fontSize: "30rpx",
+          fontSize: "30px",
           fontWeight: "bold",
         }}
       >
@@ -32,7 +32,7 @@ const ComUseLayoutHeight: FC = () => {
       </View>
       <View
         style={{
-          fontSize: "30rpx",
+          fontSize: "30px",
           fontWeight: "bold",
         }}
       >

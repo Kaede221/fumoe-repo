@@ -11,23 +11,23 @@ const ComUseNavInfo: FC = () => {
         alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
-        gap: "15rpx",
+        gap: "15px",
       }}
     >
       <View
         style={{
-          fontSize: "30rpx",
+          fontSize: "30px",
           fontWeight: "bold",
-          marginTop: "20rpx",
+          marginTop: "20px",
         }}
       >
         useNavInfo
       </View>
       <View
         style={{
-          fontSize: "30rpx",
+          fontSize: "30px",
           fontWeight: "bold",
-          marginTop: "20rpx",
+          marginTop: "20px",
         }}
       >
         顶部高度: {navInfo.appHeaderHeight}px

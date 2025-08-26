@@ -1,10 +1,11 @@
 import { FC } from "react";
 import { View } from "@tarojs/components";
-import Title from "@/components/Title";
 
 import iconTest from "@/assets/ic-debug.svg";
 
-import { MoeTag, MoeCell } from "@fumoe/taro-components";
+import { MoeTag, MoeCell, MoeTypography } from "@fumoe/taro-components";
+
+const { Title } = MoeTypography;
 
 const TagView: FC = () => {
   return (

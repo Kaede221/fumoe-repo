@@ -12,14 +12,14 @@ const ComUseCounter: FC = () => {
         alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
-        gap: "15rpx",
+        gap: "15px",
       }}
     >
       <View
         style={{
-          fontSize: "30rpx",
+          fontSize: "30px",
           fontWeight: "bold",
-          marginTop: "20rpx",
+          marginTop: "20px",
         }}
       >
         useCounter - Value is {value}
@@ -27,7 +27,7 @@ const ComUseCounter: FC = () => {
       <View
         style={{
           display: "flex",
-          gap: "10rpx",
+          gap: "10px",
         }}
       >
         <MoeButton onClick={inc} size="small">

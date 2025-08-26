@@ -1,7 +1,11 @@
 import Taro from "@tarojs/taro";
 import { View } from "@tarojs/components";
-import { MoeHeader, MoeCell, IMoeCell } from "@fumoe/taro-components";
-import Title from "@/components/Title";
+import {
+  MoeHeader,
+  MoeCell,
+  IMoeCell,
+  MoeTypography,
+} from "@fumoe/taro-components";
 
 import "./index.scss";
 
@@ -22,6 +26,10 @@ const renderList1: IMoeCell[] = [
   {
     title: "MoeHeader",
     label: "通用的顶部组件",
+  },
+  {
+    title: "MoeTypography",
+    label: "排版",
   },
 ];
 
@@ -87,9 +95,17 @@ const Index = () => {
       <MoeHeader backgroundColor="#FFFFFF" iconSize={50}>
         MoeLib - 组件
       </MoeHeader>
-      {finalList.map((listObj) => (
+      {finalList.map((listObj, index) => (
         <>
-          <Title>{listObj.title}</Title>
+          <MoeTypography.Title
+            key={`title-${index}`}
+            level={3}
+            style={{
+              paddingLeft: "20px",
+            }}
+          >
+            {listObj.title}
+          </MoeTypography.Title>
           {listObj.item
             .slice()
             .sort((a, b) => {

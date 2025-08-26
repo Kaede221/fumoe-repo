@@ -13,8 +13,8 @@ const CheckboxView: FC = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          margin: "20rpx 0",
-          gap: "20rpx",
+          margin: "20px 0",
+          gap: "20px",
         }}
       >
         <MoeCheckbox>复选框</MoeCheckbox>
