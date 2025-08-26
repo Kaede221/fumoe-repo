@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Image, View, ViewProps } from "@tarojs/components";
 import classNames from "classnames";
 
@@ -14,6 +14,7 @@ export interface IMoeCell extends ViewProps {
   title?: React.ReactNode;
   /**
    * 右侧信息部分
+   * @deprecated 本内容已弃用, 请直接使用 children 来设置单元格内容
    */
   label?: React.ReactNode;
   /**
@@ -32,6 +33,10 @@ export interface IMoeCell extends ViewProps {
    * 点击的回调函数
    */
   onClick?: () => void;
+  /**
+   * 单元格内容部分
+   */
+  children?: ReactNode;
 }
 
 /**
@@ -42,6 +47,7 @@ export interface IMoeCell extends ViewProps {
  * @param isLink 是否显示右侧小箭头并开启点击反馈
  * @param clickable 是否开启点击反馈
  * @param onClick 点击的回调函数
+ * @param children 右侧信息部分
  * @param restProps
  * @constructor
  */
@@ -52,6 +58,7 @@ const MoeCell: React.FC<IMoeCell> = ({
   isLink,
   clickable,
   onClick,
+  children,
   ...restProps
 }) => {
   return (
@@ -73,7 +80,7 @@ const MoeCell: React.FC<IMoeCell> = ({
       </View>
 
       <View className="moe-cell-container-content">
-        {label}
+        {children ? children : label}
         {isLink && (
           <Image
             svg
