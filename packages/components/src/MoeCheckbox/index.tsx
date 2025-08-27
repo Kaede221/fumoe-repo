@@ -1,6 +1,5 @@
 import { CSSProperties, FC, ReactNode } from "react";
 import { View, Image, ViewProps } from "@tarojs/components";
-import { useToggle } from "@fumoe/taro-hooks";
 
 import classNames from "classnames";
 
@@ -12,7 +11,7 @@ const DEFAULT_CHECK_ICON =
 
 export interface IMoeCheckbox extends ViewProps {
   /**
-   * 是否为选中状态 (可以理解为默认值)
+   * 选中状态
    */
   checked?: boolean;
   /**
@@ -52,7 +51,7 @@ export interface IMoeCheckbox extends ViewProps {
 
 /**
  * CheckBox 复选框组件
- * @param checked 是否为选中状态 (可以理解为默认值)
+ * @param checked 选中状态
  * @param disabled 是否禁用
  * @param shape 形状
  * @param iconSize 图标大小
@@ -76,16 +75,10 @@ const MoeCheckbox: FC<IMoeCheckbox> = ({
   onChange,
   ...restProps
 }) => {
-  // 判断当前是否点击
-  const [isChecked, { toggle: toggleIsChecked }] = useToggle(checked);
-
   // 点击事件
   const handleClick = () => {
     if (disabled) return;
-    // 先调用
-    if (onChange) onChange(!isChecked);
-    // 先切换
-    toggleIsChecked();
+    if (onChange) onChange(!checked);
   };
 
   return (
@@ -102,7 +95,7 @@ const MoeCheckbox: FC<IMoeCheckbox> = ({
       {/* 选择框 */}
       <View
         className={classNames("moe-checkbox-container-box", `shape-${shape}`, {
-          active: isChecked,
+          active: checked,
           disabled,
         })}
         style={
@@ -116,11 +109,11 @@ const MoeCheckbox: FC<IMoeCheckbox> = ({
         {/* 里面放一个对勾 */}
         <Image
           className={classNames("moe-checkbox-container-box-image", {
-            active: isChecked,
+            active: checked,
           })}
           style={{
-            width: iconSize - 5 + "px",
-            height: iconSize - 5 + "px",
+            width: iconSize * 0.85 + "px",
+            height: iconSize * 0.85 + "px",
           }}
           src={iconUrl ? iconUrl : DEFAULT_CHECK_ICON}
         />
