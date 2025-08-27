@@ -8,7 +8,7 @@ import "./index.scss";
 
 const FloatButtonView: FC = () => {
   const [circleShape, { toggle: toggleCircleShape }] = useToggle(true);
-  const [visiable, { toggle: toggleVisiable }] = useToggle(false);
+  const [visiable, { toggle: toggleVisiable }] = useToggle(true);
   const [colorIndex, { inc: incColorIndex }] = useCounter(0);
   const colorList = ["#008cff", "#6600ff", "#a100ff", "#ff9100"];
   const [sizeIndex, { inc: incSizeIndex }] = useCounter(0);

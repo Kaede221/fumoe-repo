@@ -47,7 +47,7 @@ const Index = () => {
 
   return (
     <View>
-      <MoeHeader back backgroundColor="#FFFFFF">
+      <MoeHeader back backgroundColor="#FFFFFF" fixed>
         {showId}
       </MoeHeader>
       {/* 渲染对应的列表就行 */}

@@ -15,14 +15,14 @@ const Index: FC = () => {
         alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
-        gap: "15px",
+        gap: "15rpx",
       }}
     >
       <View
         style={{
-          fontSize: "30px",
+          fontSize: "30rpx",
           fontWeight: "bold",
-          marginTop: "20px",
+          marginTop: "20rpx",
         }}
       >
         useUpdateEffect - Value is {counter} {"\n"}
@@ -31,7 +31,7 @@ const Index: FC = () => {
       <View
         style={{
           display: "flex",
-          gap: "10px",
+          gap: "10rpx",
         }}
       >
         <MoeButton onClick={inc} size="small">
