@@ -47,6 +47,10 @@ const renderList2: IMoeCell[] = [
     title: "MoeCheckbox",
     children: "复选框",
   },
+  {
+    title: "MoeRadio",
+    children: "单选框",
+  },
 ];
 
 // NOTE 反馈组件
@@ -66,10 +70,6 @@ const renderList4: IMoeCell[] = [
   {
     title: "MoeTag",
     children: "标签组件",
-  },
-  {
-    title: "MoeToast",
-    children: "弹窗组件",
   },
 ];
 

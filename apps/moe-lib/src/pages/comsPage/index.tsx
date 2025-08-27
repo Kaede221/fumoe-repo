@@ -14,7 +14,7 @@ import SwitchView from "@/components/comViews/SwitchView";
 import LoadingView from "@/components/comViews/LoadingView";
 import CheckboxView from "@/components/comViews/CheckboxView";
 import TypographyView from "@/components/comViews/TypographyView";
-import ToastView from "@/components/comViews/ToastView";
+import RadioView from "@/components/comViews/RadioView";
 
 import "./index.scss";
 
@@ -31,7 +31,7 @@ const componentMap = {
   MoeLoading: <LoadingView />,
   MoeCheckbox: <CheckboxView />,
   MoeTypography: <TypographyView />,
-  MoeToast: <ToastView />,
+  MoeRadio: <RadioView />,
 };
 
 const Index = () => {
