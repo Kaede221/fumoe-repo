@@ -13,23 +13,23 @@ import "./index.scss";
 const renderList1: IMoeCell[] = [
   {
     title: "MoeButton",
-    label: "按钮组件",
+    children: "按钮组件",
   },
   {
     title: "MoeFloatButton",
-    label: "悬浮按钮组件",
+    children: "悬浮按钮组件",
   },
   {
     title: "MoeCell",
-    label: "单元格组件",
+    children: "单元格组件",
   },
   {
     title: "MoeHeader",
-    label: "通用的顶部组件",
+    children: "通用的顶部组件",
   },
   {
     title: "MoeTypography",
-    label: "排版",
+    children: "排版",
   },
 ];
 
@@ -37,15 +37,15 @@ const renderList1: IMoeCell[] = [
 const renderList2: IMoeCell[] = [
   {
     title: "MoePicker",
-    label: "弹出选择器",
+    children: "弹出选择器",
   },
   {
     title: "MoeSwitch",
-    label: "开关",
+    children: "开关",
   },
   {
     title: "MoeCheckbox",
-    label: "复选框",
+    children: "复选框",
   },
 ];
 
@@ -53,11 +53,11 @@ const renderList2: IMoeCell[] = [
 const renderList3: IMoeCell[] = [
   {
     title: "MoeBackdrop",
-    label: "背景弹出层",
+    children: "背景弹出层",
   },
   {
     title: "MoeLoading",
-    label: "加载组件",
+    children: "加载组件",
   },
 ];
 
@@ -65,7 +65,11 @@ const renderList3: IMoeCell[] = [
 const renderList4: IMoeCell[] = [
   {
     title: "MoeTag",
-    label: "标签组件",
+    children: "标签组件",
+  },
+  {
+    title: "MoeToast",
+    children: "弹窗组件",
   },
 ];
 
@@ -118,14 +122,15 @@ const Index = () => {
               <MoeCell
                 key={`renderlist1-${index}`}
                 title={item.title}
-                label={item.label}
                 isLink
                 onClick={async () => {
                   await Taro.navigateTo({
                     url: "/pages/comsPage/index?id=" + item.title,
                   });
                 }}
-              ></MoeCell>
+              >
+                {item.children}
+              </MoeCell>
             ))}
         </>
       ))}
