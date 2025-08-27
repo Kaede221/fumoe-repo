@@ -8,7 +8,10 @@ import "./index.scss";
 
 // 默认的图标
 const DEFAULT_CHECK_ICON =
-  "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNzU2MTEzMjAzMTc3IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9Ijc5ODIiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTk5Ny44ODggNzAuMTQ0QzY4Ni41OTIgMjYxLjEyIDQ2MC44IDUwMi4yNzIgMzU4LjkxMiA2MjMuMTA0TDExMC4wOCA0MjguMDMyIDAgNTE2LjYwOGw0MjkuNTY4IDQzNy4yNDhDNTAzLjI5NiA3NjQuNDE2IDczNy43OTIgMzk0LjI0IDEwMjQgMTMxLjA3MmwtMjYuMTEyLTYwLjkyOG0wIDB6IiBwLWlkPSI3OTgzIiBmaWxsPSIjZmZmZmZmIj48L3BhdGg+PC9zdmc+";
+  "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNzU2MjkwMzUzMDQxIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjQ0MjQiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTk5Ny44ODggNzAuMTQ0QzY4Ni41OTIgMjYxLjEyIDQ2MC44IDUwMi4yNzIgMzU4LjkxMiA2MjMuMTA0bC0yNDguODMyLTE5NS4wNzItMTEwLjA4IDg4LjU3NiA0MjkuNTY4IDQzNy4yNDhjNzMuNzI4LTE4OS40NCAzMDguMjI0LTU1OS42MTYgNTk0LjQzMi04MjIuNzg0bC0yNi4xMTItNjAuOTI4bTAgMHoiIHAtaWQ9IjQ0MjUiIGZpbGw9IiNmZmZmZmYiPjwvcGF0aD48L3N2Zz4=";
+
+const DEFAULT_CHECK_ICON_DISABLED =
+  "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNzU2MjkwMzUzMDQxIiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjQ0MjQiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTk5Ny44ODggNzAuMTQ0QzY4Ni41OTIgMjYxLjEyIDQ2MC44IDUwMi4yNzIgMzU4LjkxMiA2MjMuMTA0bC0yNDguODMyLTE5NS4wNzItMTEwLjA4IDg4LjU3NiA0MjkuNTY4IDQzNy4yNDhjNzMuNzI4LTE4OS40NCAzMDguMjI0LTU1OS42MTYgNTk0LjQzMi04MjIuNzg0bC0yNi4xMTItNjAuOTI4bTAgMHoiIHAtaWQ9IjQ0MjUiIGZpbGw9IiM5ZDlkOWQiPjwvcGF0aD48L3N2Zz4=";
 
 export interface IMoeCheckbox extends ViewProps {
   /**
@@ -36,6 +39,10 @@ export interface IMoeCheckbox extends ViewProps {
    */
   iconUrl?: string;
   /**
+   * 自定义图标 (禁用状态) 的链接, 地址, base64字符串
+   */
+  disableIconUrl?: string;
+  /**
    * 激活的背景颜色
    */
   activeBackgroundColor?: string;
@@ -61,11 +68,11 @@ export interface IMoeCheckbox extends ViewProps {
  * @param shape 形状
  * @param iconSize 图标大小
  * @param iconUrl 自定义图标的链接, 地址, base64字符串
+ * @param disableIconUrl 自定义图标 (禁用状态) 的链接, 地址, base64字符串
  * @param activeBackgroundColor 激活的背景颜色
  * @param children 复选框右侧内容部分
  * @param style 自定义样式表
  * @param onChange 切换的时候调用, 传入切换后的值
- * @param restProps
  * @constructor
  */
 const MoeCheckbox: FC<IMoeCheckbox> = ({
@@ -75,11 +82,11 @@ const MoeCheckbox: FC<IMoeCheckbox> = ({
   shape = "square",
   iconSize = 20,
   iconUrl,
+  disableIconUrl,
   activeBackgroundColor = "#1989FA",
   children,
   style,
   onChange,
-  ...restProps
 }) => {
   // 判断当前是否为受控组件
   // 只要没有value, 就是非受控组件
@@ -105,7 +112,6 @@ const MoeCheckbox: FC<IMoeCheckbox> = ({
           // 调用
           handleClick();
         }}
-        {...restProps}
       >
         {/* 选择框 */}
         <View
@@ -129,12 +135,21 @@ const MoeCheckbox: FC<IMoeCheckbox> = ({
           <Image
             className={classNames("moe-checkbox-container-box-image", {
               active: isChecked,
+              disabled,
             })}
             style={{
               width: iconSize - 5 + "px",
               height: iconSize - 5 + "px",
             }}
-            src={iconUrl ? iconUrl : DEFAULT_CHECK_ICON}
+            src={
+              !disabled
+                ? iconUrl
+                  ? iconUrl
+                  : DEFAULT_CHECK_ICON
+                : disableIconUrl
+                  ? disableIconUrl
+                  : DEFAULT_CHECK_ICON_DISABLED
+            }
           />
         </View>
         {/* 右边的部分 */}
@@ -159,7 +174,6 @@ const MoeCheckbox: FC<IMoeCheckbox> = ({
           // 调用
           handleClick();
         }}
-        {...restProps}
       >
         {/* 选择框 */}
         <View
@@ -183,12 +197,21 @@ const MoeCheckbox: FC<IMoeCheckbox> = ({
           <Image
             className={classNames("moe-checkbox-container-box-image", {
               active: checked,
+              disabled,
             })}
             style={{
               width: iconSize - 5 + "px",
               height: iconSize - 5 + "px",
             }}
-            src={iconUrl ? iconUrl : DEFAULT_CHECK_ICON}
+            src={
+              !disabled
+                ? iconUrl
+                  ? iconUrl
+                  : DEFAULT_CHECK_ICON
+                : disableIconUrl
+                  ? disableIconUrl
+                  : DEFAULT_CHECK_ICON_DISABLED
+            }
           />
         </View>
         {/* 右边的部分 */}
