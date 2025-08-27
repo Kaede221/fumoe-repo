@@ -6,6 +6,7 @@ export { default as MoeFloatButton, IMoeFloatButton } from "./MoeFloatButton";
 export { default as MoeHeader, IMoeHeader } from "./MoeHeader";
 export { default as MoeLoading, IMoeLoading } from "./MoeLoading";
 export { default as MoePicker, IMoePicker } from "./MoePicker";
+export { default as MoeRadio, IMoeRadio } from "./MoeRadio";
 export { default as MoeSwitch, IMoeSwitch } from "./MoeSwitch";
 export { default as MoeTag, IMoeTag } from "./MoeTag";
 export { default as MoeTypography, ITitle } from "./MoeTypography";
