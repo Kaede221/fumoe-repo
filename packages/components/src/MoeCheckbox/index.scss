@@ -36,6 +36,8 @@ $--moe-animation-duration: 0.15s;
     // 禁用的选择框
     &.disabled {
       filter: grayscale(100%);
+      background-color: #cbcbcb;
+      color: #cbcbcb;
     }
 
     &-image {

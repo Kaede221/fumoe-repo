@@ -1,5 +1,6 @@
 import { CSSProperties, FC, ReactNode } from "react";
 import { View, Image, ViewProps } from "@tarojs/components";
+import { useToggle } from "@fumoe/taro-hooks";
 
 import classNames from "classnames";
 
@@ -14,6 +15,10 @@ export interface IMoeCheckbox extends ViewProps {
    * 选中状态
    */
   checked?: boolean;
+  /**
+   * 默认是否选中
+   */
+  defaultChecked?: boolean;
   /**
    * 是否禁用
    */
@@ -43,15 +48,15 @@ export interface IMoeCheckbox extends ViewProps {
    */
   style?: CSSProperties;
   /**
-   * 切换的时候调用, 传入切换后的值
-   * @param newValue
+   * 切换的时候调用, 传入新值
    */
   onChange?: (newValue: boolean) => void;
 }
 
 /**
  * CheckBox 复选框组件
- * @param checked 选中状态
+ * @param checked 选中状态 (受控)
+ * @param defaultChecked 默认是否选中 (非受控)
  * @param disabled 是否禁用
  * @param shape 形状
  * @param iconSize 图标大小
@@ -65,6 +70,7 @@ export interface IMoeCheckbox extends ViewProps {
  */
 const MoeCheckbox: FC<IMoeCheckbox> = ({
   checked,
+  defaultChecked,
   disabled,
   shape = "square",
   iconSize = 20,
@@ -75,53 +81,121 @@ const MoeCheckbox: FC<IMoeCheckbox> = ({
   onChange,
   ...restProps
 }) => {
-  // 点击事件
-  const handleClick = () => {
-    if (disabled) return;
-    if (onChange) onChange(!checked);
-  };
+  // 判断当前是否为受控组件
+  // 只要没有value, 就是非受控组件
+  if (typeof checked === "undefined") {
+    // NOTE 非受控模式
+    const [isChecked, { toggle: toggleIsChecked }] = useToggle(defaultChecked);
 
-  return (
-    <View
-      className="moe-checkbox-container"
-      style={style}
-      onClick={(e) => {
-        e.stopPropagation();
-        // 调用
-        handleClick();
-      }}
-      {...restProps}
-    >
-      {/* 选择框 */}
+    // 点击事件
+    const handleClick = () => {
+      if (disabled) return;
+      // 先调用
+      if (onChange) onChange(!isChecked);
+      // 先切换
+      toggleIsChecked();
+    };
+
+    return (
       <View
-        className={classNames("moe-checkbox-container-box", `shape-${shape}`, {
-          active: checked,
-          disabled,
-        })}
-        style={
-          {
-            height: iconSize + "px",
-            width: iconSize + "px",
-            "--moe-checkbox-active": activeBackgroundColor,
-          } as CSSProperties
-        }
+        className="moe-checkbox-container"
+        style={style}
+        onClick={(e) => {
+          e.stopPropagation();
+          // 调用
+          handleClick();
+        }}
+        {...restProps}
       >
-        {/* 里面放一个对勾 */}
-        <Image
-          className={classNames("moe-checkbox-container-box-image", {
-            active: checked,
-          })}
-          style={{
-            width: iconSize * 0.85 + "px",
-            height: iconSize * 0.85 + "px",
-          }}
-          src={iconUrl ? iconUrl : DEFAULT_CHECK_ICON}
-        />
+        {/* 选择框 */}
+        <View
+          className={classNames(
+            "moe-checkbox-container-box",
+            `shape-${shape}`,
+            {
+              active: isChecked,
+              disabled,
+            },
+          )}
+          style={
+            {
+              height: iconSize + "px",
+              width: iconSize + "px",
+              "--moe-checkbox-active": activeBackgroundColor,
+            } as CSSProperties
+          }
+        >
+          {/* 里面放一个对勾 */}
+          <Image
+            className={classNames("moe-checkbox-container-box-image", {
+              active: isChecked,
+            })}
+            style={{
+              width: iconSize - 5 + "px",
+              height: iconSize - 5 + "px",
+            }}
+            src={iconUrl ? iconUrl : DEFAULT_CHECK_ICON}
+          />
+        </View>
+        {/* 右边的部分 */}
+        {children}
       </View>
-      {/* 右边的部分 */}
-      {children}
-    </View>
-  );
+    );
+  } else {
+    // NOTE 受控模式
+    // 点击事件
+    const handleClick = () => {
+      if (disabled) return;
+      // 先调用
+      if (onChange) onChange(!checked);
+    };
+
+    return (
+      <View
+        className="moe-checkbox-container"
+        style={style}
+        onClick={(e) => {
+          e.stopPropagation();
+          // 调用
+          handleClick();
+        }}
+        {...restProps}
+      >
+        {/* 选择框 */}
+        <View
+          className={classNames(
+            "moe-checkbox-container-box",
+            `shape-${shape}`,
+            {
+              active: checked,
+              disabled,
+            },
+          )}
+          style={
+            {
+              height: iconSize + "px",
+              width: iconSize + "px",
+              "--moe-checkbox-active": activeBackgroundColor,
+            } as CSSProperties
+          }
+        >
+          {/* 里面放一个对勾 */}
+          <Image
+            className={classNames("moe-checkbox-container-box-image", {
+              active: checked,
+            })}
+            style={{
+              width: iconSize - 5 + "px",
+              height: iconSize - 5 + "px",
+            }}
+            src={iconUrl ? iconUrl : DEFAULT_CHECK_ICON}
+          />
+        </View>
+        {/* 右边的部分 */}
+        {children}
+      </View>
+    );
+  }
 };
 
 export default MoeCheckbox;

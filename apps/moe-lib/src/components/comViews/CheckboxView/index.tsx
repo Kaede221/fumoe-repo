@@ -1,12 +1,12 @@
 import { FC } from "react";
 import { View } from "@tarojs/components";
-import { MoeCell, MoeCheckbox } from "@fumoe/taro-components";
+import { MoeCell, MoeCheckbox, MoeTypography } from "@fumoe/taro-components";
 import Taro from "@tarojs/taro";
 
 const CheckboxView: FC = () => {
   return (
     <View>
-      <MoeCell title="基础使用" />
+      <MoeTypography.Title level={3}>基础使用</MoeTypography.Title>
       <View
         style={{
           width: "100%",
@@ -20,25 +20,27 @@ const CheckboxView: FC = () => {
         <MoeCheckbox>复选框</MoeCheckbox>
         <MoeCheckbox shape="round" />
       </View>
-      <MoeCell title="结合单元格" label={<MoeCheckbox />}></MoeCell>
-      <MoeCell
-        title="禁用状态"
-        label={<MoeCheckbox disabled checked />}
-      ></MoeCell>
-      <MoeCell
-        title="自定义颜色"
-        label={
-          <MoeCheckbox
-            checked
-            activeBackgroundColor="#ff9a3c"
-            onChange={async (value) => {
-              await Taro.showToast({
-                title: value ? "开启" : "关闭",
-              });
-            }}
-          />
-        }
-      ></MoeCell>
+      <MoeCell title="结合单元格">
+        <MoeCheckbox />
+      </MoeCell>
+      <MoeCell title="禁用状态">
+        <MoeCheckbox disabled checked />
+      </MoeCell>
+      <MoeCell title="自定义颜色">
+        <MoeCheckbox
+          defaultChecked
+          activeBackgroundColor="#ff9a3c"
+          onChange={async (value) => {
+            await Taro.showToast({
+              title: value ? "开启" : "关闭",
+            });
+          }}
+        />
+      </MoeCell>
+      <MoeTypography.Title level={3}>受控模式</MoeTypography.Title>
+      <MoeCell title="我无法取消选择">
+        <MoeCheckbox checked={true} />
+      </MoeCell>
     </View>
   );
 };
