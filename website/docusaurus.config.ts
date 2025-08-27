@@ -55,20 +55,32 @@ const config: Config = {
 
     themeConfig: {
         image: 'img/favicon.png',
-        // NOTE 配置navbar
+        // 配置navbar
         navbar: {
             title: 'FuMOE',
             logo: {
-                alt: 'My Site Logo',
+                alt: 'FuMOE Logo',
                 src: 'img/favicon.png',
             },
-            // NOTE 顶栏的分类
+            // 顶栏的分类
             items: [
                 {
                     type: 'docSidebar',
                     sidebarId: 'tutorialSidebar',
                     position: 'left',
-                    label: '信息',
+                    label: '快速开始',
+                },
+                {
+                    type: 'doc',
+                    position: 'left',
+                    label: 'Hooks',
+                    docId: '/category/hooks',
+                },
+                {
+                    type: 'doc',
+                    position: 'left',
+                    label: '组件',
+                    docId: '/category/组件',
                 },
                 {
                     href: 'https://github.com/Kaede221/fumoe-repo',
