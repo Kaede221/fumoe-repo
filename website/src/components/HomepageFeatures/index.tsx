@@ -10,7 +10,7 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
     {
-        title: '简单上手',
+        title: '📚 简单上手',
         description: (
             <>
                 每个组件都有完整, 详细的文档, 方便开发者快速上手.
@@ -18,23 +18,24 @@ const FeatureList: FeatureItem[] = [
         ),
     },
     {
-        title: '体积极小',
+        title: '🐜 体积极小',
         description: (
             <>
-                每个组件相互独立, 几乎不会相互依赖, 这也让每个组件的大小极小.
+                每个组件相互独立, 几乎不会相互依赖, 这也让每个组件的体积极小.
             </>
         ),
     },
     {
-        title: '设计美观',
+        title: '🎨 设计美观',
         description: (
             <>
-                每个组件都是精心进行涉及过的, 在微信开发者工具中都进行了数次的测试.
+                每个组件都是精心进行设计过的, 在微信开发者工具中都进行了数次的测试.
             </>
         ),
     },
 ];
 
+// 主页的下方的特点部分的单个内容
 function Feature({title, description}: FeatureItem) {
     return (
         <div className={clsx('col col--4')}>
@@ -46,6 +47,7 @@ function Feature({title, description}: FeatureItem) {
     );
 }
 
+// 主页下方的特性部分
 export default function HomepageFeatures(): ReactNode {
     return (
         <section className={styles.features}>

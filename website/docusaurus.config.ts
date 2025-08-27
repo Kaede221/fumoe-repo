@@ -5,13 +5,14 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
     title: 'FuMOE',
     tagline: '一个专为Taro 4.x 设计的组件库/hooks库',
-    favicon: 'img/favicon.ico',
+    favicon: 'img/favicon.png',
 
     // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
     future: {
         v4: true, // Improve compatibility with the upcoming Docusaurus v4
     },
 
+    // TODO 设置网站的生产环境链接
     // Set the production url of your site here
     url: 'https://your-docusaurus-site.example.com',
     // Set the /<baseUrl>/ pathname under which your site is served
@@ -21,7 +22,7 @@ const config: Config = {
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
     organizationName: 'fumoe', // Usually your GitHub org/user name.
-    projectName: '@fumoe', // Usually your repo name.
+    projectName: '@fumoe/websites', // Usually your repo name.
 
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
@@ -53,14 +54,15 @@ const config: Config = {
     ],
 
     themeConfig: {
-        // Replace with your project's social card
-        image: 'img/docusaurus-social-card.jpg',
+        image: 'img/favicon.png',
+        // NOTE 配置navbar
         navbar: {
             title: 'FuMOE',
             logo: {
                 alt: 'My Site Logo',
-                src: 'img/logo.svg',
+                src: 'img/favicon.png',
             },
+            // NOTE 顶栏的分类
             items: [
                 {
                     type: 'docSidebar',
@@ -78,47 +80,30 @@ const config: Config = {
         footer: {
             style: 'dark',
             links: [
+                // {
+                //     title: '文档',
+                //     items: [
+                //         {
+                //             label: 'Tutorial',
+                //             to: '/docs/intro',
+                //         },
+                //     ],
+                // },
                 {
-                    title: 'Docs',
+                    title: '更多信息',
                     items: [
                         {
-                            label: 'Tutorial',
-                            to: '/docs/intro',
-                        },
-                    ],
-                },
-                {
-                    title: 'Community',
-                    items: [
-                        {
-                            label: 'Stack Overflow',
-                            href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                            label: 'My Blog',
+                            href: "https://blog.fumoe.top/"
                         },
                         {
-                            label: 'Discord',
-                            href: 'https://discordapp.com/invite/docusaurus',
-                        },
-                        {
-                            label: 'X',
-                            href: 'https://x.com/docusaurus',
-                        },
-                    ],
-                },
-                {
-                    title: 'More',
-                    items: [
-                        {
-                            label: 'Blog',
-                            to: '/blog',
-                        },
-                        {
-                            label: 'GitHub',
-                            href: 'https://github.com/facebook/docusaurus',
+                            label: 'My GitHub',
+                            href: 'https://github.com/Kaede221',
                         },
                     ],
                 },
             ],
-            copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+            copyright: `Copyright © ${new Date().getFullYear()} FuMOE. Built By KaedeShimizu.`,
         },
         prism: {
             theme: prismThemes.github,
