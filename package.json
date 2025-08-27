@@ -9,6 +9,7 @@
     "build:taro-weapp": "pnpm --F @fumoe/taro-test build:weapp",
     "build:taro-h5": "pnpm --F @fumoe/taro-test build:h5",
     "build:components": "pnpm --F @fumoe/taro-components build",
+    "dev:components": "pnpm --F @fumoe/taro-components dev",
     "build:hooks": "pnpm --F @fumoe/taro-hooks build",
     "docs:dev": "pnpm --F @fumoe/website start"
   },

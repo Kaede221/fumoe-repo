@@ -25,6 +25,7 @@
     "build": "node build.js",
     "build:types": "tsc --emitDeclarationOnly",
     "build:tsc": "tsc",
+    "dev": "node build.js --watch",
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
