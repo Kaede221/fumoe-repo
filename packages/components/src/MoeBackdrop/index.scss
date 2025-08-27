@@ -4,12 +4,12 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #000000;
+  background-color: rgba(#000000, 0.6);
   transition: opacity 0.3s ease-in-out;
   z-index: 1000;
 
   &.show {
-    opacity: 0.6;
+    opacity: 1;
   }
 
   &.hide {

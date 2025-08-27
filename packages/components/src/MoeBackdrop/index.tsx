@@ -41,7 +41,7 @@ export interface IMoeBackdrop extends ViewProps {
  */
 const MoeBackdrop: FC<IMoeBackdrop> = ({
   show,
-  closeable,
+  closeable = true,
   onClose,
   children,
   style,

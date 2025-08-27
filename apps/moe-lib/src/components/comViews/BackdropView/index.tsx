@@ -9,18 +9,31 @@ const BackdropView: FC = () => {
   return (
     <View>
       <MoeButton onClick={toggleShow}>普通显示</MoeButton>
-      <MoeBackdrop show={show} setShow={toggleShow} closeable />
+      <MoeBackdrop show={show} onClose={toggleShow} closeable />
       <MoeButton onClick={toggleShow2}>内嵌内容</MoeButton>
-      <MoeBackdrop show={show2} setShow={toggleShow2} closeable>
+      <MoeBackdrop show={show2} onClose={toggleShow2} closeable>
         <View
           style={{
-            width: "300px",
-            height: "300px",
-            backgroundColor: "#FFFFFF",
-            borderRadius: "30px",
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          This Is A Pannel
+          <View
+            style={{
+              width: "300rpx",
+              height: "300rpx",
+              backgroundColor: "#FFFFFF",
+              borderRadius: "30rpx",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            This Is A Pannel
+          </View>
         </View>
       </MoeBackdrop>
     </View>
