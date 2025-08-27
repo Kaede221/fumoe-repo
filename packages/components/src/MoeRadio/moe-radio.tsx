@@ -66,9 +66,9 @@ const MoeRadio: FC<IMoeRadio> = ({
   const content = useContext(MoeRadioGroupContext);
   return (
     <MoeCheckbox
-      disabled={disabled}
+      disabled={content.disabled || disabled}
       shape={shape}
-      iconSize={iconSize}
+      iconSize={content.size || iconSize}
       iconUrl={iconUrl}
       activeBackgroundColor={activeBackgroundColor}
       onChange={(newValue) => {
@@ -78,6 +78,7 @@ const MoeRadio: FC<IMoeRadio> = ({
         content.onClick(value);
       }}
       checked={value === content.currentValue}
+      defaultChecked={value === content.defaultValue}
       style={style}
     >
       {children}
