@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/Kaede221/fumoe-repo/compare/v0.2.1...v0.2.2) (2025-08-27)
+
+### Performance Improvements
+
+* **components:** 优化样式 ([f89801f](https://github.com/Kaede221/fumoe-repo/commit/f89801fbdc233a41b7aae473262369c57bb7a370))
+
 ## [0.2.1](https://github.com/Kaede221/fumoe-repo/compare/v0.2.0...v0.2.1) (2025-08-27)
 
 **Note:** Version bump only for package fumoe-repo
