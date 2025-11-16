@@ -1,11 +1,11 @@
-import Taro from "@tarojs/taro";
+import Taro, { ENV_TYPE } from "@tarojs/taro";
 import React, { ReactNode } from "react";
 import { View, Image, ViewProps } from "@tarojs/components";
 
+import "./index.scss";
+
 const arrowIcon =
   "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNzU1MzE3NjIwMzg2IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjQ5MDIiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTEwOS41OTM2IDUwOS4zODg4bDM4Ni4wNDgtMzgzLjEyOTZjMTYuMTI4LTE3LjkyIDE1LjIwNjQtNDUuMjg2NC0yLjA3MzYtNjIuMTMxMmE0NS42NzA0IDQ1LjY3MDQgMCAwIDAtNjIuNjQzMi0wLjk3MjhMMTMuMzEyIDQ3Ny42MTkyYTQ0LjkwMjQgNDQuOTAyNCAwIDAgMCAwIDYzLjc5NTJsNDE3LjYxMjggNDE0LjIwOGE0NS41OTM2IDQ1LjU5MzYgMCAwIDAgNDUuNTY4IDE2LjA3NjggNDUuMjYwOCA0NS4yNjA4IDAgMCAwIDM0LjMyOTYtMzMuODE3NiA0NC44NzY4IDQ0Ljg3NjggMCAwIDAtMTUuODcyLTQ1LjM2MzJMMTA5LjU5MzYgNTA5LjM4ODh6IiBmaWxsPSIjMjIyMjIyIiBwLWlkPSI0OTAzIiBkYXRhLXNwbS1hbmNob3ItaWQ9ImEzMTN4LnNlYXJjaF9pbmRleC4wLmkwLjJjNmEzYTgxQTAxdjFsIj48L3BhdGg+PC9zdmc+";
-
-import "./index.scss";
 
 export interface IMoeHeader extends ViewProps {
   /** 标题大小 */
@@ -26,6 +26,10 @@ export interface IMoeHeader extends ViewProps {
   backgroundColor?: string;
   /** 层级高度 */
   zIndex?: number;
+  /** 右侧的图标 */
+  rightIcon?: ReactNode;
+  /** 右侧图标点击事件 */
+  onClickRightIcon?: () => void;
   /** 标题内部元素 */
   children?: ReactNode;
 }
@@ -41,10 +45,10 @@ export interface IMoeHeader extends ViewProps {
  * @param backHandler 点击返回区域的回调事件
  * @param backgroundColor 背景颜色
  * @param zIndex 层级高度
+ * @param rightIcon 右侧图标
+ * @param onClickRightIcon 右侧图标点击事件
  * @param children 标题内部元素
  * @param restProps
- * @author kaedeshimizu
- * @email kaedeshimizu@qq.com
  */
 const MoeHeader: React.FC<IMoeHeader> = ({
   fontSize = 32,
@@ -56,25 +60,34 @@ const MoeHeader: React.FC<IMoeHeader> = ({
   backHandler,
   backgroundColor = "transparent",
   zIndex = 1000,
+  rightIcon,
+  onClickRightIcon,
   children,
   ...restProps
 }) => {
-  // 防止当前不存在这个东西
-  const { statusBarHeight } = Taro.getWindowInfo
-    ? Taro.getWindowInfo()
-    : { statusBarHeight: 0 };
-
-  // 获取胶囊信息
-  const { height, top } = Taro.getMenuButtonBoundingClientRect
-    ? Taro.getMenuButtonBoundingClientRect()
-    : { height: 32, top: 0 };
-
-  // 计算标题栏高度
-  const titleBarHeight = height + (top - statusBarHeight!) * 2;
+  let titleBarHeight = 0;
   // 计算导航栏高度
-  const appHeaderHeight = statusBarHeight! + titleBarHeight;
+  let appHeaderHeight: number;
+  let containerHeight: number;
 
-  const containerHeight = appHeaderHeight - (statusBarHeight || 0);
+  // 环境适配
+  if (Taro.getEnv() === ENV_TYPE.WEAPP) {
+    // 防止当前不存在这个东西
+    const { statusBarHeight } = Taro.getWindowInfo
+      ? Taro.getWindowInfo()
+      : { statusBarHeight: 0 };
+
+    // 获取胶囊信息
+    const { height, top } = Taro.getMenuButtonBoundingClientRect
+      ? Taro.getMenuButtonBoundingClientRect()
+      : { height: 32, top: 0 };
+    titleBarHeight = height + (top - statusBarHeight!) * 2;
+    appHeaderHeight = statusBarHeight! + titleBarHeight;
+    containerHeight = appHeaderHeight - (statusBarHeight || 0);
+  } else {
+    appHeaderHeight = 50;
+    containerHeight = appHeaderHeight;
+  }
 
   // 定义点击回调事件
   const onClickBackIcon = async () => {
@@ -107,7 +120,7 @@ const MoeHeader: React.FC<IMoeHeader> = ({
         ></View>
       )}
       <View
-        className={"moe-header"}
+        className="moe-header"
         style={{
           position: fixed ? "fixed" : "static",
           height: appHeaderHeight + "px",
@@ -119,17 +132,21 @@ const MoeHeader: React.FC<IMoeHeader> = ({
       >
         {/*主要内容区域*/}
         <View
-          className={"moe-header-container"}
+          className="moe-header-container"
           style={{
             height: containerHeight + "px",
             fontSize: Taro.pxTransform(fontSize),
             justifyContent: titleLeft ? "flex-start" : "center",
-            paddingLeft: titleLeft ? (back ? fontSize + 25 + "px" : "0") : "0",
+            paddingLeft: titleLeft
+              ? back
+                ? fontSize + 10 + "px"
+                : "15px"
+              : "0",
           }}
         >
           {back && (
             <Image
-              className={"back-icon"}
+              className="back-icon"
               src={!!backIcon ? backIcon : arrowIcon}
               onClick={onClickBackIcon}
               style={{
@@ -149,6 +166,22 @@ const MoeHeader: React.FC<IMoeHeader> = ({
           >
             {children}
           </View>
+
+          {/* 右侧图标部分 */}
+          {rightIcon &&
+            (typeof rightIcon === "string" ? (
+              <Image
+                className="right-icon"
+                src={rightIcon}
+                onClick={onClickRightIcon}
+                style={{
+                  width: Taro.pxTransform(iconSize),
+                  height: Taro.pxTransform(iconSize),
+                }}
+              ></Image>
+            ) : (
+              <View className="right-icon">{rightIcon}</View>
+            ))}
         </View>
       </View>
     </>

@@ -31,6 +31,15 @@ const HeaderView: FC = () => {
       >
         自定义图标 back + backIcon
       </MoeHeader>
+      <Title level={3}>右侧图标一样, 不过方法顶部不同</Title>
+      <MoeHeader
+        backgroundColor="#FFFFFF"
+        back
+        backIcon={iconTest}
+        rightIcon={iconTest}
+      >
+        右边也有图标
+      </MoeHeader>
       <Title level={3}>返回按钮的回调函数可以自定义</Title>
       <MoeHeader
         backgroundColor="#FFFFFF"
