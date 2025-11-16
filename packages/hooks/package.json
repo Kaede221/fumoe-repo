@@ -1,6 +1,6 @@
 {
   "name": "@fumoe/taro-hooks",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Taro 4.x 中, 可以开箱即用的自制hooks",
   "publishConfig": {
     "access": "public",

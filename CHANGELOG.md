@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/Kaede221/fumoe-repo/compare/v0.2.2...v0.3.0) (2025-11-16)
+
+### Features
+
+* **components:** 为 MoeHeader 组件添加右侧图标支持 ([fc7a55c](https://github.com/Kaede221/fumoe-repo/commit/fc7a55c2e891a417d9f61bbd0ecf5e08f1b222d5))
+
 ## [0.2.2](https://github.com/Kaede221/fumoe-repo/compare/v0.2.1...v0.2.2) (2025-08-27)
 
 ### Performance Improvements
